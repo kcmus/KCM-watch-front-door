@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+   <rect width="24" height="24" rx="12" transform="matrix(1 0 0 -1 0 24)" fill="#fff"></rect>
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M17.809 4.2h1.38l-5.764 6.247 6.54 8.753H15.18l-4.398-5.887-5.43 5.887H3.93l6.224-6.727L3.973 4.2h4.784l4.044 5.412L17.809 4.2ZM8.247 5.234H6.042l9.691 12.931h2.205L8.247 5.235Z"
+        fill="#212529"
+      ></path>
+ 
+</svg>

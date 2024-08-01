@@ -16,6 +16,15 @@
 <style scoped>
 
 
+#header{
+
+        padding-top: 16px;
+        padding-bottom: 16px;
+        height: 60px;
+        background-color: bisque
+    }
+
+
 
 @media (min-width: 768px){
     #header{

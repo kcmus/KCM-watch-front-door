@@ -14,6 +14,13 @@
 <style scoped>
 
 
+#sow-seeds-of-change-box{
+    height: 304px;
+    background-color: bisque;
+
+}
+
+
 @media (min-width: 768px){
 
     #sow-seeds-of-change-box{

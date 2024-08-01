@@ -17,6 +17,12 @@
 
 <style scoped>
 
+
+#BVOV-box{
+    height: 1027px; 
+    background-color: bisque;
+   }
+
    
 
 @media (min-width: 768px){

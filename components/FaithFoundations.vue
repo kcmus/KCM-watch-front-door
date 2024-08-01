@@ -16,6 +16,14 @@
 <style scoped>
 
 
+
+#faith-foundations-box{
+
+    height:305px;
+    background-color: bisque;
+}
+
+
 @media (min-width: 768px){
 
 

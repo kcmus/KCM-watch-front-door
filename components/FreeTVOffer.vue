@@ -18,6 +18,15 @@
 <style scoped>
 
 
+#Free-TV-Offer{
+
+height: 323px;
+background-color: bisque;
+
+
+}
+
+
 
 @media (min-width: 768px){
 

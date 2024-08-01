@@ -16,6 +16,14 @@
 
 <style>
 
+#Live-TV-box{
+
+height: 232px;
+background-color: bisque;
+
+}
+
+
 @media (min-width: 768px){
 
     #Live-TV-box{

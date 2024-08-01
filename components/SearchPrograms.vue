@@ -13,6 +13,13 @@
 
 <style scoped>
 
+#search-programs-box{
+
+    height: 98px;
+    background-color: bisque;
+
+}
+
 @media (min-width: 768px){
 
     #search-programs-box{

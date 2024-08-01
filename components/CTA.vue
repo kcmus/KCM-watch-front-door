@@ -14,6 +14,19 @@
 <style scoped>
 
 
+
+
+#give-prayer-partner-box{
+
+
+    height: 759px;
+    padding-top: 72px;
+    padding-bottom: 72px;
+    background-color: #343A40;
+    color: white;
+}
+
+
 @media (min-width: 768px){
 
 

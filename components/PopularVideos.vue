@@ -14,6 +14,14 @@
 <style scoped>
 
 
+#popular-videos-box{
+    height: 291px;
+    
+    background-color: bisque;
+
+}
+
+
 @media (min-width: 768px){
 
     #popular-videos-box{

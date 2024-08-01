@@ -13,6 +13,14 @@
 
 <style scoped>
 
+
+#footer-box{
+
+height: 1287px;
+background-color: #212529;
+color: white;
+}
+
 @media (min-width: 768px){
 
     #footer-box{

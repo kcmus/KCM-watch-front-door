@@ -13,6 +13,15 @@
 
 <style scoped>
 
+#ways-to-watch-box{
+
+    
+    height: 1104px;
+    background-color: bisque;
+
+}
+
+
 
 @media (min-width: 768px){
 

@@ -14,6 +14,14 @@
 <style scoped>
 
 
+#recent-videos-box{
+
+height: 291px;
+background-color: bisque;
+}
+
+
+
 @media (min-width: 768px){
 
     #recent-videos-box{

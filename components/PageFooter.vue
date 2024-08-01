@@ -1,6 +1,6 @@
 <template>
 
-    <footer>
+    <footer id="footer-box">
 
         15. Page Footer
     </footer>
@@ -11,6 +11,17 @@
 
 </script>
 
-<style>
+<style scoped>
+
+@media (min-width: 768px){
+
+    #footer-box{
+
+        height: 653px;
+        background-color: #212529;
+        color: white;
+    }
+
+}
 
 </style>

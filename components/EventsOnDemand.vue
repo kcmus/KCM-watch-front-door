@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div id="event-on-demand">
        10. Events on Demand
         
     </div>
@@ -11,6 +11,18 @@
 
 </script>
 
-<style>
+<style scoped>
+
+
+@media (min-width: 768px){
+
+
+    #event-on-demand{
+        height: 718px;
+        background-color: bisque;
+    }
+
+
+}
 
 </style>

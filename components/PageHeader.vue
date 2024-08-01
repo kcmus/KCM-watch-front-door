@@ -1,9 +1,9 @@
 <template>
 
-    <header>
+    <header id="header">
 
-        1. Page Header
-
+       
+            1. Page Header
     </header>
 
 </template>
@@ -13,6 +13,15 @@
 
 </script>
 
-<style>
+<style scoped>
+
+
+
+@media (min-width: 768px){
+    #header{
+        height: 163px;
+        background-color: bisque
+    }
+}
 
 </style>

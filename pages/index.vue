@@ -84,10 +84,10 @@
   /* gap: 40px; */
 }
 
-.component {
+/* .component {
   border: 2px solid #800080;
  
-}
+} */
 
 
 
@@ -252,53 +252,60 @@
   #BVOV {
     grid-column: 1 / 2;
     grid-row: 2 / 4;
-    height: 541px;
+    height: 552px;
     margin-right: 24px ;
+    margin-bottom: 19px;
 
   }
 
   #Live-TV, #ITV-Video {
     grid-column: 2 / 3;
+
   }
 
   #Live-TV {
     grid-row: 2 / 3;
-    
+    height: 265px; 
+    margin-bottom: 24px;
     
   }
 
   #ITV-Video {
     grid-row: 3 / 4;
+    height: 263px;
+    margin-bottom: 19px;
   }
 
+
+
   #Free-TV{
-    height: 157px;
+    height: 187px;
     margin-bottom: 60px;
   }
 
   #Recent-Videos{
 
     height: 272px;
-    margin-bottom: 60px;
+    margin-bottom: 84px;
   }
 
   #Popular-Videos{
     height: 272px;
-    margin-bottom: 60px;
-
+    margin-bottom: 84px;
+   
   }
 
 
-#Faith-Foundations{
-  height: 282px;
-  margin-bottom: 60px;
-}
+  #Faith-Foundations{
+    height: 282px;
+    margin-bottom: 60px;
+  }
 
-#Sow-Seeds{
+  #Sow-Seeds{
 
-  height: 166px;
-  margin-bottom: 60px;
-}
+    height: 166px;
+    margin-bottom: 84px;
+  }
 
 
 #Events-On-Demand{
@@ -306,13 +313,13 @@
   grid-column: 1 / -1;
   padding-top: 24px;
 
-  height: 714px;
-  margin-bottom: 60px;
+  height: 718px;
+  margin-bottom: 84px; 
 }
 
   #Inside-the-Vision {
     grid-column: 1 / -1;
-    height: 589px;
+    height: 563px;
     margin-bottom: 60px;
   }
 
@@ -336,14 +343,16 @@
 
   #Give-Prayer-Partner{
 
-    height: 205px;
-    margin-bottom: 60px;
+    height: 325px;
+    margin-bottom: -120px;
+   
 
   }
 
   #Page-Footer {
     grid-column: 1 / -1;
     height: 653px;
+   
   }
 
 

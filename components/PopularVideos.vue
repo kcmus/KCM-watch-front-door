@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div id="popular-videos-box">
          7. Popular Videos
         
     </div>
@@ -11,6 +11,17 @@
 
 </script>
 
-<style>
+<style scoped>
+
+
+@media (min-width: 768px){
+
+    #popular-videos-box{
+    height: 272px;
+    
+    background-color: bisque;
+
+    }
+}
 
 </style>

@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div id="faith-foundations-box">
          8. Faith Foundations
         
     </div>
@@ -9,8 +9,22 @@
 
 <script setup>
 
+
+
 </script>
 
-<style>
+<style scoped>
+
+
+@media (min-width: 768px){
+
+
+    #faith-foundations-box{
+
+        height: 272px;
+        background-color: bisque;
+    }
+
+}
 
 </style>

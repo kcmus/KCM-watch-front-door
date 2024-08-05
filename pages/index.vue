@@ -3,6 +3,7 @@
 
   
   <div class="container">
+
     <section id="Page-Header">
       <PageHeader />
     </section>
@@ -62,6 +63,7 @@
     <section id="Page-Footer">
       <PageFooter />
     </section>
+
   </div>
 
 </div>
@@ -86,12 +88,15 @@
 }
 
 
-
-
 #Page-Header{
+  
   height: 92px;
   margin-bottom: 24px;
+  
+ 
 }
+
+
 
 
 #BVOV{
@@ -218,11 +223,11 @@
 
 @media (min-width: 768px) {
 
-  .wrapper{
+  /* .wrapper{
     max-width: 1280px;
     margin: 0 auto;
     
-  }
+  } */
 
   .container {
     display: grid;

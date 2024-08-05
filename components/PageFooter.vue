@@ -1,9 +1,10 @@
 <template>
 
-    <footer id="footer-box">
+    <footer class="container"   id="page-footer">
 
         15. Page Footer
     </footer>
+
 </template>
 
 
@@ -14,19 +15,22 @@
 <style scoped>
 
 
-#footer-box{
 
-height: 1287px;
-background-color: #212529;
-color: white;
+
+#page-footer{
+
+    height: 1287px;
+    background-color: #212529;
+  
+    color: white;
+    text-align: center;
+   
 }
 
 @media (min-width: 768px){
 
-    #footer-box{
-
+    #page-footer{
         height: 653px;
-        background-color: #212529;
         color: white;
     }
 

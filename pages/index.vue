@@ -4,9 +4,6 @@
   
   <div class="container">
 
-    <section id="Page-Header">
-      <PageHeader />
-    </section>
 
     <section id="BVOV" >
       <BVOV />
@@ -60,10 +57,6 @@
       <CTA />
     </section>
 
-    <section id="Page-Footer">
-      <PageFooter />
-    </section>
-
   </div>
 
 </div>
@@ -75,11 +68,7 @@
 
 <style scoped>
 
-/* .wrapper{
-  max-width: 390px;
-  margin: 0 auto;
- 
-} */
+
 
 .container {
   display: flex;
@@ -88,13 +77,6 @@
 }
 
 
-#Page-Header{
-  
-  height: 92px;
-  margin-bottom: 24px;
-  
- 
-}
 
 
 
@@ -103,7 +85,6 @@
 
   height: 1027px;
   margin-bottom: 36px;
-
 
 }
 
@@ -182,42 +163,19 @@
 
   height: 903px;
   margin-bottom: -150px;
+  width: 100vw; 
+  position: relative;
+  left: 50%; 
+  right: 50%; 
+  margin-left: -50vw; 
+  margin-right: -50vw; 
+  background-color: #212529;
+  
 
 
 }
 
 
-
-
-
-
-#Page-Footer{
-  height: 1287px;
-}
-
-
-
-
-/* 3 rows * 100px + 2 gaps */
-/* #Events-On-Demand {
-  height: calc(5 * 100px + 20px); 
-}
-
-#Inside-the-Vision {
-  height: calc(4 * 100px + 10px); 
-}
-
-#Ways-to-Watch {
-  height: calc(7 * 100px + 30px);
-}
-
-#Page-Footer {
-  height: calc(2 * 100px + 10px); 
-} */
-
-/* #BVOV {
-  height: calc(4 * 100px + 10px); 
-} */
 
 
 
@@ -232,8 +190,8 @@
   .container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    /* gap: 40px; */
-    grid-auto-rows: minmax(100px, auto); /* Ensure rows can expand as needed */
+   
+    grid-auto-rows: minmax(100px, auto); 
   }
 
 
@@ -242,38 +200,34 @@
   }
 
   
-  #Page-Header{
-
-    height: 163px;
-    margin-bottom: 60px;
-    grid-column: 1 / -1;
-  
-  }
 
 
   #BVOV {
     grid-column: 1 / 2;
-    grid-row: 2 / 4;
+    grid-row: 1 / 3;
     height: 552px;
     margin-right: 24px ;
     margin-bottom: 19px;
+    margin-top: 24px;
 
   }
 
   #Live-TV, #ITV-Video {
     grid-column: 2 / 3;
 
+
   }
 
   #Live-TV {
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
     height: 265px; 
     margin-bottom: 24px;
+    margin-top: 24px;
     
   }
 
   #ITV-Video {
-    grid-row: 3 / 4;
+    grid-row: 2 / 3;
     height: 263px;
     margin-bottom: 19px;
   }
@@ -319,43 +273,38 @@
   margin-bottom: 84px; 
 }
 
-  #Inside-the-Vision {
-    grid-column: 1 / -1;
-    height: 563px;
-    margin-bottom: 60px;
-  }
+#Inside-the-Vision {
+  grid-column: 1 / -1;
+  height: 563px;
+  margin-bottom: 60px;
+}
 
 
 
-  #Search-Programs {
-    grid-column: 1 / -1;
+#Search-Programs {
+  grid-column: 1 / -1;
+
+  height: 98px;
+  margin-bottom: 60px;
+}
+
+
+#Ways-to-Watch {
+  grid-column: 1 / -1;
+  height: 908px;
+  margin-bottom: 60px;
+
   
-    height: 98px;
-    margin-bottom: 60px;
-  }
+}
+
+#Give-Prayer-Partner{
+
+  height: 325px;
+  margin-bottom: -120px;
 
 
-  #Ways-to-Watch {
-    grid-column: 1 / -1;
-    height: 908px;
-    margin-bottom: 60px;
 
-   
-  }
-
-  #Give-Prayer-Partner{
-
-    height: 325px;
-    margin-bottom: -120px;
-   
-
-  }
-
-  #Page-Footer {
-    grid-column: 1 / -1;
-    height: 653px;
-   
-  }
+}
 
 }
 </style>

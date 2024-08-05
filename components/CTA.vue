@@ -24,6 +24,7 @@
     padding-bottom: 72px;
     background-color: #343A40;
     color: white;
+    text-align: center;
 }
 
 

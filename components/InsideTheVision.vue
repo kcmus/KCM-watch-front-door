@@ -15,9 +15,9 @@
 
 
 #inside-the-vision-box{
-        height: 975px;
-        background-color: bisque;
-    }
+    height: 975px;
+    background-color: bisque;
+}
 
 @media (min-width: 768px){
 

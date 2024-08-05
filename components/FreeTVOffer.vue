@@ -11,8 +11,6 @@
 <script setup>
 
 
-
-
 </script>
 
 <style scoped>
@@ -20,9 +18,8 @@
 
 #Free-TV-Offer{
 
-height: 323px;
-background-color: bisque;
-
+    height: 323px;
+    background-color: bisque;
 
 }
 
@@ -33,9 +30,7 @@ background-color: bisque;
     #Free-TV-Offer{
 
         height: 187px;
-        background-color: bisque;
-
-        
+        background-color: bisque;    
     }
 
 }

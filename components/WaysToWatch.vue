@@ -1,7 +1,7 @@
 <template>
 
     <div id="ways-to-watch-box">
-         13. Ways to Watch
+        13. Ways to Watch
         
     </div>
 </template>

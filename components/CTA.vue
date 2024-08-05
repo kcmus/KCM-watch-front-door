@@ -33,18 +33,15 @@
 
     #give-prayer-partner-box{
 
-    padding-top: 60px;
-    padding-bottom: 60px;
+        padding-top: 60px;
+        padding-bottom: 60px;
 
-    height: 205px;
-    background-color: #343A40;
-    color: white;
+        height: 205px;
+        background-color: #343A40;
+        color: white;
     }
 
 }
-
-
-
 
 </style>
 

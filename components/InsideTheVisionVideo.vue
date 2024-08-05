@@ -15,9 +15,9 @@
 
 
 #Inside-the-vision-video{
-        height: 259px ;
-        background-color: bisque;
-    }
+    height: 259px ;
+    background-color: bisque;
+}
 
 
 @media (min-width: 768px){

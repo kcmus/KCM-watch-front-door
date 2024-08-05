@@ -21,7 +21,7 @@
 #BVOV-box{
     height: 1027px; 
     background-color: bisque;
-   }
+}
 
    
 
@@ -30,7 +30,7 @@
   #BVOV-box{
     height: 552px; 
     background-color: bisque;
-   }
+  }
 
 
 }

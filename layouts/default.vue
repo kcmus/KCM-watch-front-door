@@ -55,7 +55,6 @@
  
 }
 
-
 main {
   margin-top: 24px;
 }

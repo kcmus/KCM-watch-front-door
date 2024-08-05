@@ -14,9 +14,6 @@
 
 <style scoped>
 
-
-
-
 #page-footer{
 
     height: 1287px;
@@ -33,7 +30,6 @@
         height: 653px;
         color: white;
     }
-
 }
 
 </style>

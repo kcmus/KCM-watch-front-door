@@ -18,8 +18,8 @@
 
 #Live-TV-box{
 
-height: 232px;
-background-color: bisque;
+    height: 232px;
+    background-color: bisque;
 
 }
 

@@ -2,11 +2,18 @@
  <template>
   <div class="wrapper">
 
-    <div class="header-wrapper">
+    <div class="header-wrapper-outer sticky-top bg-white ">
 
-      <PageHeader/>
+      <div class="header-wrapper">
+        <PageHeader/>
+      </div>
 
     </div>
+
+   
+ 
+    
+
 
     <main class="container">
       <NuxtPage/>
@@ -14,9 +21,7 @@
 
     <div class="footer-wrapper">
       <PageFooter/>
-
     </div>
-
 
   </div>
 </template>
@@ -31,6 +36,11 @@
   margin: 0 auto;
 }
 
+.header-wrapper-outer{
+
+  
+}
+
 .header-wrapper {
   width: 100vw; 
   position: relative;
@@ -38,11 +48,8 @@
   right: 50%; 
   margin-left: -50vw; 
   margin-right: -50vw; 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
- 
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); 
 }
-
-
 
 .footer-wrapper {
   width: 100vw; 

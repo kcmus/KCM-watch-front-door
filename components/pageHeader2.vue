@@ -1,5 +1,4 @@
 
-
 <template>
          
         <div id="pixel-anchor"></div>
@@ -299,16 +298,15 @@
 
 import { onMounted, ref } from 'vue';
 
-/***********************/
+
 /****** CONSTANTS ******/
-/***********************/
+
 let searchBox, searchInput, headerBox, headerRow1, myCollapsible, mainNavContents;
 
 const mediaQuery = ref(null);
 
-/***********************/
+
 /****** FUNCTIONS ******/
-/***********************/
 
 function handleTabletChange(e) {
   if (e.matches) {
@@ -350,15 +348,15 @@ function widthWatcher() {
   const winWidth = window.innerWidth;
   console.log(winWidth);
   if (winWidth < 768) {
-    // Add mobile-specific logic here if needed
+   
   } else {
     stickyWatcher();
   }
 }
 
-/***********************/
+
+
 /****** LIFECYCLE ******/
-/***********************/
 onMounted(() => {
   // Initialize DOM references
   searchBox = document.getElementById('kcm-header-search-box');
@@ -379,9 +377,9 @@ onMounted(() => {
   widthWatcher();
 });
 
-/*****************************/
+
 /****** EVENT LISTENERS ******/
-/*****************************/
+
 if (typeof window !== 'undefined') {
   // RESIZE HANDLING
   window.addEventListener('resize', function() {
@@ -391,15 +389,27 @@ if (typeof window !== 'undefined') {
 }
 
 
-
-
 </script>
 
 
 
-
-
 <style scoped>
+
+
+header {
+  width: 100vw;
+  position: fixed; 
+  top: 0; 
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  z-index: 1000;
+  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.1);
+  background-color: white; 
+}
+
+
 
 
 

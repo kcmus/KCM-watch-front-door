@@ -55,18 +55,27 @@
 }
 
 main {
-  margin-top: 24px;
+  margin-top: 88px;
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 992px) {
+  main {
+    margin-top: 80px; 
+  }
+}
+
+
+@media (min-width: 993px) {
  
   main {
-    margin-top: 60px;
+    margin-top: 180px;
    
   }
 
 }
+
+
 </style>
 
 

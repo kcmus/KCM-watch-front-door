@@ -12257,6 +12257,8 @@ fieldset:disabled .btn {
 header {
   -webkit-box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.1);
+
+  
   
 }
 
@@ -12305,6 +12307,8 @@ header .row-1 {
     padding-top: 2px;
   }
 }
+
+
 .navbar-brand img {
   width: 171px;
   height: 32px;
@@ -12316,6 +12320,8 @@ header .row-1 {
     height: 57px;
   }
 }
+
+
 @media screen and (min-width: 992px) {
   #kcmh {
     padding: 0 20px;

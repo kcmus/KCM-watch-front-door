@@ -80,7 +80,6 @@
 
 
 
-
 #BVOV{
 
   height: 1027px;

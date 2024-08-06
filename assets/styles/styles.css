@@ -12228,6 +12228,8 @@ fieldset:disabled .btn {
     display: none !important;
   }
 }
+
+
 .btn-give {
   --bs-btn-font-weight: 700;
   --bs-btn-color: var(--bs-white);
@@ -12252,10 +12254,11 @@ fieldset:disabled .btn {
   height: 1px;
 }
 
-header {
+/* header {
   -webkit-box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.1);
-}
+  
+} */
 
 /*** ROW-1 HEIGHTS ***/
 .header-stuck .row-1 {
@@ -12278,6 +12281,7 @@ header .row-1 {
     opacity: 1;
   }
 }
+
 #kcmh .main-nav .btn-close {
   display: none;
 }
@@ -12605,9 +12609,13 @@ ul.nav.kcmh-nav-member {
 
 @media (min-width: 992px) {
   .region-map-icon {
-    margin-right: 8px;
+    /* margin-right: 8px; */
+    margin-right: 4px
+    
   }
 }
+
+
 @media (min-width: 1200px) {
   .region-map-icon {
     margin-right: 12px;

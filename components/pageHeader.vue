@@ -3,19 +3,22 @@
 <template>
 
 
+<div :class="{ 'header-hidden': isHeaderHidden }">
 
-<div :class="{ 'header-hidden': isHeaderHidden }" id="header-wrapper">
+
+<div  id="header-wrapper">
 
  
   <div id="pixel-anchor"></div>
   <header class="bg-white sticky-top p-0" id="kcmh">
     
     <!-- first-row -->
-    <div class="container px-0 row-1 header-first-row">
+    <div class="container px-4 row-1 header-first-row">
       <div class="row g-0">
         <div class="col-2">
           <div class="dropdown-end">
-            <a data-bs-toggle="dropdown" aria-expanded="false"><img class="region-map-icon" src="https://s3.amazonaws.com/libraries67.kcm.org/images/logos/region-icon-dark.svg" width="12" height="19"></a><button class="btn btn-outline-secondary dropdown-toggle kcmh-region-select" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a data-bs-toggle="dropdown" aria-expanded="false"><img class="region-map-icon" src="https://s3.amazonaws.com/libraries67.kcm.org/images/logos/region-icon-dark.svg" width="12" height="19"></a>
+            <button class="btn btn-outline-secondary dropdown-toggle kcmh-region-select" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Select a Region
             </button>
             <div class="dropdown-menu">
@@ -56,7 +59,9 @@
 
 
    <!-- second-row -->
-    <nav class="container-lg main-nav navbar navbar-expand-lg sticky-top">
+    
+
+      <nav class="container-lg main-nav navbar navbar-expand-lg sticky-top px-4">
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMobile" aria-controls="offcanvasMobile" aria-expanded="false" aria-label="Open Nav"><span class="navbar-toggler-icon"></span></button>
       <a class="navbar-brand me-auto ms-3 ms-lg-0" href="#"><img class="" src="https://libraries67.kcm.org/images/logos/kcm-header-logo.svg" width="306" height="57" alt="Kenneth Copeland Ministries"></a>
       <!-- <a href="#" class="mobile-give">Give</a> -->
@@ -147,6 +152,9 @@
         <div class="main-nav-give d-none d-lg-block"><a href="#" class="btn btn-give">Give</a></div>
       </div>
     </nav>
+
+ 
+   
     <!-- second-row -->
 
   </header>
@@ -300,7 +308,7 @@
   
 </div>
 
-
+</div>
 </template>
 
 
@@ -314,18 +322,18 @@ onMounted(() => {
     const firstRowHeight = document.querySelector('.row-1')?.clientHeight || 0;
     const screenWidth = window.innerWidth;
 
-    // Only apply the scroll logic if the screen width is greater than 992px
+    
     if (screenWidth > 992) {
       isHeaderHidden.value = window.scrollY > firstRowHeight;
     } else {
-      // Ensure the header is shown if the screen width is 992px or less
+      
       isHeaderHidden.value = false;
     }
   };
 
   window.addEventListener('scroll', handleScroll);
 
-  // Cleanup the event listener when the component is unmounted
+
   return () => {
     window.removeEventListener('scroll', handleScroll);
   };
@@ -333,44 +341,47 @@ onMounted(() => {
 </script>
 
 <style scoped>
-#header-wrapper {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+
+
+
+ #header-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  } 
+
+
+.header-hidden > #header-wrapper {
+  box-shadow: none !important; 
 }
 
-/* Transition effect for the first row */
-.header-first-row {
-  transition: transform 0.001s ease-out, opacity 0.001s ease-out;
-}
 
-.header-hidden .header-first-row {
-  transform: translateY(-100%);
-  opacity: 0;
-  pointer-events: none;
-}
 
-/* Sticky second row with box-shadow */
 .header-hidden .main-nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  width: 100vw !important ; 
   z-index: 1021;
   background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); 
 }
 
-/* Optional: Adjust padding/margin for the second row when it sticks */
-.header-hidden .main-nav .container-lg {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
 
-/* Disable transition for screen widths <= 992px */
+  .header-first-row {
+    transition: transform 0.0001s ease-out, opacity 0.0001s ease-out;
+  }
+
+
+
+
+
 @media (max-width: 992px) {
   .header-first-row {
     transition: none;
@@ -382,4 +393,8 @@ onMounted(() => {
     pointer-events: all;
   }
 }
+
+
+
+
 </style>

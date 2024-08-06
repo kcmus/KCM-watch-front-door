@@ -10,15 +10,15 @@
 
     </div> -->
 
-  <div class="sticky-top" id="header-wrapper">
-    <PageHeader />
-    
-  </div>
+    <div class="sticky-top" id="header-wrapper">
+      <PageHeader />
       
+    </div>
+        
 
       
-  
-    <main class="container">
+
+    <main class="container px-3">
       <NuxtPage/>
     </main>
 
@@ -42,11 +42,7 @@
 }
 
 
-#header-wrapper {
-  
 
- 
-}
 
 .footer-wrapper {
   width: 100vw; 
@@ -68,8 +64,8 @@ main {
  
   main {
     margin-top: 60px;
+   
   }
-
 
 }
 </style>

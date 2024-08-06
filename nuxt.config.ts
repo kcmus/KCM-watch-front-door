@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   // Add Bootstrap CSS
   css: [
     'bootstrap/dist/css/bootstrap.css',
-    './assets/styles/main.css'
+    './assets/styles/main.css',
+    'bootstrap-icons/font/bootstrap-icons.css',
     
   ],
 

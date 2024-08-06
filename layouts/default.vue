@@ -2,19 +2,22 @@
  <template>
   <div class="wrapper">
 
-    <div class="header-wrapper-outer sticky-top bg-white ">
+    <!-- <div class="header-wrapper-outer sticky-top bg-white ">
 
       <div class="header-wrapper">
-        <PageHeader/>
+ 
       </div>
 
-    </div>
+    </div> -->
 
-   
- 
+  <div class="sticky-top" id="header-wrapper">
+    <PageHeader />
     
+  </div>
+      
 
-
+      
+  
     <main class="container">
       <NuxtPage/>
     </main>
@@ -27,6 +30,8 @@
 </template>
 
 <script setup>
+
+
 </script>
 
 <style scoped>
@@ -36,19 +41,11 @@
   margin: 0 auto;
 }
 
-.header-wrapper-outer{
 
+#header-wrapper {
   
-}
 
-.header-wrapper {
-  width: 100vw; 
-  position: relative;
-  left: 50%; 
-  right: 50%; 
-  margin-left: -50vw; 
-  margin-right: -50vw; 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); 
+ 
 }
 
 .footer-wrapper {
@@ -72,6 +69,8 @@ main {
   main {
     margin-top: 60px;
   }
+
+
 }
 </style>
 

@@ -12254,11 +12254,11 @@ fieldset:disabled .btn {
   height: 1px;
 }
 
-/* header {
+header {
   -webkit-box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.1);
   
-} */
+}
 
 /*** ROW-1 HEIGHTS ***/
 .header-stuck .row-1 {

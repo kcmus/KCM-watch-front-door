@@ -1,12 +1,11 @@
 
 
 <template>
-      <div  id="header-wrapper">
-     
+         
         <div id="pixel-anchor"></div>
         <header class="bg-white sticky-top p-0" id="kcmh">       
             <!-- first-row -->
-            <div class="container px-4 row-1 header-first-row header-row"  ref="firstRow">
+            <div class="container px-4 row-1">
                 <div class="row g-0">
                   <div class="col-2">
                     <div class="dropdown-end">
@@ -50,7 +49,7 @@
             <!-- first-row -->
 
             <!-- second-row -->
-            <nav class="container-lg main-nav navbar navbar-expand-lg sticky-top px-4 header-second-row header-row" :class="{ sticky: isSticky }">
+            <nav class="container-lg main-nav navbar navbar-expand-lg sticky-top px-4">
                   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMobile" aria-controls="offcanvasMobile" aria-expanded="false" aria-label="Open Nav"><span class="navbar-toggler-icon"></span></button>
                   <a class="navbar-brand me-auto ms-3 ms-lg-0" href="#"><img class="" src="https://libraries67.kcm.org/images/logos/kcm-header-logo.svg" width="306" height="57" alt="Kenneth Copeland Ministries"></a>
                   <!-- <a href="#" class="mobile-give">Give</a> -->
@@ -291,80 +290,118 @@
         </div>
         <!-- /OFFCANVAS MENU -->
         
-      </div>
-
 
 </template>
 
 
-<script setup lang="ts">
+<script setup>
 
-import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-const isSticky = ref(false);
-const firstRow = ref(null);
+import { onMounted, ref } from 'vue';
 
-const handleScroll = () => {
-  const firstRowHeight = firstRow.value.offsetHeight;
-  isSticky.value = window.pageYOffset > firstRowHeight;
-};
+/***********************/
+/****** CONSTANTS ******/
+/***********************/
+let searchBox, searchInput, headerBox, headerRow1, myCollapsible, mainNavContents;
 
+const mediaQuery = ref(null);
+
+/***********************/
+/****** FUNCTIONS ******/
+/***********************/
+
+function handleTabletChange(e) {
+  if (e.matches) {
+    console.log('Media Query Matched!');
+  } else {
+    console.log('<= 768 - Adding nav-visible and toggling .navbar-toggler');
+    myCollapsible.addEventListener('show.bs.collapse', event => {
+      mainNavContents.classList.add("nav-visible");
+      document.querySelector(".navbar-toggler").style.display = 'none';
+    });
+    myCollapsible.addEventListener('hide.bs.collapse', event => {
+      mainNavContents.classList.remove("nav-visible");
+      document.querySelector(".navbar-toggler").style.display = 'block';
+    });
+  }
+}
+
+function stickyWatcher() {
+  if (
+    "IntersectionObserver" in window &&
+    "IntersectionObserverEntry" in window &&
+    "intersectionRatio" in window.IntersectionObserverEntry.prototype
+  ) {
+    let observer = new IntersectionObserver(entries => {
+      if (entries[0].boundingClientRect.y < 0) {
+        headerBox.classList.add("header-stuck");
+        // headerRow1.style.display = "none";
+      } else {
+        headerBox.classList.remove("header-stuck");
+        // headerRow1.style.display = "block";
+      }
+    });
+    observer.observe(document.querySelector("#pixel-anchor"));
+  }
+}
+
+// Watch for width to avoid triggering unnecessary logic
+function widthWatcher() {
+  const winWidth = window.innerWidth;
+  console.log(winWidth);
+  if (winWidth < 768) {
+    // Add mobile-specific logic here if needed
+  } else {
+    stickyWatcher();
+  }
+}
+
+/***********************/
+/****** LIFECYCLE ******/
+/***********************/
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
+  // Initialize DOM references
+  searchBox = document.getElementById('kcm-header-search-box');
+  searchInput = document.getElementById('kcm-header-search');
+  headerBox = document.getElementById('kcmh');
+  headerRow1 = document.querySelector(".row-1");
+  myCollapsible = document.getElementById('kcm-header-main-nav');
+  mainNavContents = document.getElementById('kcmh');
+
+  // Initialize media query
+  if (typeof window !== 'undefined') {
+    mediaQuery.value = window.matchMedia('(min-width: 768px)');
+    mediaQuery.value.addListener(handleTabletChange);
+    handleTabletChange(mediaQuery.value);
+  }
+
+  // Call width watcher on mounted
+  widthWatcher();
 });
 
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
+/*****************************/
+/****** EVENT LISTENERS ******/
+/*****************************/
+if (typeof window !== 'undefined') {
+  // RESIZE HANDLING
+  window.addEventListener('resize', function() {
+    widthWatcher();
+    stickyWatcher();
+  });
+}
+
+
 
 
 </script>
 
+
+
+
+
 <style scoped>
 
-#header-wrapper{
-
-  position: relative;
-  width: 100%;
 
 
-}
-
-
-.header-row {
-  width: 100%;
-  transition: all 0.3s ease;
-}
-.header-first-row {
-  height: 50px; /* Adjust based on your needs */
-  background-color: white /* Example background */
-}
-
-.header-second-row{
-
-  height: 50px; /* Adjust based on your needs */
-  background-color: #ffffff; /* Example background */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  position: relative;
-
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 10;
-  background-color: #ffffff; /* Ensure the background is consistent */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Full-width box-shadow */
-}
-
-@media (max-width: 992px) {
-  .header-first-row {
-    display: none;
-  }
-
-}
 
 </style>

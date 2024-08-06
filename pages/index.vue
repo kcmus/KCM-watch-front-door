@@ -1,63 +1,63 @@
 <template>
-  <div class="wrapper">
+  
 
   
   <div class="container">
 
 
-    <section id="BVOV" >
-      <BVOV />
-    </section>
+      <section id="BVOV" >
+        <BVOV />
+      </section>
 
-    <section id="Live-TV">
-      <LiveTV />
-    </section>
+      <section id="Live-TV">
+        <LiveTV />
+      </section>
 
-    <section id="ITV-Video" >
-      <InsideTheVisionVideo />
-    </section>
+      <section id="ITV-Video" >
+        <InsideTheVisionVideo />
+      </section>
 
-    <section id="Free-TV" >
-      <FreeTVOffer />
-    </section>
+      <section id="Free-TV" >
+        <FreeTVOffer />
+      </section>
 
-    <section id="Recent-Videos">
-      <RecentVideos />
-    </section>
+      <section id="Recent-Videos">
+        <RecentVideos />
+      </section>
 
-    <section id="Popular-Videos">
-      <PopularVideos />
-    </section>
+      <section id="Popular-Videos">
+        <PopularVideos />
+      </section>
 
-    <section id="Faith-Foundations">
-      <FaithFoundations />
-    </section>
+      <section id="Faith-Foundations">
+        <FaithFoundations />
+      </section>
 
-    <section id="Sow-Seeds">
-      <SowSeedsOfChange />
-    </section>
+      <section id="Sow-Seeds">
+        <SowSeedsOfChange />
+      </section>
 
-    <section id="Events-On-Demand">
-      <EventsOnDemand />
-    </section>
+      <section id="Events-On-Demand">
+        <EventsOnDemand />
+      </section>
 
-    <section id="Inside-the-Vision">
-      <InsideTheVision />
-    </section>
+      <section id="Inside-the-Vision">
+        <InsideTheVision />
+      </section>
 
-    <section id="Search-Programs">
-      <SearchPrograms />
-    </section>
+      <section id="Search-Programs">
+        <SearchPrograms />
+      </section>
 
-    <section id="Ways-to-Watch">
-      <WaysToWatch />
-    </section>
+      <section id="Ways-to-Watch">
+        <WaysToWatch />
+      </section>
 
-    <section id="Give-Prayer-Partner">
-      <CTA />
-    </section>
+      <section id="Give-Prayer-Partner">
+        <CTA />
+      </section>
 
-  </div>
+ 
 
 </div>
 
@@ -73,7 +73,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  /* gap: 40px; */
+ 
 }
 
 
@@ -180,11 +180,6 @@
 
 @media (min-width: 768px) {
 
-  /* .wrapper{
-    max-width: 1280px;
-    margin: 0 auto;
-    
-  } */
 
   .container {
     display: grid;
@@ -306,4 +301,21 @@
 }
 
 }
+
+
+/* iPad Air, iPad Pro, and Surface Pro 7 */
+@media only screen and (min-device-width: 820px) and (max-device-width: 1366px),
+       only screen and (min-width: 912px) and (max-width: 1440px) {
+    .container {
+       padding-left: 1px;
+       padding-right: 1px;
+        max-width: 100%; 
+        margin: 0 auto; 
+    }
+}
+
+
+
+
+
 </style>

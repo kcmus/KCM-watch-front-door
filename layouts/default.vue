@@ -2,21 +2,8 @@
  <template>
   <div class="wrapper">
 
-    <!-- <div class="header-wrapper-outer sticky-top bg-white ">
-
-      <div class="header-wrapper">
- 
-      </div>
-
-    </div> -->
-<!-- 
-    <div id="header-wrapper"> -->
-      <!-- <PageHeader /> -->
       <PageHeader2/>
      
-    <!-- </div> -->
-        
-
     <main class="container px-3">
       <NuxtPage/>
     </main>

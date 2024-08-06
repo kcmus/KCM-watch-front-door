@@ -57,9 +57,7 @@
         <CTA />
       </section>
 
- 
-
-</div>
+  </div>
 
 </template>
 
@@ -75,9 +73,6 @@
   flex-direction: column;
  
 }
-
-
-
 
 
 #BVOV{
@@ -131,8 +126,6 @@
 }
 
 #Events-On-Demand{
-
-
   height: 1575px;
   margin-bottom: 36px;
   
@@ -141,7 +134,7 @@
 
 
 #Inside-the-Vision{
- 
+
   height: 975px;
   margin-bottom: 36px;
 }
@@ -170,8 +163,6 @@
   margin-right: -50vw; 
   background-color: #212529;
   
-
-
 }
 
 
@@ -179,7 +170,6 @@
 
 
 @media (min-width: 768px) {
-
 
   .container {
     display: grid;
@@ -194,8 +184,6 @@
   }
 
   
-
-
   #BVOV {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
@@ -258,47 +246,45 @@
   }
 
 
-#Events-On-Demand{
+  #Events-On-Demand{
 
-  grid-column: 1 / -1;
-  padding-top: 24px;
+    grid-column: 1 / -1;
+    padding-top: 24px;
 
-  height: 718px;
-  margin-bottom: 84px; 
-}
+    height: 718px;
+    margin-bottom: 84px; 
+  }
 
-#Inside-the-Vision {
-  grid-column: 1 / -1;
-  height: 563px;
-  margin-bottom: 60px;
-}
-
-
-
-#Search-Programs {
-  grid-column: 1 / -1;
-
-  height: 98px;
-  margin-bottom: 60px;
-}
-
-
-#Ways-to-Watch {
-  grid-column: 1 / -1;
-  height: 908px;
-  margin-bottom: 60px;
-
-  
-}
-
-#Give-Prayer-Partner{
-
-  height: 325px;
-  margin-bottom: -120px;
+  #Inside-the-Vision {
+    grid-column: 1 / -1;
+    height: 563px;
+    margin-bottom: 60px;
+  }
 
 
 
-}
+  #Search-Programs {
+    grid-column: 1 / -1;
+
+    height: 98px;
+    margin-bottom: 60px;
+  }
+
+
+  #Ways-to-Watch {
+    grid-column: 1 / -1;
+    height: 908px;
+    margin-bottom: 60px;
+
+    
+  }
+
+  #Give-Prayer-Partner{
+
+    height: 325px;
+    margin-bottom: -120px;
+
+  }
 
 }
 
@@ -313,9 +299,6 @@
         margin: 0 auto; 
     }
 }
-
-
-
 
 
 </style>

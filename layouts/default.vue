@@ -10,13 +10,12 @@
 
     </div> -->
 
-    <div class="sticky-top" id="header-wrapper">
-      <PageHeader />
-      
+    <div  id="header-wrapper">
+      <!-- <PageHeader /> -->
+      <PageHeader2/>
+     
     </div>
         
-
-      
 
     <main class="container px-3">
       <NuxtPage/>

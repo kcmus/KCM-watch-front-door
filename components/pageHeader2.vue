@@ -1,17 +1,12 @@
 
 
 <template>
-
-
-  <div :class="{ 'header-hidden': isHeaderHidden }">
-
       <div  id="header-wrapper">
-
-      
+     
         <div id="pixel-anchor"></div>
         <header class="bg-white sticky-top p-0" id="kcmh">       
             <!-- first-row -->
-            <div class="container px-4 row-1 header-first-row">
+            <div class="container px-4 row-1 header-first-row header-row"  ref="firstRow">
                 <div class="row g-0">
                   <div class="col-2">
                     <div class="dropdown-end">
@@ -55,7 +50,7 @@
             <!-- first-row -->
 
             <!-- second-row -->
-            <nav class="container-lg main-nav navbar navbar-expand-lg sticky-top px-4">
+            <nav class="container-lg main-nav navbar navbar-expand-lg sticky-top px-4 header-second-row header-row" :class="{ sticky: isSticky }">
                   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMobile" aria-controls="offcanvasMobile" aria-expanded="false" aria-label="Open Nav"><span class="navbar-toggler-icon"></span></button>
                   <a class="navbar-brand me-auto ms-3 ms-lg-0" href="#"><img class="" src="https://libraries67.kcm.org/images/logos/kcm-header-logo.svg" width="306" height="57" alt="Kenneth Copeland Ministries"></a>
                   <!-- <a href="#" class="mobile-give">Give</a> -->
@@ -298,71 +293,28 @@
         
       </div>
 
-  </div>
+
 </template>
 
 
 <script setup lang="ts">
-// import { onMounted, ref } from 'vue';
 
-// const isHeaderHidden = ref(false);
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-// onMounted(() => {
-//   const handleScroll = () => {
-//     const firstRowHeight = document.querySelector('.row-1')?.clientHeight || 0;
-//     const screenWidth = window.innerWidth;
+const isSticky = ref(false);
+const firstRow = ref(null);
 
-    
-//     if (screenWidth > 992) {
-//       isHeaderHidden.value = window.scrollY > firstRowHeight;
-//     } else {
-      
-//       isHeaderHidden.value = false;
-//     }
-//   };
-
-//   window.addEventListener('scroll', handleScroll);
-
-
-//   return () => {
-//     window.removeEventListener('scroll', handleScroll);
-//   };
-// });
-
-
-import { onMounted, ref } from 'vue';
-
-const isHeaderHidden = ref(false);
+const handleScroll = () => {
+  const firstRowHeight = firstRow.value.offsetHeight;
+  isSticky.value = window.pageYOffset > firstRowHeight;
+};
 
 onMounted(() => {
-  const handleScroll = () => {
-    const firstRowHeight = document.querySelector('.row-1')?.clientHeight || 0;
-    const screenWidth = window.innerWidth;
-    const mainNav = document.querySelector('.main-nav');
-    const headerWrapper = document.getElementById("header-wrapper");
-
-    if (screenWidth > 992) {
-      if (window.scrollY > firstRowHeight) {
-        isHeaderHidden.value = true;
-        headerWrapper.style.marginTop = "120px";
-       
-      } else {
-        isHeaderHidden.value = false;
-        headerWrapper.style.marginTop = "0px";
-        mainNav.style.boxShadow = "none";
-      }
-    } else {
-      isHeaderHidden.value = false;
-      headerWrapper.style.marginTop = "0px";
-      mainNav.style.boxShadow = "none";
-    }
-  };
-
   window.addEventListener('scroll', handleScroll);
+});
 
-  return () => {
-    window.removeEventListener('scroll', handleScroll);
-  };
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll);
 });
 
 
@@ -370,57 +322,49 @@ onMounted(() => {
 
 <style scoped>
 
+#header-wrapper{
+
+  position: relative;
+  width: 100%;
 
 
-
- #header-wrapper {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  } 
+}
 
 
-/* .header-hidden > #header-wrapper {
-  box-shadow: none !important; 
-} */
+.header-row {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.header-first-row {
+  height: 50px; /* Adjust based on your needs */
+  background-color: white /* Example background */
+}
 
+.header-second-row{
 
+  height: 50px; /* Adjust based on your needs */
+  background-color: #ffffff; /* Example background */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: relative;
 
-.header-hidden .main-nav {
+}
+
+.sticky {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  width: 100vw !important ; 
-  z-index: 1021;
-  background-color: white;
- 
+  width: 100%;
+  z-index: 10;
+  background-color: #ffffff; /* Ensure the background is consistent */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Full-width box-shadow */
 }
-
-
-  .header-first-row {
-    transition: transform 0.0001s ease-out, opacity 0.0001s ease-out;
-  }
-
-
 
 @media (max-width: 992px) {
   .header-first-row {
-    transition: none;
+    display: none;
   }
 
-  .header-hidden .header-first-row {
-    transform: none;
-    opacity: 1;
-    pointer-events: all;
-  }
 }
-
-
-
 
 </style>

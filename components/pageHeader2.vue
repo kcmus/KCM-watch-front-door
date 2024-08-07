@@ -417,31 +417,6 @@ if (typeof window !== 'undefined') {
 <style scoped>
 
 
-  :root {
-    --desk-search-height: 20px;
-    --kcm-orange: #f54d09;
-    --kcm-orange-hover: #f38a4a;
-    --kcm-navy: #212529;
-    --kcm-sky: #8ddaff;
-    --kcm-border-radius: 3px;
-  }
-
-
-  .btn-give {
-    --bs-btn-font-weight: 700;
-    --bs-btn-color: var(--bs-white);
-    --bs-btn-bg: var(--kcm-orange);
-    --bs-btn-border-color: var(--kcm-orange);
-    --bs-btn-hover-color: var(--bs-white);
-    --bs-btn-hover-bg: #f38a4a;
-    --bs-btn-hover-border-color: #f38a4a;
-    --bs-btn-focus-shadow-rgb: #f38a4a;
-    --bs-btn-active-color: var(--bs-white);
-    --bs-btn-active-bg: #f38a4a;
-    --bs-btn-active-border-color: #f38a4a;
-    border-radius: 3px;
-    font-size: 14px;
-  }
 
 
   #pixel-anchor {

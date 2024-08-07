@@ -1,9 +1,13 @@
 <template>
 
-    <div>
-         2. BVOV
-        
+    <div id="BVOV-box">  
+        2. BVOV
+        <div></div>
+        <div></div>
+        <div></div>
+
     </div>
+
 </template>
 
 
@@ -11,6 +15,26 @@
 
 </script>
 
-<style>
+<style scoped>
+
+
+#BVOV-box{
+    height: 1027px; 
+    background-color: bisque;
+}
+
+   
+
+@media (min-width: 768px){
+
+  #BVOV-box{
+    height: 552px; 
+    background-color: bisque;
+  }
+
+
+}
+  
+
 
 </style>

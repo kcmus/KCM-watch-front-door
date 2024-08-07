@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div id="search-programs-box">
          12. Search Programs
         
     </div>
@@ -11,6 +11,23 @@
 
 </script>
 
-<style>
+<style scoped>
 
+#search-programs-box{
+
+    height: 98px;
+    background-color: bisque;
+
+}
+
+@media (min-width: 768px){
+
+    #search-programs-box{
+
+        height: 98px;
+        background-color: bisque;
+
+    }
+
+}
 </style>

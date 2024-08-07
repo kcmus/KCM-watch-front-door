@@ -1,230 +1,310 @@
-<!-- <template>
-  <div class="container">
-
-
-    <section id="Page-Header" class="component">
-      <PageHeader />
-    </section>
-    
-    <section id="BVOV" class="component large">
-      <BVOV />
-    </section>
-
-    <section id="Live-TV" class="component small">
-      <LiveTV />
-    </section>
-
-    <section id="ITV-Video" class="component small">
-      <InsideTheVisionVideo />
-    </section>
-
-    <section id="Free-TV" class="component">
-      <FreeTVOffer />
-    </section>
-
-    <section id="Recent-Videos" class="component">
-      <RecentVideos />
-    </section>
-
-    <section id="Popular-Videos" class="component">
-      <PopularVideos />
-    </section>
-
-    <section id="Faith-Foundations" class="component">
-      <FaithFoundations />
-    </section>
-
-    <section id="Sow-Seeds" class="component">
-      <SowSeedsOfChange />
-    </section>
-
-    <section id="Events-On-Demand" class="component">
-      <EventsOnDemand />
-    </section>
-
-    <section id="Inside-the-Vision" class="component">
-      <InsideTheVision />
-    </section>
-
-    <section id="Search-Programs" class="component">
-      <SearchPrograms />
-    </section>
-
-    <section id="Ways-to-Watch" class="component">
-      <WaysToWatch />
-    </section>
-
-    <section id="Give-Prayer-Partner" class="component">
-      <CTA />
-    </section>
-
-    <section id="Page-Footer" class="component">
-      <PageFooter />
-    </section>
-  </div>
-</template>
-
-<script setup>
-
-</script>
-
-
-<style scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.component {
-  border: 2px solid #800080;
-  min-height: 100px;
-}
-
-.large {
-  min-height: 300px;
-}
-
-.small {
-  min-height: 150px;
-}
-
-@media (min-width: 768px) {
-  .container {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  #BVOV, #Free-TV, #Recent-Videos, #Popular-Videos, #Faith-Foundations, #Sow-Seeds, #Events-On-Demand, #Inside-the-Vision, #Search-Programs, #Ways-to-Watch, #Give-Prayer-Partner, #Page-Footer {
-    flex: 1 1 100%;
-  }
-
-  #Live-TV, #ITV-Video {
-    flex: 1 1 50%;
-  }
-}
-
-@media (min-width: 1024px) {
-  #BVOV {
-    flex: 2 1 60%;
-  }
-
-  #Live-TV, #ITV-Video {
-    flex: 1 1 20%;
-  }
-}
-</style> -->
-
 <template>
+  <div class="wrapper">
+
+  
   <div class="container">
-    <section id="Page-Header" class="component">
-      <PageHeader />
-    </section>
-    
-    <section id="BVOV" class="component">
+
+
+    <section id="BVOV" >
       <BVOV />
     </section>
 
-    <section id="Live-TV" class="component">
+    <section id="Live-TV">
       <LiveTV />
     </section>
 
-    <section id="ITV-Video" class="component">
+    <section id="ITV-Video" >
       <InsideTheVisionVideo />
     </section>
 
-    <section id="Free-TV" class="component">
+    <section id="Free-TV" >
       <FreeTVOffer />
     </section>
 
-    <section id="Recent-Videos" class="component">
+    <section id="Recent-Videos">
       <RecentVideos />
     </section>
 
-    <section id="Popular-Videos" class="component">
+    <section id="Popular-Videos">
       <PopularVideos />
     </section>
 
-    <section id="Faith-Foundations" class="component">
+    <section id="Faith-Foundations">
       <FaithFoundations />
     </section>
 
-    <section id="Sow-Seeds" class="component">
+    <section id="Sow-Seeds">
       <SowSeedsOfChange />
     </section>
 
-    <section id="Events-On-Demand" class="component">
+    <section id="Events-On-Demand">
       <EventsOnDemand />
     </section>
 
-    <section id="Inside-the-Vision" class="component">
+    <section id="Inside-the-Vision">
       <InsideTheVision />
     </section>
 
-    <section id="Search-Programs" class="component">
+    <section id="Search-Programs">
       <SearchPrograms />
     </section>
 
-    <section id="Ways-to-Watch" class="component">
+    <section id="Ways-to-Watch">
       <WaysToWatch />
     </section>
 
-    <section id="Give-Prayer-Partner" class="component">
+    <section id="Give-Prayer-Partner">
       <CTA />
     </section>
 
-    <section id="Page-Footer" class="component">
-      <PageFooter />
-    </section>
   </div>
+
+</div>
+
 </template>
 
 <script setup>
-
 </script>
 
 <style scoped>
+
+
+
 .container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  /* gap: 40px; */
 }
 
-.component {
-  border: 2px solid #800080;
-  min-height: 100px;
+
+
+
+
+
+#BVOV{
+
+  height: 1027px;
+  margin-bottom: 36px;
+
 }
+
+#Live-TV{
+
+  height: 232px;
+  margin-bottom: 36px;
+  
+}
+
+#ITV-Video{
+  height: 259px;
+  margin-bottom: 36px;
+
+}
+
+#Free-TV{
+
+  height: 324px;
+  margin-bottom: 36px;
+}
+
+
+#Recent-Videos{
+
+  height: 291px;
+  margin-bottom: 36px;
+}
+
+#Popular-Videos{
+  height: 291px;
+  margin-bottom: 60px;
+}
+
+
+#Faith-Foundations{
+  height: 305px;
+  margin-bottom: 36px;
+}
+
+
+#Sow-Seeds{
+  height: 304px;
+  margin-bottom: 60px;
+}
+
+#Events-On-Demand{
+
+
+  height: 1575px;
+  margin-bottom: 36px;
+  
+}
+
+
+
+#Inside-the-Vision{
+ 
+  height: 975px;
+  margin-bottom: 36px;
+}
+
+#Search-Programs{
+
+  height: 98px;
+  margin-bottom: 36px;
+
+}
+
+#Ways-to-Watch{
+  height: 1104px;
+  margin-bottom: 61.34px;
+}
+
+#Give-Prayer-Partner{
+
+  height: 903px;
+  margin-bottom: -150px;
+  width: 100vw; 
+  position: relative;
+  left: 50%; 
+  right: 50%; 
+  margin-left: -50vw; 
+  margin-right: -50vw; 
+  background-color: #212529;
+  
+
+
+}
+
+
+
+
 
 @media (min-width: 768px) {
+
+  /* .wrapper{
+    max-width: 1280px;
+    margin: 0 auto;
+    
+  } */
+
   .container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 10px;
+   
+    grid-auto-rows: minmax(100px, auto); 
   }
 
-  #Page-Header {
+
+  #Free-TV, #Recent-Videos, #Popular-Videos, #Faith-Foundations, #Sow-Seeds,  #Ways-to-Watch, #Give-Prayer-Partner, #Page-Footer {
     grid-column: 1 / -1;
   }
 
+  
+
+
   #BVOV {
     grid-column: 1 / 2;
-    grid-row: 2 / 4;
+    grid-row: 1 / 3;
+    height: 552px;
+    margin-right: 24px ;
+    margin-bottom: 19px;
+    margin-top: 24px;
+
   }
 
   #Live-TV, #ITV-Video {
     grid-column: 2 / 3;
+
+
   }
 
   #Live-TV {
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
+    height: 265px; 
+    margin-bottom: 24px;
+    margin-top: 24px;
+    
   }
 
   #ITV-Video {
-    grid-row: 3 / 4;
+    grid-row: 2 / 3;
+    height: 263px;
+    margin-bottom: 19px;
   }
 
-  #Free-TV, #Recent-Videos, #Popular-Videos, #Faith-Foundations, #Sow-Seeds, #Events-On-Demand, #Inside-the-Vision, #Search-Programs, #Ways-to-Watch, #Give-Prayer-Partner, #Page-Footer {
-    grid-column: 1 / -1;
+
+
+  #Free-TV{
+    height: 187px;
+    margin-bottom: 60px;
   }
+
+  #Recent-Videos{
+
+    height: 272px;
+    margin-bottom: 84px;
+  }
+
+  #Popular-Videos{
+    height: 272px;
+    margin-bottom: 84px;
+   
+  }
+
+
+  #Faith-Foundations{
+    height: 282px;
+    margin-bottom: 60px;
+  }
+
+  #Sow-Seeds{
+
+    height: 166px;
+    margin-bottom: 84px;
+  }
+
+
+#Events-On-Demand{
+
+  grid-column: 1 / -1;
+  padding-top: 24px;
+
+  height: 718px;
+  margin-bottom: 84px; 
+}
+
+#Inside-the-Vision {
+  grid-column: 1 / -1;
+  height: 563px;
+  margin-bottom: 60px;
+}
+
+
+
+#Search-Programs {
+  grid-column: 1 / -1;
+
+  height: 98px;
+  margin-bottom: 60px;
+}
+
+
+#Ways-to-Watch {
+  grid-column: 1 / -1;
+  height: 908px;
+  margin-bottom: 60px;
+
+  
+}
+
+#Give-Prayer-Partner{
+
+  height: 325px;
+  margin-bottom: -120px;
+
+
+
+}
+
 }
 </style>

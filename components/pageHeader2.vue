@@ -6,6 +6,8 @@
         <!-- first-row -->
         <div class="container px-4 row-1">
             <div class="row g-0">
+              
+              <!-- region -->
               <div class="col-2">
                 <div class="dropdown-end">
                   <a data-bs-toggle="dropdown" aria-expanded="false"><img class="region-map-icon" src="https://s3.amazonaws.com/libraries67.kcm.org/images/logos/region-icon-dark.svg" width="12" height="19"></a>
@@ -24,13 +26,18 @@
                   </div>
                 </div>
               </div>
+               
+              <!-- search-box -->
               <div class="col flex-grow-1" id="kcm-header-search-box">
                 <div id="deskSearchWrap">
                   <form action="" autocomplete="off">
-                    <input id="search" name="search" type="text" placeholder="Site Search..."><input id="search_submit" type="submit">
+                    <input id="search" name="search" type="text" placeholder="Site Search...">
+                    <input id="search_submit" type="submit">
                   </form>
                 </div>
               </div>
+
+              
               <div class="col-auto">
                 <ul class="nav justify-content-end kcmh-nav-member">
                   <li class="nav-item"><a class="nav-link" href="#"><span class="position-relative"><i class="bi bi-cart-fill"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -145,10 +152,12 @@
 
     <!-- OFFCANVAS MENU -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMobile" aria-labelledby="offcanvasMobileLabel">
+
       <div class="offcanvas-header">
         <a class="mobileNavLogo" href="#"><img class="" src="https://libraries67.kcm.org/images/logos/kcm-header-logo.svg" width="171" height="32" alt="Kenneth Copeland Ministries"></a>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
+      
       <div class="offcanvas-body">
         <!--
         ************************
@@ -160,6 +169,8 @@
           <input type="text" class="form-control" aria-label="Search Site..." placeholder="Search Site...">
           <span class="input-group-text"><i class="bi bi-search"></i></span>
         </div>
+
+
         <div class="accordion kcmh-nav-main" id="mobileAccordion">
           <div class="accordion-item">
             <h2 class="accordion-header">
@@ -274,7 +285,9 @@
             </div>
           </div>
         </div>
+
         <hr>
+      
         <ul class="nav flex-column kcmh-nav-member">
           <li class="nav-item"><a class="nav-link" href="#"><span class="position-relative"><i class="bi bi-cart-fill"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                   99+
@@ -364,8 +377,6 @@ function widthWatcher() {
   }
 }
 
-
-
 /****** LIFECYCLE ******/
 onMounted(() => {
   // Initialize DOM references
@@ -454,6 +465,424 @@ if (typeof window !== 'undefined') {
   #kcmh .main-nav .btn-close {
     display: none;
   }
+
+
+#kcmh.nav-visible .main-nav .btn-close {
+  font-size: 12px;
+  position: relative;
+  display: block;
+  margin-top: -4px;
+}
+
+
+
+
+/* ** /ROW HEIGHTS ***/ 
+ .navbar-brand {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    height: 40px;
+    padding-top: 2px;
+  }
+}
+
+
+.navbar-brand img {
+  width: 171px;
+  height: 32px;
+}
+
+@media screen and (min-width: 992px) {
+  .navbar-brand img {
+    width: 306px;
+    height: 57px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #kcmh {
+    padding: 0 20px;
+  }
+}
+@media (min-width: 992px) {
+  #kcmh > nav {
+    height: 105px;
+  }
+}
+
+@media (max-width: 992px) {
+  #kcmh {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+.kcmh-nav-member a {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2c5a6f;
+}
+
+.kcmh-nav-member a:hover,
+.kcmh-nav-member a:focus {
+  color: #0372a5;
+}
+
+
+.kcmh-nav-main .nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--kcm-navy);
+}
+
+.kcmh-nav-main .nav-link:hover,
+.kcmh-nav-main .nav-link:active {
+  color: #7a7c7f;
+}
+
+
+.kcmh-nav-main .dropdown-menu {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--kcm-navy);
+
+}
+
+.kcmh-nav-main .dropdown-menu.show {
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .kcmh-nav-main .dropdown-menu.show {
+    background: #f8f9fa;
+    -webkit-box-shadow: var(--bs-dropdown-box-shadow);
+    box-shadow: var(--bs-dropdown-box-shadow);
+  }
+}
+
+
+#kcmh .col-auto > ul > li:last-child > a {
+  padding-right: 0;
+}
+
+#kcmh .dropdown-end {
+  z-index: 1030;
+}
+
+
+#kcmh .dropdown-end,
+ul.nav.kcmh-nav-member {
+  padding-top: 24px;
+}
+
+
+.kcmh-region-select.btn {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+}
+
+
+/****************/
+#kcmh .dropdown-menu.show {
+  z-index: 1030;
+}
+
+
+#kcmh .dropdown-menu.show:before,
+#kcmh .dropdown-menu.show:after {
+  position: absolute;
+  z-index: 2;
+  top: -12px;
+  left: 18px;
+  display: block;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  content: " ";
+  border: solid 6px transparent;
+  border-bottom-color: #f8f9fa;
+} 
+
+#kcmh .dropdown-menu.show:after {
+  position: absolute;
+  z-index: 1002;
+  top: -12px;
+  left: 18px;
+  display: block;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  content: " ";
+  border: solid 6px transparent;
+  border-bottom-color: #f8f9fa;
+
+
+}
+
+#kcmh .dropdown-menu.show:before {
+  z-index: 1001;
+  top: -16px;
+  left: 16px;
+  border: solid 8px transparent;
+  border-bottom-color: #dee2e6;
+}
+/******************/
+
+@media screen and (max-width: 768px) {
+  .kcmh-nav-main {
+    padding-top: 36px;
+  }
+}
+
+.kcmh-nav-main .dropdown-item.active,
+.kcmh-nav-main .dropdown-item:active {
+  color: #fff;
+  background: #234859;
+}
+
+
+#mobileAccordion a.accordion-button,
+#offcanvasMobile > div.offcanvas-body > ul > li > a {
+  padding: 12px 0;
+}
+
+
+.kcmh-region-select.btn {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #6c757d;
+}
+
+.kcmh-region-select.btn:hover {
+  color: #6c757d;
+  background-color: #fff;
+
+}
+
+.kcmh-region-select.btn.show {
+  color: #6c757d;
+  background-color: #fff;
+}
+
+.btn-outline-secondary {
+  border: 1px solid #6c757d;
+  border-radius: var(--kcm-border-radius);
+  background: #fff;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  border: 1px solid #6c757d;
+  background: #fff;
+}
+
+/**********************/
+/*** OFFCANVAS MENU ***/
+/**********************/
+
+.offcanvas {
+  background: #f8f9fa;
+  -webkit-box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.mobileNavLogo {
+  width: 171px;
+  height: 32px;
+}
+
+#offcanvasMobile hr {
+  margin: 36px 0;
+}
+
+#offcanvasMobile .nav {
+  margin-bottom: 0;
+  padding-top: 0;
+
+}
+
+
+#offcanvasMobile .kcmh-nav-main ul.menu {
+  padding-left: 40px a;
+  padding-left-padding-left: 12px;
+}
+
+#offcanvasMobile .kcmh-nav-main ul.menu {
+  padding-left: 40px a;
+  padding-left-padding-left: 12px;
+}
+
+#offcanvasMobile .dropdown-menu.show {
+  position: relative;
+  margin-left: 24px;
+  border: none;
+
+}
+
+/******************/
+/*** MOBILE NAV ***/
+/******************/
+.nav-visible .mobile-give {
+  display: none;
+}
+
+.btn-sm.btn-give {
+  margin-right: 8px;
+ 
+}
+
+.navbar-toggler {
+  margin-right: 8px;
+
+}
+
+@media (max-width: 768px) {
+  .navbar-toggler {
+    padding: 0;
+    margin-left: 8px;
+  }
+}
+
+
+#offcanvasMobile .form-control {
+  font-size: 14px;
+  line-height: 1.5;
+  
+}
+
+#offcanvasMobile .accordion-item:first-of-type {
+  border-radius: 0;
+
+}
+
+
+#offcanvasMobile .accordion-button:not(.collapsed) {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+}
+
+#offcanvasMobile .accordion-item,
+#offcanvasMobile .accordion-button {
+  text-decoration: none;
+  border: none;
+  background: none;
+ 
+}
+
+
+#offcanvasMobile .accordion-button {
+  color: var(--kcm-navy);
+  border-radius: 0;
+
+}
+
+#offcanvasMobile button[aria-expanded=true],
+#offcanvasMobile a[aria-expanded=true] {
+  font-weight: 700;
+
+}
+
+
+#offcanvasMobile .accordion-body {
+  padding: 12px 0;
+
+}
+
+
+#offcanvasMobile .accordion-body > ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+#offcanvasMobile .accordion-body li {
+  list-style: none;
+}
+
+#offcanvasMobile .accordion-body a {
+  line-height: 2;
+  display: block;
+  padding-left: 16px;
+  text-decoration: none;
+  color: var(--kcm-navy);
+}
+
+#offcanvasMobile .accordion-body a:hover {
+  background: #e8e8e8;
+  
+}
+
+#offcanvasMobile .accordion-body a.active {
+  color: #fff;
+  background: #234859;
+}
+
+/*******************/
+/*** /MOBILE NAV ***/
+/*******************/
+/*** DESKTOP STYLES FOR HEADER ***/
+
+.region-map-icon {
+  width: 12px;
+  height: 19px;
+}
+
+
+@media (min-width: 992px) {
+  .region-map-icon {
+    /* margin-right: 8px; */
+    margin-right: 4px
+    
+  }
+}
+
+@media (min-width: 1200px) {
+  .region-map-icon {
+    margin-right: 12px;
+  }
+}
+
+
+#kcm-header-search-box.hide {
+  width: 0;
+  text-align: right;
+}
+
+
+#kcm-header-search-box.hide input {
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+ 
+}
+
+#kcm-header-search-box > form > label > i {
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 7px;
+  margin-right: 8px;
+
+}
+
+
+
+#kcmh > div > div > div.col-auto > ul > li:nth-child(1) > a > span > span,
+#offcanvasMobile > div.offcanvas-body > ul > li:nth-child(1) > a > span > span {
+  background-color: var(--kcm-orange) !important;
+}
 
 
 

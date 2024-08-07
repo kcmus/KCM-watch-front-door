@@ -127,17 +127,15 @@
 
 #Events-On-Demand{
   height: 1575px;
-  margin-bottom: 36px;
-  
+  margin-bottom: 36px; 
 }
-
 
 
 #Inside-the-Vision{
-
   height: 975px;
   margin-bottom: 36px;
 }
+
 
 #Search-Programs{
 
@@ -164,8 +162,6 @@
   background-color: #212529;
   
 }
-
-
 
 
 

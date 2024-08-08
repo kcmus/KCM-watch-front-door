@@ -2,7 +2,7 @@
  <template>
   <div class="wrapper">
 
-      <PageHeader2/>
+      <PageHeader/>
      
     <main class="container px-3">
       <NuxtPage/>

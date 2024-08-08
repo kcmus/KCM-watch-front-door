@@ -2,16 +2,11 @@
  <template>
   <div class="wrapper">
 
-    <div class="header-wrapper-outer sticky-top bg-white ">
 
-      <div class="header-wrapper">
-        <PageHeader/>
-      </div>
+      <PageHeader/>
+     
+    <main class="container px-3">
 
-    </div>
-
-  
-    <main >
       <NuxtPage/>
     </main>
 
@@ -23,6 +18,8 @@
 </template>
 
 <script setup>
+
+
 </script>
 
 <style scoped>
@@ -32,20 +29,8 @@
   margin: 0 auto;
 }
 
-.header-wrapper-outer{
 
-  
-}
 
-.header-wrapper {
-  width: 100vw; 
-  position: relative;
-  left: 50%; 
-  right: 50%; 
-  margin-left: -50vw; 
-  margin-right: -50vw; 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); 
-}
 
 .footer-wrapper {
   width: 100vw; 
@@ -59,20 +44,28 @@
 }
 
 main {
-  margin-top: 24px;
+  margin-top: 88px;
 }
 
 
-@media (min-width: 768px) {
- 
+@media (min-width: 768px) and (max-width: 992px) {
   main {
-    margin-top: 60px;
-    
-
-
-
+    margin-top: 80px; 
   }
 }
+
+
+@media (min-width: 993px) {
+ 
+  main {
+
+    margin-top: 180px;
+   
+
+  }
+
+}
+
 
 
 /* iPad Air, iPad Pro, and Surface Pro 7 */
@@ -87,8 +80,6 @@ main {
 
     
 }
-
-
 
 
 </style>

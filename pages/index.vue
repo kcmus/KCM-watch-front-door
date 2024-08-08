@@ -1,65 +1,63 @@
 <template>
-  <div class="wrapper">
+  
 
   
   <div class="container">
 
 
-    <section id="BVOV" >
-      <BVOV />
-    </section>
+      <section id="BVOV" >
+        <BVOV />
+      </section>
 
-    <section id="Live-TV">
-      <LiveTV />
-    </section>
+      <section id="Live-TV">
+        <LiveTV />
+      </section>
 
-    <section id="ITV-Video" >
-      <InsideTheVisionVideo />
-    </section>
+      <section id="ITV-Video" >
+        <InsideTheVisionVideo />
+      </section>
 
-    <section id="Free-TV" >
-      <FreeTVOffer />
-    </section>
+      <section id="Free-TV" >
+        <FreeTVOffer />
+      </section>
 
-    <section id="Recent-Videos">
-      <RecentVideos />
-    </section>
+      <section id="Recent-Videos">
+        <RecentVideos />
+      </section>
 
-    <section id="Popular-Videos">
-      <PopularVideos />
-    </section>
+      <section id="Popular-Videos">
+        <PopularVideos />
+      </section>
 
-    <section id="Faith-Foundations">
-      <FaithFoundations />
-    </section>
+      <section id="Faith-Foundations">
+        <FaithFoundations />
+      </section>
 
-    <section id="Sow-Seeds">
-      <SowSeedsOfChange />
-    </section>
+      <section id="Sow-Seeds">
+        <SowSeedsOfChange />
+      </section>
 
-    <section id="Events-On-Demand">
-      <EventsOnDemand />
-    </section>
+      <section id="Events-On-Demand">
+        <EventsOnDemand />
+      </section>
 
-    <section id="Inside-the-Vision">
-      <InsideTheVision />
-    </section>
+      <section id="Inside-the-Vision">
+        <InsideTheVision />
+      </section>
 
-    <section id="Search-Programs">
-      <SearchPrograms />
-    </section>
+      <section id="Search-Programs">
+        <SearchPrograms />
+      </section>
 
-    <section id="Ways-to-Watch">
-      <WaysToWatch />
-    </section>
+      <section id="Ways-to-Watch">
+        <WaysToWatch />
+      </section>
 
-    <section id="Give-Prayer-Partner">
-      <CTA />
-    </section>
+      <section id="Give-Prayer-Partner">
+        <CTA />
+      </section>
 
   </div>
-
-</div>
 
 </template>
 
@@ -73,12 +71,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  /* gap: 40px; */
+ 
 }
-
-
-
-
 
 
 #BVOV{
@@ -132,20 +126,16 @@
 }
 
 #Events-On-Demand{
-
-
   height: 1575px;
-  margin-bottom: 36px;
-  
+  margin-bottom: 36px; 
 }
-
 
 
 #Inside-the-Vision{
- 
   height: 975px;
   margin-bottom: 36px;
 }
+
 
 #Search-Programs{
 
@@ -171,21 +161,11 @@
   margin-right: -50vw; 
   background-color: #212529;
   
-
-
 }
 
 
 
-
-
 @media (min-width: 768px) {
-
-  /* .wrapper{
-    max-width: 1280px;
-    margin: 0 auto;
-    
-  } */
 
   .container {
     display: grid;
@@ -200,8 +180,6 @@
   }
 
   
-
-
   #BVOV {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
@@ -264,47 +242,59 @@
   }
 
 
-#Events-On-Demand{
+  #Events-On-Demand{
 
-  grid-column: 1 / -1;
-  padding-top: 24px;
+    grid-column: 1 / -1;
+    padding-top: 24px;
 
-  height: 718px;
-  margin-bottom: 84px; 
-}
+    height: 718px;
+    margin-bottom: 84px; 
+  }
 
-#Inside-the-Vision {
-  grid-column: 1 / -1;
-  height: 563px;
-  margin-bottom: 60px;
-}
-
-
-
-#Search-Programs {
-  grid-column: 1 / -1;
-
-  height: 98px;
-  margin-bottom: 60px;
-}
-
-
-#Ways-to-Watch {
-  grid-column: 1 / -1;
-  height: 908px;
-  margin-bottom: 60px;
-
-  
-}
-
-#Give-Prayer-Partner{
-
-  height: 325px;
-  margin-bottom: -120px;
+  #Inside-the-Vision {
+    grid-column: 1 / -1;
+    height: 563px;
+    margin-bottom: 60px;
+  }
 
 
 
-}
+  #Search-Programs {
+    grid-column: 1 / -1;
+
+    height: 98px;
+    margin-bottom: 60px;
+  }
+
+
+  #Ways-to-Watch {
+    grid-column: 1 / -1;
+    height: 908px;
+    margin-bottom: 60px;
+
+    
+  }
+
+  #Give-Prayer-Partner{
+
+    height: 325px;
+    margin-bottom: -120px;
+
+  }
 
 }
+
+
+/* iPad Air, iPad Pro, and Surface Pro 7 */
+@media only screen and (min-device-width: 820px) and (max-device-width: 1366px),
+       only screen and (min-width: 912px) and (max-width: 1440px) {
+    .container {
+       padding-left: 1px;
+       padding-right: 1px;
+        max-width: 100%; 
+        margin: 0 auto; 
+    }
+}
+
+
 </style>

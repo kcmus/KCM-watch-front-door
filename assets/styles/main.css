@@ -1,3 +1,9 @@
+/* 
+@import url('styles.css'); */
+
+@import url('base.css');
+
+
 @media (min-width: 1200px) {
     .container,
     .container-lg,
@@ -8,3 +14,5 @@
       max-width: 1280px;
     }
   }
+
+

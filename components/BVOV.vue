@@ -24,7 +24,6 @@
 }
 
    
-
 @media (min-width: 768px){
 
   #BVOV-box{

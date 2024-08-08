@@ -2,9 +2,11 @@
  <template>
   <div class="wrapper">
 
+
       <PageHeader/>
      
     <main class="container px-3">
+
       <NuxtPage/>
     </main>
 
@@ -56,10 +58,27 @@ main {
 @media (min-width: 993px) {
  
   main {
+
     margin-top: 180px;
    
+
   }
 
+}
+
+
+
+/* iPad Air, iPad Pro, and Surface Pro 7 */
+@media only screen and (min-device-width: 820px) and (max-device-width: 1366px),
+       only screen and (min-width: 912px) and (max-width: 1440px) {
+    .container {
+       padding-left: 1px;
+       padding-right: 1px;
+        max-width: 100%; 
+        margin: 0 auto; 
+    }
+
+    
 }
 
 

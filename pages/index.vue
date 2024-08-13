@@ -77,20 +77,19 @@
 
 #BVOV{
 
-  height: 1027px;
+ 
   margin-bottom: 36px;
 
 }
 
 #Live-TV{
 
-  height: 232px;
   margin-bottom: 36px;
   
 }
 
 #ITV-Video{
-  height: 259px;
+ 
   margin-bottom: 36px;
 
 }

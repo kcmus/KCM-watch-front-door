@@ -186,7 +186,7 @@
     height: 552px;
     margin-right: 24px ;
     margin-bottom: 19px;
-    margin-top: 208px;
+    margin-top: 24px;
 
   }
 
@@ -200,7 +200,7 @@
     grid-row: 1 / 2;
     height: 265px; 
     margin-bottom: 24px;
-    margin-top: 208px;
+    margin-top: 24px;
     
   }
 

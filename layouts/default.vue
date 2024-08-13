@@ -31,7 +31,6 @@
 
 
 
-
 .footer-wrapper {
   width: 100vw; 
   position: relative;

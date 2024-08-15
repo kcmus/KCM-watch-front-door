@@ -58,6 +58,15 @@ video {
 }
 
 
+@media (min-width: 992px) and (max-width: 1120px) {
+
+  .text-wrapper-6{
+        font-size: 16px;
+
+  }
+
+}
+
 
 
 @media (min-width: 768px){

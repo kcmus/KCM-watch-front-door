@@ -79,7 +79,6 @@
 
 #BVOV{
 
-  margin-bottom: 36px;
   margin-top: 24px;
 
 }
@@ -202,9 +201,7 @@
     grid-row: 1 / 2;
     height: 265px; 
     margin-bottom: 24px;
-  
-  
-    
+   
   }
 
   #ITV-Video {

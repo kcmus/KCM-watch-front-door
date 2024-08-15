@@ -55,6 +55,22 @@ img {
  
 
 
+@media (min-width: 992px) and (max-width: 1120px) {
+
+        .text-wrapper-7{
+            font-size: 16px;
+
+        }
+
+        img{
+
+            width: 580px;
+        }
+
+}
+
+
+
 
  @media (min-width: 768px){
 

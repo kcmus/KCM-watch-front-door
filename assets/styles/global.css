@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:400|Poppins:500,700");
+
+@font-face {
+  font-family: "Helvetica-Bold";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/61937676c1b2ee0850725a54/fonts/helvetica-bold.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Helvetica-Regular";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/656791b77f52524f6a44afda/fonts/helvetica-regular.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Helvetica-Light";
+  src: url("https://anima-uploads.s3.amazonaws.com/5c4a8fa3ba3d79000962263a/Helvetica Light.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Neue-Medium";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/63dcde9badcdfbdea71f504c/fonts/helveticaneuemed.ttf")
+    format("truetype");
+}
+
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+
+  font-optical-sizing: auto;
+ 
+  font-style: normal;
+  line-height: 1.6;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+      

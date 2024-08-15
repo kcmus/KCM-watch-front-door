@@ -7,7 +7,7 @@
             <source src="" type="video/mp4">
         </video>
       </div>
-      <h5 class="text-wrapper" @click="redirectToLiveTV">Live TV VICTORY – Faith Teaching 24/7</h5>
+      <p class="text-wrapper-6" @click="redirectToLiveTV">Live TV VICTORY – Faith Teaching 24/7</p>
         
     </div>
 
@@ -27,13 +27,9 @@ function redirectToLiveTV() {
 
 #Live-TV-box{
 
-    /* height: 232px; */
     align-items: center;
 }
 
-
-
- 
 
 .video-container {
   position: relative;
@@ -48,16 +44,16 @@ video {
   height: 100%;
 }
 
-.text-wrapper{
+.text-wrapper-6{
 
-    color: #000000; 
-    font-family: var(--heading-h5-font-family); 
-    font-size: var(--heading-h5-font-size); 
-    font-style: var(--heading-h5-font-style); 
-    font-weight: var(--heading-h5-font-weight); 
-    letter-spacing: var(--heading-h5-letter-spacing); 
-    line-height: var(--heading-h5-line-height); 
-    cursor: pointer;   
+  color: #000000;
+  font-family: var(--heading-h5-font-family);
+  font-size: var(--heading-h5-font-size);
+  font-style: var(--heading-h5-font-style);
+  font-weight: var(--heading-h5-font-weight);
+  letter-spacing: var(--heading-h5-letter-spacing);
+  line-height: var(--heading-h5-line-height);
+
 
 }
 

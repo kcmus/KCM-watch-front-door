@@ -2,9 +2,9 @@
 <template>
          
     <div id="pixel-anchor"></div>
-    <header class="bg-white sticky-top p-0" id="kcmh">       
+    <header class="bg-white sticky-top p-0 " id="kcmh">       
         <!-- first-row -->
-        <div class="container px-4 row-1">
+        <div class="container px-3 row-1">
             <div class="row g-0">
               
               <!-- region -->
@@ -55,7 +55,7 @@
         <!-- first-row -->
 
         <!-- second-row -->
-        <nav class="container-lg main-nav navbar navbar-expand-lg sticky-top px-4">
+        <nav class="container-lg main-nav navbar navbar-expand-lg sticky-top px-3">
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMobile" aria-controls="offcanvasMobile" aria-expanded="false" aria-label="Open Nav"><span class="navbar-toggler-icon"></span></button>
               <a class="navbar-brand me-auto ms-3 ms-lg-0" href="#"><img class="" src="https://libraries67.kcm.org/images/logos/kcm-header-logo.svg" width="306" height="57" alt="Kenneth Copeland Ministries"></a>
               <!-- <a href="#" class="mobile-give">Give</a> -->
@@ -592,7 +592,7 @@ ul.nav.kcmh-nav-member {
 .kcmh-region-select.btn {
   padding-top: 1px;
   padding-bottom: 1px;
-  padding-left: 5px;
+  padding-left: 4px;
  
   
 }

@@ -2,7 +2,7 @@
   
 
   
-  <div class="container">
+  <div class="container px-3">
 
 
       <section id="BVOV" >
@@ -34,7 +34,7 @@
       </section>
 
       <section id="Sow-Seeds">
-        <SowSeedsOfChange />
+        <SowSeedsOfChange />  
       </section>
 
       <section id="Events-On-Demand">
@@ -62,6 +62,8 @@
 </template>
 
 <script setup>
+
+
 </script>
 
 <style scoped>
@@ -77,14 +79,15 @@
 
 #BVOV{
 
- 
   margin-bottom: 36px;
+  margin-top: 24px;
 
 }
 
 #Live-TV{
 
   margin-bottom: 36px;
+  margin-top: 24px;
   
 }
 
@@ -126,7 +129,9 @@
 
 #Events-On-Demand{
   height: 1575px;
-  margin-bottom: 36px; 
+  margin-bottom: 36px;
+
+  
 }
 
 
@@ -164,12 +169,11 @@
 
 
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 
   .container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-   
     grid-auto-rows: minmax(100px, auto); 
   }
 
@@ -182,10 +186,9 @@
   #BVOV {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    height: 552px;
     margin-right: 24px ;
     margin-bottom: 19px;
-    margin-top: 24px;
+ 
 
   }
 
@@ -199,14 +202,15 @@
     grid-row: 1 / 2;
     height: 265px; 
     margin-bottom: 24px;
-    margin-top: 24px;
+  
+  
     
   }
 
   #ITV-Video {
     grid-row: 2 / 3;
     height: 263px;
-    margin-bottom: 19px;
+    margin-bottom: 48px;
   }
 
 
@@ -219,12 +223,12 @@
   #Recent-Videos{
 
     height: 272px;
-    margin-bottom: 84px;
+    margin-bottom: 24px;
   }
 
   #Popular-Videos{
     height: 272px;
-    margin-bottom: 84px;
+    margin-bottom: 24px;
    
   }
 
@@ -283,8 +287,8 @@
 
 }
 
-
-/* iPad Air, iPad Pro, and Surface Pro 7 */
+/* 
+iPad Air, iPad Pro, and Surface Pro 7 */
 @media only screen and (min-device-width: 820px) and (max-device-width: 1366px),
        only screen and (min-width: 912px) and (max-width: 1440px) {
     .container {
@@ -295,5 +299,38 @@
     }
 }
 
+
+@media (min-width: 1440px) {
+
+  #BVOV {
+ 
+    margin-top: 20px;
+
+  }
+
+
+  #Live-TV {
+    margin-top: 20px;
+    
+  }
+
+
+}
+
+@media (max-width: 678px) {
+
+#BVOV {
+
+ 
+  margin-top: 10px;
+
+}
+
+
+
+
+
+}
+ 
 
 </style>

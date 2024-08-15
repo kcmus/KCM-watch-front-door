@@ -5,7 +5,7 @@
 
       <PageHeader/>
      
-    <main class="container px-3">
+    <main>
 
       <NuxtPage/>
     </main>
@@ -24,10 +24,10 @@
 
 <style scoped>
 
-.wrapper {
+/* .wrapper {
   max-width: 1280px;
   margin: 0 auto;
-}
+} */
 
 
 
@@ -44,6 +44,7 @@
 
 main {
   margin-top: 88px;
+ 
 }
 
 
@@ -59,26 +60,40 @@ main {
   main {
 
     margin-top: 180px;
-   
-
+  
   }
 
 }
 
 
+@media (min-width: 992px) and (max-width: 1440px) {
+  main {
+
+    margin-left: 82px;
+
+    margin-right: 82px;
+    
+  }
+}
+
+
+
+
+
 
 /* iPad Air, iPad Pro, and Surface Pro 7 */
-@media only screen and (min-device-width: 820px) and (max-device-width: 1366px),
+/* @media only screen and (min-device-width: 820px) and (max-device-width: 1366px),
        only screen and (min-width: 912px) and (max-width: 1440px) {
     .container {
-       padding-left: 1px;
-       padding-right: 1px;
-        max-width: 100%; 
-        margin: 0 auto; 
+       padding-left: 104px;
+       padding-right: 104px;
+      max-width: 100%; 
+      margin: 0 auto; 
+      margin-top: 100px;
     }
 
     
-}
+} */
 
 
 </style>

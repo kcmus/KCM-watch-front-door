@@ -34,9 +34,6 @@ function openITVPage() {
  
 
 
-
-  
-
 .text-wrapper-7{
     color: #000000;
     font-family: var(--heading-h5-font-family);
@@ -72,7 +69,7 @@ img {
 
 
 
- @media (min-width: 768px){
+ @media (min-width: 992px){
 
 
     #Inside-the-vision-video{

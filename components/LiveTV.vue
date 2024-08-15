@@ -69,7 +69,7 @@ video {
 
 
 
-@media (min-width: 768px){
+@media (min-width: 992px){
 
     #Live-TV-box{
      

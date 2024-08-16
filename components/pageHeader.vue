@@ -10,7 +10,9 @@
               <!-- region -->
               <div class="col-2">
                 <div class="dropdown-end">
-                  <a data-bs-toggle="dropdown" aria-expanded="false"><img class="region-map-icon" src="https://s3.amazonaws.com/libraries67.kcm.org/images/logos/region-icon-dark.svg" width="12" height="19"></a>
+                  <a data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="region-map-icon" src="https://s3.amazonaws.com/libraries67.kcm.org/images/logos/region-icon-dark.svg" width="12" height="19">
+                  </a>
                   <button class="btn btn-outline-secondary dropdown-toggle kcmh-region-select" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Select a Region
                   </button>
@@ -40,8 +42,11 @@
               
               <div class="col-auto">
                 <ul class="nav justify-content-end kcmh-nav-member">
-                  <li class="nav-item"><a class="nav-link" href="#"><span class="position-relative"><i class="bi bi-cart-fill"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                          99+
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="position-relative">
+                      <i class="bi bi-cart-fill"></i>
+                          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                             99+
                           <span class="visually-hidden">items in cart</span>
                         </span></span></a></li>
                   <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
@@ -50,6 +55,8 @@
                   <li class="nav-item"><a class="nav-link" href="#">Sign Out</a></li>
                 </ul>
               </div>
+
+
             </div>
         </div>
         <!-- first-row -->

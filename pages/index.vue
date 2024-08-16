@@ -286,7 +286,7 @@
 
 /* 
 iPad Air, iPad Pro, and Surface Pro 7 */
-@media only screen and (min-device-width: 820px) and (max-device-width: 1366px),
+/* @media only screen and (min-device-width: 820px) and (max-device-width: 1366px),
        only screen and (min-width: 912px) and (max-width: 1440px) {
     .container {
        padding-left: 1px;
@@ -294,40 +294,10 @@ iPad Air, iPad Pro, and Surface Pro 7 */
         max-width: 100%; 
         margin: 0 auto; 
     }
-}
-
-
-@media (min-width: 1440px) {
-
-  #BVOV {
- 
-    margin-top: 20px;
-
-  }
-
-
-  #Live-TV {
-    margin-top: 20px;
-    
-  }
-
-
-}
-
-@media (max-width: 678px) {
-
-#BVOV {
-
- 
-  margin-top: 10px;
-
-}
+} */
 
 
 
 
-
-}
- 
 
 </style>

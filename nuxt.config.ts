@@ -1,7 +1,10 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import runtimeConfig from "./nuxt.runtimeConfig";
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+
+  runtimeConfig,
 
   // Add Bootstrap CSS
   css: [

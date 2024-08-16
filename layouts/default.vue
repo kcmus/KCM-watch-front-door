@@ -3,7 +3,10 @@
   <div class="wrapper">
 
 
-      <PageHeader/>
+      <!-- <PageHeader/> -->
+
+      <HeaderPageHeader/>
+      <HeaderOffcanvasMobile/>
      
     <main>
 
@@ -12,7 +15,11 @@
 
     <div class="footer-wrapper">
       <PageFooter/>
+      <!-- <FooterPageFooter/> -->
+
     </div>
+
+   
 
   </div>
 </template>
@@ -43,12 +50,12 @@
 }
 
 main {
-  margin-top: 88px;
+  margin-top: 28px;
  
 }
 
 
-@media (min-width: 768px) and (max-width: 992px) {
+/* @media (min-width: 768px) and (max-width: 992px) {
   main {
     margin-top: 80px; 
   }
@@ -63,7 +70,7 @@ main {
   
   }
 
-}
+} */
 
 
 @media (min-width: 992px) and (max-width: 1440px) {

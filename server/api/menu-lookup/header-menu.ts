@@ -1,7 +1,9 @@
 import type { FooterMenuLookupResult } from "./footer-menu";
+
 export type HeaderMenuLookupResult = Readonly<{
   header: FooterMenuLookupResult["footer"];
 }>;
+
 
 const getUrl = (api2Url: string, api2Token: string) => {
   return `${api2Url}/api/menus/header.json?token=${api2Token}`;
@@ -31,6 +33,8 @@ export default defineEventHandler(async (event) => {
   const { api2Url, api2Token } = useRuntimeConfig(event);
   const { fakeMenuLookup } = useAppConfig();
 
+
+  // api2Url: "https://local-api2.kcmtst.org",
   const url = getUrl(api2Url, api2Token);
 
   if (!fakeMenuLookup) {

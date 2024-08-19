@@ -14,20 +14,5 @@ export default defineAppConfig({
   footer: {
     subscribeUrl: `/read/faith-to-faith/subscribe`,
   },
-  prayerForm: {
-    pageTitle: "Volunteer Prayer Request Form | Kenneth Copeland Ministries",
-    enforceSSO: true,
 
-    defaultPublicationUse: true,
-    defaultCountry: "US",
-
-    defaultIpAddress: "67.62.42.66",
-    defaultGeoIpCountry: "US",
-    defaultSourceCode: "GW1VPFSOUT",
-
-    /** When true, fakes the account lookup by phone number. */
-    fakeAccountLookup: false,
-    /** When true, fakes the submission of a prayer request. */
-    fakeSubmitPrayerRequest: false,
-  },
 });

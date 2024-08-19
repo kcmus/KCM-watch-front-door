@@ -5,8 +5,13 @@ const getQueryString = (args: Record<string, string | undefined>) => {
     .join("&");
 };
 
+
+//  webSyncID: "1db6ba71-e641-3900-9545-707c2a56b8e8",
+// sessionGUID: "e7d6cdd5-86b2-5b40-7ed9-a142233cd78b",
+
 export default defineEventHandler(async (event) => {
   const { webSyncID, sessionGUID, ...appConfig } = useAppConfig(event);
+
 
   const queryString = getQueryString({ webSyncID, sessionGUID });
 

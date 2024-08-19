@@ -89,6 +89,7 @@ const todayBVOV = {
   link: 'https://www.kcm.org/watch/tv-broadcast',
 };
 
+
 const otherBVOVs = [
   {
     image: '/images/BVOV-1.png',
@@ -247,8 +248,6 @@ function downloadShowNotes() {
     margin-top: 15px;
   }
 
-
-
 }
 
 
@@ -264,11 +263,8 @@ function downloadShowNotes() {
 
     font-size: 13px;
 
-
  }
 
-
- 
 }
 
 

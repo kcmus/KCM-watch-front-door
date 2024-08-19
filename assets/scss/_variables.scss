@@ -1,0 +1,59 @@
+$btn-info-bg: $info;
+$btn-info-border: $btn-info-bg;
+$btn-info-color: $white;
+$btn-info-hover-bg: #0372a5;
+$btn-info-hover-border: $btn-info-hover-bg;
+$btn-info-hover-color: $btn-info-color;
+$btn-info-active-bg: #32779a;
+$btn-info-active-border: #3670b0;
+$btn-info-active-color: $btn-info-color;
+$btn-info-disabled-bg: #70a5b5;
+$btn-info-disabled-border: $btn-info-disabled-bg;
+$btn-info-disabled-color: $btn-info-color;
+
+$btn-orange-bg: $orange;
+$btn-orange-border: $btn-orange-bg;
+$btn-orange-color: $white;
+$btn-orange-hover-bg: #f38a4a;
+$btn-orange-hover-border: $btn-orange-hover-bg;
+$btn-orange-hover-color: $btn-orange-color;
+$btn-orange-active-bg: $btn-orange-hover-bg;
+$btn-orange-active-border: $primary;
+$btn-orange-active-color: $btn-orange-hover-color;
+
+$font-family-sans-serif:
+  Helvetica,
+  system-ui,
+  -apple-system,
+  Arial,
+  sans-serif,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  "Noto Sans",
+  "Liberation Sans",
+  Arial,
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji" !default;
+$font-family-base: var(--bs-font-sans-serif) !default;
+
+$font-size-root: null !default;
+$font-size-base: 1rem;
+$font-size-sm: $font-size-base * 0.875 !default;
+$font-size-lg: $font-size-base * 1.25 !default;
+
+$font-family-serif: "georgia", "kepler-std-n6", "kepler-std", serif;
+
+$btn-active-box-shadow: inset 0 3px 5px rgba($black, 0.125) !default;
+
+$btn-hover-bg-shade-amount: 15% !default;
+$btn-hover-bg-tint-amount: 15% !default;
+$btn-hover-border-shade-amount: 20% !default;
+$btn-hover-border-tint-amount: 10% !default;
+$btn-active-bg-shade-amount: 20% !default;
+$btn-active-bg-tint-amount: 20% !default;
+$btn-active-border-shade-amount: 25% !default;
+$btn-active-border-tint-amount: 10% !default;

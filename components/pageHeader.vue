@@ -69,6 +69,7 @@
               <!-- <a href="#" class="btn btn-sm btn-primary me-2" style="background-color:#f54d09;border-color:#f54d09;"><b>Give</b></a> -->
               <button class="btn btn-sm btn-give d-lg-none">Give</button>
               <button type="button" class="btn-close" data-bs-toggle="collapse" data-bs-target="#kcm-header-main-nav" aria-label="Close"></button>
+              
               <div class="container-fluid px-0">
                 <div class="collapse navbar-collapse justify-content-center" id="kcm-header-main-nav">
                   <ul class="navbar-nav mb-2 mb-lg-0 kcmh-nav-main">

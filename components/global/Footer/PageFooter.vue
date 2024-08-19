@@ -1,38 +1,62 @@
 <template>
   <footer id="kcmf" class="container-fluid" data-bs-theme="dark">
     <div class="container">
+
       <BsRow g="0" class="row-1">
         <!-- logo block -->
         <BsCol col="12" lg="4" class="text-center">
           <div class="mission-wrap">
-            <img src="~/assets/kcm-footer-logo.svg" width="273" height="124" />
+            <a href="https://www.kcm.org/">
+              <img src="~/assets/kcm-footer-logo.svg" width="273" height="124" />
+            </a>    
             <p class="mission">
               Kenneth Copeland Ministries' mission is to minister the Word of Faith, by teaching believers who they are
               in Christ Jesus; taking them from the milk of the Word to the meat, and from religion to reality.
             </p>
           </div>
         </BsCol>
+         <!-- logo block -->
+        
+        <!-- region dropdown mobile block -->
         <div class="text-center d-md-none">
           <FooterRegionSelect :selected-region-id="selectedRegionId" class="dropdown-region d-inline-flex mb-5" />
         </div>
+
+
+        <!-- nav columns -->
         <BsCol v-for="mainMenu in navItems" :key="mainMenu.title" col="6" lg="2">
           <h2>{{ mainMenu.title }}</h2>
           <ul>
             <li v-for="sub in mainMenu.links" :key="sub.text">
-              <a
+              <!-- <a
                 v-if="sub.text === 'Give'"
                 :href="sub.href"
                 :target="sub.target"
                 class="btn btn-sm btn-orange fw-bold d-lg-none d-inline-block btn-give"
+                >{{ sub.text }}</a
+              > -->
+              <a
+                v-if="sub.text === 'Give'"
+                :href="sub.href"
+                :target="sub.target"
+                class="btn btn-sm btn-orange fw-bold d-lg d-inline-block btn-give"
                 >{{ sub.text }}</a
               >
               <a v-else :href="sub.href" :target="sub.target">{{ sub.text }}</a>
             </li>
           </ul>
         </BsCol>
+        <!-- nav columns -->
+
       </BsRow>
+
+
+
+      <!-- row -->
       <BsHrRow class="d-none d-md-block" />
-      <BsRow class="row-2">
+
+
+      <BsRow class="row-2 g-md-4">
         <BsCol col="12" lg="4" class="order-md-1">
           <h2>Join the Conversation</h2>
           <ul class="social-list list-inline">
@@ -58,6 +82,7 @@
           </div>
         </BsCol>
       </BsRow>
+
       <BsRow>
         <BsCol class="text-center legal-nav">
           <ul class="list-inline">
@@ -69,6 +94,7 @@
           </ul>
         </BsCol>
       </BsRow>
+
       <BsRow class="page-bottom">
         <BsCol class="text-center">
           <p class="disclaim">
@@ -87,6 +113,7 @@
           <p>FINISH STRONG is a registered trademark owned by Finish Strong, LLC</p>
         </BsCol>
       </BsRow>
+
     </div>
   </footer>
 </template>
@@ -98,6 +125,7 @@ defineProps<{
   sourceParam?: string; // ?source=GW1FTFKFS?
   selectedRegionId?: "us" | "za" | "au" | "ca" | "uk" | "ua" | "es" | "pt";
 }>();
+
 const { footer: footerConfig } = useAppConfig();
 
 const { data: navItems } = useFetch("/api/menu-lookup/footer-menu");
@@ -144,6 +172,7 @@ const socialLinks = ref<SocialLink[]>([
 </script>
 
 <style lang="scss" scoped>
+
 footer {
   --bs-body-font-size: 0.875rem;
 
@@ -173,6 +202,12 @@ h2,
   .social-list.list-inline > li:not(:last-child) {
     margin-right: 5px;
   }
+
+
+
+
+
+
 }
 
 .row-1,

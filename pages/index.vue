@@ -78,9 +78,7 @@
 
 
 #BVOV{
-
   margin-top: 24px;
-
 }
 
 #Live-TV{
@@ -155,7 +153,7 @@
 #Give-Prayer-Partner{
 
   height: 903px;
-  margin-bottom: -150px;
+  margin-bottom: 0px;
   width: 100vw; 
   position: relative;
   left: 50%; 
@@ -163,7 +161,6 @@
   margin-left: -50vw; 
   margin-right: -50vw; 
   background-color: #212529;
-  
 }
 
 
@@ -211,6 +208,17 @@
   }
 
 
+  #Give-Prayer-Partner{
+
+      height: 325px;
+      margin-bottom: 120px;
+
+}
+
+
+}
+
+@media (min-width: 768px){
 
   #Free-TV{
     height: 187px;
@@ -278,23 +286,13 @@
   #Give-Prayer-Partner{
 
     height: 325px;
-    margin-bottom: -120px;
+    margin-bottom: 0px;
 
   }
 
-}
 
-/* 
-iPad Air, iPad Pro, and Surface Pro 7 */
-/* @media only screen and (min-device-width: 820px) and (max-device-width: 1366px),
-       only screen and (min-width: 912px) and (max-width: 1440px) {
-    .container {
-       padding-left: 1px;
-       padding-right: 1px;
-        max-width: 100%; 
-        margin: 0 auto; 
-    }
-} */
+
+}
 
 
 

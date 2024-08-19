@@ -35,7 +35,7 @@
         </div>
        
         <!-- search-box -->
-        <div id="kcm-header-search-box" class="col flex-grow-1">
+        <div id="kcm-header-search-box" class="col flex-grow-1 mt-1">
           <div id="deskSearchWrap">
             <form action="" autocomplete="off">
               <input id="search" name="search" type="text" placeholder="Site Search..." />
@@ -46,7 +46,7 @@
 
 
         
-        <!-- <div class="col-auto">
+        <div class="col-auto">
           <ul class="nav justify-content-end kcmh-nav-member">
             <li class="nav-item">
               <a class="nav-link" href="https://my.kcm.org/shoppingcart">
@@ -69,10 +69,10 @@
               </a>
             </li>
           </ul>
-        </div> -->
+        </div>
         
            
-        <div class="col-auto">
+        <!-- <div class="col-auto">
             <ul class="nav justify-content-end kcmh-nav-member">
                 <li class="nav-item"><a class="nav-link" href="#"><span class="position-relative"><i class="bi bi-cart-fill"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         99+
@@ -83,11 +83,14 @@
                 <li class="nav-item"><a class="nav-link" href="#">My Account</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Sign Out</a></li>
             </ul>
-        </div>
+        </div> -->
 
       </div>
     </div>
+    <!-- first-row -->
 
+
+    <!-- second-row -->
     <!-- <nav class="container-lg main-nav navbar navbar-expand-lg sticky-top"> -->
     <nav class="container main-nav navbar navbar-expand-lg sticky-top">
       <button
@@ -123,10 +126,10 @@
 
       <!-- <a href="#" class="mobile-give">Give</a> -->
       <!-- <a href="#" class="btn btn-sm btn-primary me-2" style="background-color:#f54d09;border-color:#f54d09;"><b>Give</b></a> -->
+      
       <button class="btn btn-sm btn-give d-lg-none">Give</button>
       <button type="button" class="btn-close" data-bs-toggle="collapse" data-bs-target="#kcm-header-main-nav" aria-label="Close"></button>
             
-
 
       <div class="container-fluid px-0">
         <div id="kcm-header-main-nav" class="collapse navbar-collapse justify-content-center">
@@ -169,6 +172,7 @@
 
       </div>
     </nav>
+     <!-- second-row -->
   </header>
 </template>
 
@@ -189,6 +193,7 @@ const { data: regions } = useRegionUrls();
 
 // Define navItems data
 const { data: navItems } = useFetch("/api/menu-lookup/header-menu");
+
 
 const ssoEmail = useSSOEmailCookie();
 const signInOrOutLink = computed(() => {

@@ -12,12 +12,14 @@
 
       <NuxtPage/>
     </main>
-
+<!-- 
     <div class="footer-wrapper">
       <PageFooter/>
-      <!-- <FooterPageFooter/> -->
+     
 
-    </div>
+    </div> -->
+
+    <FooterPageFooter/>
 
    
 
@@ -37,7 +39,7 @@
 } */
 
 
-
+/* 
 .footer-wrapper {
   width: 100vw; 
   position: relative;
@@ -46,8 +48,9 @@
   margin-left: -50vw; 
   margin-right: -50vw; 
   background-color: #212529;
+  margin-top: 0;
  
-}
+} */
 
 main {
   margin-top: 28px;

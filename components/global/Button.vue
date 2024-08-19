@@ -17,15 +17,12 @@ const props = defineProps({
 
 <style scoped>
 .custom-button {
-  /* display: inline-flex; */
-  /* align-items: center;
-  justify-content: center; */
+ 
   border: 1px solid;
   border-color: #999;
   border-radius: 4.8px;
   gap: 8px;
   height: 48px;
-
   padding: 8px 16px 8px 16px;
 
   font-family: var(--heading-h5-font-family);

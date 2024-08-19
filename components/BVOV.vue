@@ -227,7 +227,6 @@ function downloadShowNotes() {
 
   margin-top: 20px;
   margin-left: 0px;
-
   max-width: fit-content;
  
 }
@@ -257,13 +256,13 @@ function downloadShowNotes() {
   .text-wrapper-4{
         font-size: 13px;
 
- }
+   }
 
  .text-wrapper-5{
 
     font-size: 13px;
 
- }
+  }
 
 }
 

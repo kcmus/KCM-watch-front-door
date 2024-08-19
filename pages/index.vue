@@ -2,7 +2,7 @@
   
 
   
-  <div class="container px-3">
+  <div class="container">
 
 
       <section id="BVOV" >
@@ -151,7 +151,6 @@
 }
 
 #Give-Prayer-Partner{
-
   height: 903px;
   margin-bottom: 0px;
   width: 100vw; 
@@ -185,7 +184,6 @@
     margin-right: 24px ;
     margin-bottom: 19px;
  
-
   }
 
   #Live-TV, #ITV-Video {

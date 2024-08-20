@@ -142,6 +142,8 @@ const socialLinks = ref<SocialLink[]>([
     href: "https://www.facebook.com/CopelandNetwork",
     alt: "Facebook",
     iconClass: "icon-facebook3 text-white fs-4",
+   
+
   },
   {
     href: "https://x.com/CopelandNetwork",

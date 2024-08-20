@@ -18,22 +18,33 @@
 
         
         <!-- audio-icon -->
-        <div class="audio-icon" id="audioToggle" >
-          <img id="audioIcon" src="https://img.icons8.com/ios-filled/50/ffffff/speaker.png" alt="Audio Icon" @click="toggleAudio" />
+        <div class="audio-icon" id="audioToggle">
+            <i
+              :id="audioPlaying ? 'audioIcon' : 'audioIconMute'" 
+              :class="audioPlaying ? 'audio-icon-volume-low' : 'audio-icon-volume-mute2'" 
+              :alt="audioPlaying ? 'Audio Icon - Volume Low' : 'Audio Icon - Muted'" 
+              @click="toggleAudio" 
+            />
         </div>
         <!-- audio-icon -->
-        
+    
     </div>
 
     <p class="text-wrapper-6" @click="redirectToLiveTV" style="cursor: pointer;">Live TV VICTORY – Faith Teaching 24/7</p>
 
+ 
+  
   </div>
 
 </template>
 
 <script setup>
 
-import {onMounted } from 'vue';
+import {onMounted,ref } from 'vue';
+
+
+
+let audioPlaying = ref(false)
 
 
 function redirectToLiveTV() {
@@ -44,28 +55,19 @@ function redirectToLiveTV() {
 
 function toggleAudio() {
   const video = document.getElementById("video");
-  const audioIcon = document.getElementById("audioIcon");
+  
 
   video.muted = !video.muted;
 
-  audioIcon.src = video.muted
-    ? "https://img.icons8.com/ios-filled/50/ffffff/mute.png"
-    : "https://img.icons8.com/ios-filled/50/ffffff/speaker.png";
+  audioPlaying.value = video.muted
 }
-
-// function unmuteVideo() {
-//   const video = document.getElementById("video");
-//   video.muted = false;  
-// }
-
-
 
 onMounted(() => {
   const video = document.getElementById("video");
   const cover = document.getElementById("video-cover");
   cover.style.display = "none";  
   video.style.display = "block"; 
-  audioIcon.src =  "https://img.icons8.com/ios-filled/50/ffffff/mute.png"
+  audioPlaying.value = false;
  
   video.play(); 
 
@@ -88,14 +90,15 @@ onMounted(() => {
   margin: auto;
 }
 
-#video {
-  display: none;
-  width: 100%;
-  cursor: pointer;
-}
 
 .video-cover {
   position: relative;
+  cursor: pointer;
+}
+
+#video {
+  display: none;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -122,10 +125,8 @@ onMounted(() => {
 
 
 
-
-.audio-icon img {
-  width: 19.17px;
-  height: 14.4px;
+.audio-icon i {
+  color: white;
 }
 
 @media (min-width: 992px) and (max-width: 1120px) {

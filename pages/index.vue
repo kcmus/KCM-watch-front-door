@@ -10,7 +10,7 @@
       </section>
 
       <section id="Live-TV">
-        <LiveTV />
+        <LiveTV2 />
       </section>
 
       <section id="ITV-Video" >

@@ -240,11 +240,7 @@ function downloadShowNotes() {
   
   }
 
-  .text-wrapper-4{
-
-    margin-top: 15px;
-  }
-
+ 
 
 }
 
@@ -270,20 +266,6 @@ function downloadShowNotes() {
 
 
 
-@media (min-width: 992px) and (max-width: 1120px) {
-
-  .text-wrapper-4{
-      font-size: 13px;
-
-   }
-
- .text-wrapper-5{
-
-    font-size: 13px;
-
-  }
-
-}
 
 
 </style>

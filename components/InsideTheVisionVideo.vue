@@ -5,7 +5,7 @@
     <div id="Inside-the-vision-video" class="d-flex flex-column">
         <a class="mb-3"  @click="openITVPage" style="cursor: pointer;">
             <img 
-                :src="itv.image" 
+                :src="itv_current_week.image_url" 
                 alt="Inside the vision" 
                 class="img-fluid"
             >
@@ -15,7 +15,7 @@
            @click="openITVPage" 
            style="cursor: pointer;" 
         >
-         {{ itv.title }}
+         {{ itv_current_week.title }}
         </h5>
     </div>
 </template>
@@ -23,15 +23,13 @@
 
 <script setup>
 
-const itv = {
-   image:"/images/InsideTheVisionVideo.png",
-   title: 'Inside the Vision - How to GROW Your Vision',
-   link: 'https://www.insidethevision.org/',
-};
+
+
+const {data: itv_current_week} = useFetch("/api/InsideTheVisionVideo");
 
 
 function openITVPage() {
-  window.open(itv.link, '_blank');
+  window.open(itv_current_week.episode_url, '_blank');
 }
 
 </script>
@@ -62,7 +60,7 @@ img {
  
 
 
-/* @media (min-width: 992px) and (max-width: 1120px) {
+@media (min-width: 992px) and (max-width: 1120px) {
 
         .text-wrapper-7{
             font-size: 16px;
@@ -74,11 +72,11 @@ img {
             width: 580px;
         }
 
-} */
+}
 
 
 
-/* 
+
  @media (min-width: 992px){
 
 
@@ -90,6 +88,6 @@ img {
    
     }
 
-} */
+}
 
 </style>

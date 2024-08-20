@@ -21,7 +21,7 @@
         <FreeTVOffer />
       </section>
 
-      <section id="Recent-Videos">
+      <!-- <section id="Recent-Videos">
         <RecentVideos />
       </section>
 
@@ -55,7 +55,7 @@
 
       <section id="Give-Prayer-Partner">
         <CTA />
-      </section>
+      </section> -->
 
   </div>
 

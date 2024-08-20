@@ -2,14 +2,14 @@
     <div id="Live-TV-box" class="d-flex flex-column">
       <div class="video-container mb-3">
         <!-- video-cover -->
-        <div class="video-cover" id="video-cover">
+        <!-- <div class="video-cover" id="video-cover">
           <img src="/images/LiveTV.png" alt="Video Cover Image" class="img-fluid" style="cursor: pointer;" />
-        </div>
+        </div> -->
         <!-- video-cover -->
   
         <!-- video -->
         <video id="video" autoplay controls muted @click="redirectToLiveTV" >
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          <source :src="LiveTV.video_url"  :poster="LiveTV.poster_url"   type="video/mp4">
         </video>
         <!-- video -->
   
@@ -20,44 +20,60 @@
         <!-- audio-icon -->
       </div>
   
-      <p class="text-wrapper-6" @click="redirectToLiveTV" style="cursor: pointer;">Live TV VICTORY – Faith Teaching 24/7</p>
+      <p class="text-wrapper-6" @click="redirectToLiveTV" style="cursor: pointer;">{{ LiveTV.title }}</p>
     </div>
   </template>
-  
-  <script setup>
-  import { onMounted } from 'vue';
-  
-  function redirectToLiveTV() {
-    window.location.href = 'https://www.kcm.org/watch/tv-broadcast';
-  }
-  
 
-  function toggleAudio() {
+<script setup>
 
-    const video = document.getElementById("video");
-    const audioIcon = document.getElementById("audioIcon");
-  
-    video.muted = !video.muted;
-  
-    audioIcon.src = video.muted
-      ? "https://img.icons8.com/ios-filled/50/ffffff/mute.png"
-      : "https://img.icons8.com/ios-filled/50/ffffff/speaker.png";
-  }
-  
-  
-  
-  onMounted(() => {
-    const video = document.getElementById("video");
-    const cover = document.getElementById("video-cover");
-  
-    cover.style.display = "none";  
-    video.style.display = "block";  
+import { onMounted } from 'vue';
 
-    video.play();  
+const { data: LiveTV } = useFetch("/api/LiveTV");
+
+function redirectToLiveTV() {
+  window.location.href = LiveTV.redirect_url;
+}
+
+function toggleAudio() {
+  const video = document.getElementById("video");
+  const audioIcon = document.getElementById("audioIcon");
+
+  video.muted = !video.muted;
+
+
+  updateAudioIcon(video.muted, audioIcon);
+}
+
+function updateAudioIcon(isMuted, audioIcon) {
+  audioIcon.src = isMuted
+    ? "https://img.icons8.com/ios-filled/50/ffffff/mute.png"
+    : "https://img.icons8.com/ios-filled/50/ffffff/speaker.png";
+}
+
+onMounted(() => {
+  const video = document.getElementById("video");
+  const cover = document.getElementById("video-cover");
+  const audioIcon = document.getElementById("audioIcon");
+
+
+  // cover.style.display = "none";
+  // video.style.display = "block";
+
+  video.play().then(() => {
+   g
+    updateAudioIcon(video.muted, audioIcon);
   });
 
-  </script>
+  // Handle case where the user manually unmutes the video via controls
+  video.addEventListener('volumechange', () => {
+    updateAudioIcon(video.muted, audioIcon);
+  });
+});
+
+</script>
+
   
+ 
   <style>
   #Live-TV-box {
     align-items: center;
@@ -71,15 +87,15 @@
   }
   
   #video {
-    display: none;
+    display: block;
     width: 100%;
     cursor: pointer;
   }
   
-  .video-cover {
+  /* .video-cover {
     position: relative;
     cursor: pointer;
-  }
+  } */
   
   .text-wrapper-6 {
     color: #000000;

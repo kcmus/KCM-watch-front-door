@@ -3,8 +3,20 @@
 <template>
 
     <div id="Inside-the-vision-video" class="d-flex flex-column">
-        <a class="mb-3"   @click="openITVPage" style="cursor: pointer;"><img :src="itv.image" alt="Inside the vision" class="img-fluid"></a>
-        <h5 class="text-wrapper-7" @click="openITVPage">{{ itv.title }}</h5>
+        <a class="mb-3"  @click="openITVPage" style="cursor: pointer;">
+            <img 
+                :src="itv.image" 
+                alt="Inside the vision" 
+                class="img-fluid"
+            >
+        </a>
+        <h5 
+           class="text-wrapper-7" 
+           @click="openITVPage" 
+           style="cursor: pointer;" 
+        >
+         {{ itv.title }}
+        </h5>
     </div>
 </template>
 
@@ -31,9 +43,6 @@ function openITVPage() {
     align-items: center;
 }
    
- 
-
-
 .text-wrapper-7{
     color: #000000;
     font-family: var(--heading-h5-font-family);
@@ -45,6 +54,7 @@ function openITVPage() {
     line-height: var(--heading-h5-line-height);   
 } 
 
+
 img {
   max-width: 100%;
   height: auto;
@@ -52,7 +62,7 @@ img {
  
 
 
-@media (min-width: 992px) and (max-width: 1120px) {
+/* @media (min-width: 992px) and (max-width: 1120px) {
 
         .text-wrapper-7{
             font-size: 16px;
@@ -64,11 +74,11 @@ img {
             width: 580px;
         }
 
-}
+} */
 
 
 
-
+/* 
  @media (min-width: 992px){
 
 
@@ -80,6 +90,6 @@ img {
    
     }
 
-}
+} */
 
 </style>

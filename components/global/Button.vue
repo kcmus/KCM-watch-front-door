@@ -30,10 +30,10 @@ const props = defineProps({
   font-style: var(--heading-h5-font-style) !important;
   font-weight: 500;
   letter-spacing: var(--heading-h5-letter-spacing) !important;
-  line-height: 24px;
+   line-height: 24px;
    cursor: pointer;
    background-color: #ffffff00 !important;
- 
+
 }
 
 .custom-button:hover {
@@ -41,6 +41,18 @@ const props = defineProps({
   background-color: #f0f0f0;
   
 }
+
+@media (max-width: 768px){
+
+   .custom-button{
+      border: 1.8px solid;
+   }
+
+}
+
+
+
+
 
 
 

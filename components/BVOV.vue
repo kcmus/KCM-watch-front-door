@@ -17,26 +17,26 @@
 
             <a href="https://www.kcm.org/watch/tv-broadcast">
               <img
-              :src="todayBVOV.image"
-               alt="Today's BVOV Video"      
-               class="img-fluid main-video-img " 
-               height="263px"
-            />
-
+                :src="todayBVOV.image"
+                alt="Today's BVOV Video"      
+                class="img-fluid main-video-img " 
+                height="263px"
+              />
             </a>
          
             <div class="video-description mt-3">
               <p class="text-wrapper-2">Today: Prayer That Receives Answers from God</p>
               <p class="text-wrapper-3">
                 You may have faith and hope, but do you have Love? Watch Believer's Voice of Victory as Kenneth Copeland reveals how Love is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God can use His power on your behalf through the Holy Spirit!
-              </p>
-              
+              </p> 
             </div>
+            
           </div>
         </div>
   
         <!-- Right Side: Other BVOV Videos -->
         <div class="col-12 col-md-6" >
+
           <div class="other-videos ">
 
             <div class="row">              
@@ -53,7 +53,7 @@
                         </a>
                     </div>
 
-                    <div class="col-md-8" style="margin-left: -5px; margin-top: -2px;">                            
+                    <div class="col-md-8" id="other-videos-description">                            
                         <p class="mb-1 text-wrapper-4">{{ video.title }}</p>
                         <div class="text-wrapper-5" style="margin-top: 14px;">{{ video.date }}</div>
                     </div>
@@ -62,8 +62,6 @@
             </div>
 
             <div class="row" id="button-wrapper">
-
-                <!-- <button class="btn btn-primary" @click="downloadShowNotes">Download Show Notes</button> -->
                 <Button buttonText="Download Show Notes" @click="downloadShowNotes"/>
                
             </div>
@@ -131,7 +129,7 @@ function downloadShowNotes() {
 <style scoped>
 
 .video-description{
-  padding-left: 1px;
+  padding-left: 5px;
 }
 
 
@@ -227,8 +225,8 @@ function downloadShowNotes() {
 
   margin-top: 20px;
   margin-left: 0px;
-  max-width: fit-content;
- 
+
+  
 }
 
 
@@ -236,9 +234,9 @@ function downloadShowNotes() {
 @media (max-width: 768px){
 
   #button-wrapper{
- 
-   width: 100%;
-   margin: 20px auto;
+    
+    width:65%;
+    margin: 15px auto;
   
   }
 
@@ -247,14 +245,35 @@ function downloadShowNotes() {
     margin-top: 15px;
   }
 
+
 }
+
+
+@media (min-width:768px){
+
+  #other-videos-description{
+    margin-left: -5px; 
+    margin-top: -3px;
+
+  }
+
+  #button-wrapper{
+
+    max-width: fit-content;
+
+}
+
+
+}
+
+
 
 
 
 @media (min-width: 992px) and (max-width: 1120px) {
 
   .text-wrapper-4{
-        font-size: 13px;
+      font-size: 13px;
 
    }
 

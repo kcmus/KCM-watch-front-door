@@ -56,7 +56,6 @@ export default defineEventHandler(async (event) => {
           start: "05/25/1999",
           stop: "05/27/1998",
         },
-        // image: "/images/FreeTVOffer.png",
         image: {
           src: "/images/FreeTVOffer.png",
           alt: "title",

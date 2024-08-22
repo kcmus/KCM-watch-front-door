@@ -30,8 +30,10 @@ import { onMounted } from 'vue';
 
 const { data: LiveTV } = useFetch("/api/LiveTV");
 
+const redirect_url = computed(() => LiveTV.value?.redirect_url)
+
 function redirectToLiveTV() {
-  window.location.href = LiveTV.redirect_url;
+  window.location.href = redirect_url.value;
 }
 
 function toggleAudio() {

@@ -27,9 +27,12 @@
 
 const {data: itv_current_week} = await useFetch("/api/InsideTheVisionVideo");
 
+const episode_url = computed(()=> itv_current_week.value?.episode_url);
+
+
 
 function openITVPage() {
-  window.open(itv_current_week.episode_url, '_blank');
+  window.open(episode_url.value, '_blank');
 }
 
 </script>

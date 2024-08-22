@@ -74,7 +74,7 @@ onMounted(() => {
 
   
  
-  <style>
+<style scoped>
   #Live-TV-box {
     align-items: center;
   }

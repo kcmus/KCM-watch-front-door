@@ -5,7 +5,7 @@
       <!-- Titles -->
       <div class="row d-flex flex-column align-items-start title" style="gap: 12px;">
         <div class="text-wrapper-1">BVOV This Week</div>
-        <p class="p">The Manifestations of the Holy Spirit and Prayer</p>
+        <p class="p">{{BVOV_Series.title}}</p>
       </div>
 
       <!-- main-content -->
@@ -17,7 +17,7 @@
 
             <a href="https://www.kcm.org/watch/tv-broadcast">
               <img
-                :src="todayBVOV.image"
+                src= "/images/BVOV-today.png"
                 alt="Today's BVOV Video"      
                 class="img-fluid main-video-img " 
                 height="263px"
@@ -25,9 +25,13 @@
             </a>
          
             <div class="video-description mt-3">
-              <p class="text-wrapper-2">Today: Prayer That Receives Answers from God</p>
+              <p class="text-wrapper-2">Today: {{todayVideo.title }} </p>
+
               <p class="text-wrapper-3">
-                You may have faith and hope, but do you have Love? Watch Believer's Voice of Victory as Kenneth Copeland reveals how Love is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God can use His power on your behalf through the Holy Spirit!
+                {{todayVideo.summary }}
+
+                <!-- You may have faith and hope, but do you have Love? Watch Believer's Voice of Victory as Kenneth Copeland reveals how Love is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God can use His power on your behalf through the Holy Spirit! -->
+  
               </p> 
             </div>
             
@@ -40,13 +44,13 @@
           <div class="other-videos ">
 
             <div class="row">              
-              <div class="col-6 col-md-12 mb-3" v-for="(video, index) in  otherBVOVs " :key="index">
+              <div class="col-6 col-md-12 mb-3" v-for="(video, index) in  otherVideos " :key="index">
                 <div class="row">
                     <div class="col-md-4">
 
                         <a href="https://www.kcm.org/watch/tv-broadcast">
                             <img
-                                :src="video.image"
+                                :src= "video.video.video_preview "
                                 :alt="video.title"
                                 class="img-fluid"
                             />
@@ -55,15 +59,15 @@
 
                     <div class="col-md-8" id="other-videos-description">                            
                         <p class="mb-1 text-wrapper-4">{{ video.title }}</p>
-                        <div class="text-wrapper-5" style="margin-top: 14px;">{{ video.date }}</div>
+                        <div class="text-wrapper-5" style="margin-top: 14px;">{{formatDate(video.air_date) }}</div>
                     </div>
                 </div>              
               </div>
             </div>
 
             <div class="row" id="button-wrapper">
-                <Button buttonText="Download Show Notes" @click="downloadShowNotes"/>
-               
+                <Button buttonText="Download Show Notes" @click="downloadShowNotes()"/>
+       
             </div>
 
           </div>
@@ -74,54 +78,22 @@
   
   <script setup>
 import Button from './global/Button.vue';
+import formatDate from '~/utils/formatDateUtils';
+
+
+const {data: BVOV_Series} =  useFetch("/api/BVOV");
+
+
+const todayVideo = computed(() => BVOV_Series.value?.todayVideo);
+const otherVideos = computed(() => BVOV_Series.value?.otherVideos);
+const downloadsUrl = computed(() => BVOV_Series.value?.downloadsNotesUrl);
 
 
 
-const todayBVOV = {
-  image: '/images/BVOV-today.png',
-  title: 'Today: Prayer That Receives Answers from God',
-  description: `You may have faith and hope, but do you have Love?
-                Watch Believer’s Voice of Victory as Kenneth Copeland reveals how Love
-                is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God
-                can use His power on your behalf through the Holy Spirit.`,
-  link: 'https://www.kcm.org/watch/tv-broadcast',
-};
-
-
-const otherBVOVs = [
-  {
-    image: '/images/BVOV-1.png',
-    title: 'How to Access the Power of God Through Prayer',
-    date: 'Monday March 18, 2024',
-    link: 'https://www.kcm.org/watch/tv-broadcast',
-  },
-  {
-    image: '/images/BVOV-1.png',
-    title: 'How to Access the Power of God Through Prayer',
-    date: 'Monday March 18, 2024',
-    link: 'https://www.kcm.org/watch/tv-broadcast',
-  },
-  {
-    image: '/images/BVOV-1.png',
-    title: 'How to Access the Power of God Through Prayer',
-    date: 'Monday March 18, 2024',
-    link: 'https://www.kcm.org/watch/tv-broadcast',
-  },
-  {
-    image: '/images/BVOV-1.png',
-    title: 'How to Access the Power of God Through Prayer',
-    date: 'Monday March 18, 2024',
-    link: 'https://www.kcm.org/watch/tv-broadcast',
-  }
-];
 
 function downloadShowNotes() {
-  window.location.href = 'path-to-download-notes'; 
+  window.location.href = downloadsUrl.value; 
 }
-
-// function openBVOVVideo(link) {
-//   window.open(link, '_blank');
-// }
 
 </script>
 
@@ -261,12 +233,6 @@ function downloadShowNotes() {
 
 
 }
-
-
-
-
-
-
 
 </style>
 

@@ -42,7 +42,7 @@ export default defineEventHandler(async (event) => {
     return formatMenuResults(results.header.content);
   }
 
-  console.warn("faking API call to ", url);
+  // console.warn("faking API call to ", url);
 
   const results: HeaderMenuLookupResult = {
     "header": {

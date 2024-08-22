@@ -25,7 +25,7 @@
 
 
 
-const {data: itv_current_week} = useFetch("/api/InsideTheVisionVideo");
+const {data: itv_current_week} = await useFetch("/api/InsideTheVisionVideo");
 
 
 function openITVPage() {

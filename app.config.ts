@@ -14,5 +14,8 @@ export default defineAppConfig({
   footer: {
     subscribeUrl: `/read/faith-to-faith/subscribe`,
   },
-
+  fakeBVOVFetch: true,
+  fakeITVFetch: true,
+  fakeLiveTVFetch: true,
+  fakeTVOfferFetch: true,
 });

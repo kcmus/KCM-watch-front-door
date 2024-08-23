@@ -1,82 +1,128 @@
 <template>
-    <div id="bvov-container">
+  <div id="bvov-container">
+    <!-- Titles -->
+    <div class="row d-flex flex-column align-items-start title" style="gap: 12px;">
+      <div class="text-wrapper-1">BVOV This Week</div>
+      <p class="p">{{ BVOV_Series.value?.content.title }}</p>
+    </div>
 
-
-      <!-- Titles -->
-      <div class="row d-flex flex-column align-items-start title" style="gap: 12px;">
-        <div class="text-wrapper-1">BVOV This Week</div>
-        <p class="p">{{BVOV_Series.title}}</p>
-      </div>
-
-      <!-- main-content -->
-      <div class="row gutters">
-
-        <!-- Left Side: Main Video -->
-        <div class="col-12 col-md-6 mb-3">
-          <div class="main-video">
-
-            <a href="https://www.kcm.org/watch/tv-broadcast">
-              <img
-                src= "/images/BVOV-today.png"
-                alt="Today's BVOV Video"      
-                class="img-fluid main-video-img " 
-                height="263px"
-              />
-            </a>
-         
-            <div class="video-description mt-3">
-              <p class="text-wrapper-2">Today: {{todayVideo.title }} </p>
-
-              <p class="text-wrapper-3">
-                {{todayVideo.summary }}
-
-                <!-- You may have faith and hope, but do you have Love? Watch Believer's Voice of Victory as Kenneth Copeland reveals how Love is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God can use His power on your behalf through the Holy Spirit! -->
-  
-              </p> 
-            </div>
-            
+    <!-- main-content -->
+    <div class="row gutters">
+      <!-- Left Side: Main Video -->
+      <div class="col-12 col-md-6 mb-3">
+        <div class="main-video" v-if="todayVideo">
+          <a href="https://www.kcm.org/watch/tv-broadcast">
+            <img
+              src="/images/BVOV-today.png"
+              alt="Today's BVOV Video"
+              class="img-fluid main-video-img"
+              height="263px"
+            />
+          </a>
+          <div class="video-description mt-3">
+            <p class="text-wrapper-2">Today: {{ todayVideo.title }}</p>
+            <p class="text-wrapper-3">{{ todayVideo.summary }}</p>
           </div>
         </div>
-  
-        <!-- Right Side: Other BVOV Videos -->
-        <div class="col-12 col-md-6" >
+      </div>
 
-          <div class="other-videos ">
-
-            <div class="row">              
-              <div class="col-6 col-md-12 mb-3" v-for="(video, index) in  otherVideos " :key="index">
-                <div class="row">
-                    <div class="col-md-4">
-
-                        <a href="https://www.kcm.org/watch/tv-broadcast">
-                            <img
-                                :src= "video.video.video_preview "
-                                :alt="video.title"
-                                class="img-fluid"
-                            />
-                        </a>
-                    </div>
-
-                    <div class="col-md-8" id="other-videos-description">                            
-                        <p class="mb-1 text-wrapper-4">{{ video.title }}</p>
-                        <div class="text-wrapper-5" style="margin-top: 14px;">{{formatDate(video.air_date) }}</div>
-                    </div>
-                </div>              
+      <!-- Right Side: Other BVOV Videos -->
+      <div class="col-12 col-md-6">
+        <div class="other-videos">
+          <div class="row">
+            <div
+              class="col-6 col-md-12 mb-3"
+              v-for="(video, index) in otherVideos"
+              :key="index"
+            >
+              <div class="row">
+                <div class="col-md-4">
+                  <a href="https://www.kcm.org/watch/tv-broadcast">
+                    <img
+                      :src="video.video.video_preview"
+                      :alt="video.title"
+                      class="img-fluid"
+                    />
+                  </a>
+                </div>
+                <div class="col-md-8" id="other-videos-description">
+                  <p class="mb-1 text-wrapper-4">{{ video.title }}</p>
+                  <div class="text-wrapper-5" style="margin-top: 14px;">
+                    {{ formatDate(video.air_date) }}
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div class="row" id="button-wrapper">
-                <Button buttonText="Download Show Notes" @click="downloadShowNotes()"/>
-       
-            </div>
-
+          </div>
+          <div class="row" id="button-wrapper">
+            <Button buttonText="Download Show Notes" @click="downloadShowNotes" />
           </div>
         </div>
       </div>
     </div>
-  </template>
-  
-  <script setup>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, watchEffect } from 'vue';
+import Button from './global/Button.vue';
+import formatDate from '~/utils/formatDateUtils';
+
+// Fetch the BVOV series data from the API
+const { data: BVOV_Series } = useFetch("/api/BVOV2");
+
+// Function to parse date strings to Date objects in UTC
+const parseDateUTC = (date: string): Date => {
+  return new Date(date);  // Date constructor handles UTC automatically if the string ends with "Z" or contains a timezone offset.
+};
+
+// Function to get today's video and other videos based on the user's local time zone
+const getVideoSeries = (BVOVData: BVOV_Series["bvov_current_week"]["content"]) => {
+  const currentDate = new Date();  // the user's local time zone
+  const currentDay = currentDate.getDay();
+
+  let todayVideo: TodayVideo = null;
+  const otherVideos: OtherVideos = [];
+
+  BVOVData?.items?.forEach((video) => {
+    const videoDate = parseDateUTC(video.air_date);  // Parse the UTC date
+    const isFridayVideo = videoDate.getUTCDay() === 5;  // Compare in UTC
+
+    // Adjust for user's local time zone
+    if ((currentDay === 6 || currentDay === 0) && isFridayVideo) {
+      todayVideo = { ...video };
+    } else if (currentDay !== 6 && currentDay !== 0 && currentDate.toDateString() === videoDate.toDateString()) {
+      todayVideo = { ...video };
+    } else {
+      otherVideos.push({ ...video });
+    }
+  });
+
+  return {
+    todayVideo,
+    otherVideos,
+  };
+};
+
+const todayVideo = ref<TodayVideo | null>(null);
+const otherVideos = ref<OtherVideos>([]);
+
+watchEffect(() => {
+  if (BVOV_Series.value?.content?.items) {
+    const { todayVideo: tv, otherVideos: ov } = getVideoSeries(BVOV_Series.value.content);
+    todayVideo.value = tv;
+    otherVideos.value = ov;
+  }
+});
+
+function downloadShowNotes() {
+  window.location.href = BVOV_Series.value?.content?.downloads[0].url; 
+}
+</script>
+
+
+
+  <!-- <script setup>
 import Button from './global/Button.vue';
 import formatDate from '~/utils/formatDateUtils';
 
@@ -96,6 +142,8 @@ function downloadShowNotes() {
 }
 
 </script>
+ -->
+
 
 
 <style scoped>

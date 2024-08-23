@@ -125,48 +125,14 @@ const getDownloadsUrl = (BVOVData: BVOV_Series): string => {
   return BVOVData.bvov_current_week.content.downloads[0].url;
 };
 
-// Function to get today's video and otherVideos
-const getVideoSeries = (content: BVOV_Series["bvov_current_week"]["content"]) => {
 
-    const currentDate = new Date();
-  
-  
-    const currentDay = currentDate.getDay();
-    
-    let todayVideo: TodayVideo = null;
-    const otherVideos: OtherVideos = [];
-  
-    content.items.forEach((video) => {
-  
-      const videoDate = parseDate(video.air_date);
-      const isFridayVideo = videoDate.getDay() === 5;
-  
-      
-      if ((currentDay === 6 || currentDay === 0) && isFridayVideo) {
-        // todayVideo = { ...video, video_url: video.video.vimeo || video.video.youtube, image_url: video.video.video_preview };
-        todayVideo = { ...video};
-      } else if (currentDay !== 6 && currentDay !== 0 && currentDate.toDateString() === videoDate.toDateString()) {
-        todayVideo = { ...video};        
-      } else{
-        otherVideos.push({ ...video});
-      }
-    });
-    
-  
-    return {
-      todayVideo:todayVideo,
-      otherVideos:otherVideos,
-    };
-
- 
-};
 
 // Function to format and filter BVOV results
 const formatBVOVResults = (BVOVData: BVOV_Series) => {
 
   const downloadsNotesUrl = getDownloadsUrl(BVOVData);
   const { content } = BVOVData.bvov_current_week;
-  const { todayVideo, otherVideos } = getVideoSeries(content);
+//   const { todayVideo, otherVideos } = getVideoSeries(content);
 
   
   return {
@@ -176,8 +142,7 @@ const formatBVOVResults = (BVOVData: BVOV_Series) => {
     summary: content.summary,
     air_dates: content.air_dates,
     downloads: content.downloads,
-    todayVideo:todayVideo,
-    otherVideos:otherVideos,
+    items: content.items,
     downloadsNotesUrl:downloadsNotesUrl,
   };
 

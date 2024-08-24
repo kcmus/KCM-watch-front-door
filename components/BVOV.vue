@@ -3,25 +3,25 @@
     <!-- Titles -->
     <div class="row d-flex flex-column align-items-start title" style="gap: 12px;">
       <div class="text-wrapper-1">BVOV This Week</div>
-      <p class="p">{{ BVOV_Series.value?.content.title }}</p>
+      <p class="p">{{ }}</p>
     </div>
 
     <!-- main-content -->
     <div class="row gutters">
       <!-- Left Side: Main Video -->
-      <div class="col-12 col-md-6 mb-3">
-        <div class="main-video" v-if="todayVideo">
+      <div class="col-12 col-md-6 mb-3" v-if="todayVideo">
+        <div class="main-video">
           <a href="https://www.kcm.org/watch/tv-broadcast">
             <img
-              src="/images/BVOV-today.png"
-              alt="Today's BVOV Video"
+              :src="todayVideo.video.video_preview"
+              alt="Today's BVOV Video" 
               class="img-fluid main-video-img"
               height="263px"
             />
           </a>
           <div class="video-description mt-3">
-            <p class="text-wrapper-2">Today: {{ todayVideo.title }}</p>
-            <p class="text-wrapper-3">{{ todayVideo.summary }}</p>
+            <p class="text-wrapper-2">Today: {{todayVideo.title}}</p>
+            <p class="text-wrapper-3">{{todayVideo.summary }}</p>
           </div>
         </div>
       </div>
@@ -63,28 +63,31 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup  lang = "ts">
 import { ref, watchEffect } from 'vue';
 import Button from './global/Button.vue';
 import formatDate from '~/utils/formatDateUtils';
+import type { BVOV_Results, BVOVItem, OtherVideos, TodayVideo } from '~/server/api/BVOV';
 
-// Fetch the BVOV series data from the API
-const { data: BVOV_Series } = useFetch("/api/BVOV2");
+
+// Fetch the BVOV data from the API
+const { data: BVOV_Data } = useFetch<BVOV_Results>("/api/BVOV");
 
 // Function to parse date strings to Date objects in UTC
-const parseDateUTC = (date: string): Date => {
+const parseDateUTC = (date: string) : Date => {
   return new Date(date);  // Date constructor handles UTC automatically if the string ends with "Z" or contains a timezone offset.
 };
 
+
 // Function to get today's video and other videos based on the user's local time zone
-const getVideoSeries = (BVOVData: BVOV_Series["bvov_current_week"]["content"]) => {
+const getVideoSeries = (BVOVData:BVOV_Results) => {
   const currentDate = new Date();  // the user's local time zone
-  const currentDay = currentDate.getDay();
+  const currentDay = currentDate.getDay(); // the user's current day
 
-  let todayVideo: TodayVideo = null;
-  const otherVideos: OtherVideos = [];
+  let todayVideo : TodayVideo = null;
+  let otherVideos : OtherVideos = [];
 
-  BVOVData?.items?.forEach((video) => {
+  BVOVData?.items?.forEach((video : BVOVItem) => {
     const videoDate = parseDateUTC(video.air_date);  // Parse the UTC date
     const isFridayVideo = videoDate.getUTCDay() === 5;  // Compare in UTC
 
@@ -104,46 +107,28 @@ const getVideoSeries = (BVOVData: BVOV_Series["bvov_current_week"]["content"]) =
   };
 };
 
-const todayVideo = ref<TodayVideo | null>(null);
+
+let todayVideo = ref<TodayVideo>(null);
 const otherVideos = ref<OtherVideos>([]);
 
+// Watch for changes in BVOV_Data and update todayVideo and otherVideos accordingly
 watchEffect(() => {
-  if (BVOV_Series.value?.content?.items) {
-    const { todayVideo: tv, otherVideos: ov } = getVideoSeries(BVOV_Series.value.content);
+  if (BVOV_Data.value) {
+    const { todayVideo: tv, otherVideos: ov } = getVideoSeries(BVOV_Data.value);
     todayVideo.value = tv;
     otherVideos.value = ov;
   }
 });
 
+// Function to download show notes
 function downloadShowNotes() {
-  window.location.href = BVOV_Series.value?.content?.downloads[0].url; 
-}
-</script>
-
-
-
-  <!-- <script setup>
-import Button from './global/Button.vue';
-import formatDate from '~/utils/formatDateUtils';
-
-
-const {data: BVOV_Series} =  useFetch("/api/BVOV");
-
-
-const todayVideo = computed(() => BVOV_Series.value?.todayVideo);
-const otherVideos = computed(() => BVOV_Series.value?.otherVideos);
-const downloadsUrl = computed(() => BVOV_Series.value?.downloadsNotesUrl);
-
-
-
-
-function downloadShowNotes() {
-  window.location.href = downloadsUrl.value; 
+  if (BVOV_Data.value?.downloadsNotesUrl) {
+    window.location.href = BVOV_Data.value.downloadsNotesUrl;
+  }
 }
 
-</script>
- -->
 
+</script>
 
 
 <style scoped>

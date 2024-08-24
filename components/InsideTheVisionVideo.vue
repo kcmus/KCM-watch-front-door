@@ -1,34 +1,39 @@
 
-
 <template>
-
     <div id="Inside-the-vision-video" class="d-flex flex-column">
-        <a class="mb-3"  @click="openITVPage" style="cursor: pointer;">
+        <a 
+           class="mb-3"  
+           @click="openITVPage"
+           style="cursor: pointer;"
+        >
             <img 
-                :src="itv_current_week.image_url" 
+                :src="image_url" 
                 alt="Inside the vision" 
-                class="img-fluid"
+                class="img-fluid"     
             >
         </a>
+
         <h5 
            class="text-wrapper-7" 
            @click="openITVPage" 
            style="cursor: pointer;" 
         >
-         {{ itv_current_week.title }}
+         {{ title }}
         </h5>
     </div>
 </template>
 
 
-<script setup>
+<script setup lang="ts">
+import type { ITV_Data } from '~/server/api/InsideTheVisionVideo';
 
 
+const {data: itv_current_week} = useFetch<ITV_Data>("/api/InsideTheVisionVideo");
 
-const {data: itv_current_week} = await useFetch("/api/InsideTheVisionVideo");
 
+const title = computed(() => itv_current_week.value?.title);
+const image_url = computed(() => itv_current_week.value?.image_url);
 const episode_url = computed(()=> itv_current_week.value?.episode_url);
-
 
 
 function openITVPage() {
@@ -37,8 +42,8 @@ function openITVPage() {
 
 </script>
 
-<style scoped>
 
+<style scoped>
 
 #Inside-the-vision-video{
     align-items: center;
@@ -49,8 +54,7 @@ function openITVPage() {
     font-family: var(--heading-h5-font-family);
     font-size: var(--heading-h5-font-size);
     font-style: var(--heading-h5-font-style);
-    font-weight: var(--heading-h5-font-weight);
-    
+    font-weight: var(--heading-h5-font-weight);  
     letter-spacing: var(--heading-h5-letter-spacing);
     line-height: var(--heading-h5-line-height);   
 } 
@@ -61,34 +65,22 @@ img {
   height: auto;
 }
  
-
-
 @media (min-width: 992px) and (max-width: 1120px) {
-
         .text-wrapper-7{
             font-size: 16px;
-
         }
 
         img{
-
             width: 580px;
         }
-
 }
-
-
-
 
  @media (min-width: 992px){
 
-
     #Inside-the-vision-video{
-    
      
-     align-items: normal;
+       align-items: normal;
     
-   
     }
 
 }

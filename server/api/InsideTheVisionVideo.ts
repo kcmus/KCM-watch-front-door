@@ -17,6 +17,9 @@ export type ITV_Episode = Readonly<{
 }>
 
 
+export type ITV_Data = ITV_Episode['itv_current_week']['content'];
+
+
 
 const getUrl = (api2Url: string, api2Token: string) => {
 
@@ -47,17 +50,12 @@ export default defineEventHandler(async (event) => {
 
         return formatITVResults(results);
 
-
     }
 
 
-    console.warn("faking ITV API call to", url);
-
-  
-    
+    console.warn("faking ITV API call to", url);  
 
     const results: ITV_Episode = {
-
 
         "itv_current_week" : {
 
@@ -65,7 +63,7 @@ export default defineEventHandler(async (event) => {
             "error" : null,
             "content" : {
 
-                "title" : "Inside the Vision - How to GROW Your Vision",
+               "title" : "Inside the Vision - How to GROW Your Vision",
                 "weight": 0,
                 "image_url": "/images/InsideTheVisionVideo.png",
                 "episode_url": "https://www.insidethevision.org/",
@@ -75,8 +73,6 @@ export default defineEventHandler(async (event) => {
 
     }
 
-    // console.log(formatITVResults(results));
-    
 
     return formatITVResults(results);
 })

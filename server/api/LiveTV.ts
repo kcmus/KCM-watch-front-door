@@ -17,6 +17,9 @@ export type LiveTV_Victory = Readonly<{
 }>;
 
 
+export type LiveTV_Data = LiveTV_Victory['liveTV']['content'];
+
+
 
 const getUrl = (api2Url: string, api2Token: string) => {
 

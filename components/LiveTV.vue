@@ -1,103 +1,106 @@
 <template>
     <div id="Live-TV-box" class="d-flex flex-column">
       <div class="video-container mb-3">
-        <!-- video-cover -->
-        <!-- <div class="video-cover" id="video-cover">
-          <img src="/images/LiveTV.png" alt="Video Cover Image" class="img-fluid" style="cursor: pointer;" />
-        </div> -->
-        <!-- video-cover -->
-  
         <!-- video -->
-        <video id="video" autoplay controls muted @click="redirectToLiveTV" >
-          <source :src="LiveTV.video_url"  :poster="LiveTV.poster_url"   type="video/mp4">
-        </video>
+        <video
+          ref="videoElement"
+          :src="video_url"
+          :poster="poster_url"
+          autoplay
+          controls
+          :muted="isMuted"
+          @click="redirectToLiveTV"
+          @volumechange="handleVolumeChange"
+        />
         <!-- video -->
   
         <!-- audio-icon -->
-        <div class="audio-icon" id="audioToggle">
-          <img id="audioIcon" src="https://img.icons8.com/ios-filled/50/ffffff/mute.png" alt="Audio Icon" @click="toggleAudio" />
+        <div class="audio-icon" @click="toggleAudio">
+          <img :src="audioIconSrc" alt="Audio Icon" />
         </div>
         <!-- audio-icon -->
       </div>
   
-      <p class="text-wrapper-6" @click="redirectToLiveTV" style="cursor: pointer;">{{ LiveTV.title }}</p>
+      <p class="text-wrapper-6" @click="redirectToLiveTV" style="cursor: pointer;">
+        {{ title }}
+      </p>
     </div>
   </template>
-
-<script setup>
-
-import { onMounted } from 'vue';
-
-const { data: LiveTV } = useFetch("/api/LiveTV");
-
-const redirect_url = computed(() => LiveTV.value?.redirect_url)
-
-function redirectToLiveTV() {
-  window.location.href = redirect_url.value;
-}
-
-function toggleAudio() {
-  const video = document.getElementById("video");
-  const audioIcon = document.getElementById("audioIcon");
-
-  video.muted = !video.muted;
-
-
-  updateAudioIcon(video.muted, audioIcon);
-}
-
-function updateAudioIcon(isMuted, audioIcon) {
-  audioIcon.src = isMuted
-    ? "https://img.icons8.com/ios-filled/50/ffffff/mute.png"
-    : "https://img.icons8.com/ios-filled/50/ffffff/speaker.png";
-}
-
-onMounted(() => {
-  const video = document.getElementById("video");
-  const cover = document.getElementById("video-cover");
-  const audioIcon = document.getElementById("audioIcon");
-
-
-  // cover.style.display = "none";
-  // video.style.display = "block";
-
-  video.play().then(() => {
-   g
-    updateAudioIcon(video.muted, audioIcon);
-  });
-
-  // Handle case where the user manually unmutes the video via controls
-  video.addEventListener('volumechange', () => {
-    updateAudioIcon(video.muted, audioIcon);
-  });
-});
-
-</script>
-
   
- 
-<style scoped>
+  <script setup lang="ts">
+  import { ref, computed, onMounted } from 'vue';
+  import type { LiveTV_Data } from '~/server/api/LiveTV.js';
+  
+  // Fetch LiveTV data from the API
+  const { data: LiveTV } = useFetch<LiveTV_Data>('/api/LiveTV');
+  
+  // Reactive properties to access LiveTV data
+  const title = computed(() => LiveTV.value?.title || '');
+  const video_url = computed(() => LiveTV.value?.video_url || '');
+  const poster_url = computed(() => LiveTV.value?.poster_url || '');
+  const redirect_url = computed(() => LiveTV.value?.redirect_url || '');
+  
+  // Ref to the video element
+  const videoElement = ref<HTMLVideoElement | null>(null);
+  
+  // Reactive property to manage audio state
+  const isMuted = ref(true);
+  
+  // Computed property for audio icon source
+  const audioIconSrc = computed(() =>
+    isMuted.value
+      ? 'https://img.icons8.com/ios-filled/50/ffffff/mute.png'
+      : 'https://img.icons8.com/ios-filled/50/ffffff/speaker.png'
+  );
+  
+  // Function to redirect to the live TV URL
+  function redirectToLiveTV() {
+    if (redirect_url.value) {
+      window.location.href = redirect_url.value;
+    }
+  }
+  
+  // Function to toggle audio mute/unmute
+  function toggleAudio() {
+    if (videoElement.value) {
+      isMuted.value = !isMuted.value;
+      videoElement.value.muted = isMuted.value;
+    }
+  }
+  
+  // Function to handle volume change
+  function handleVolumeChange() {
+    if (videoElement.value) {
+      isMuted.value = videoElement.value.muted;
+    }
+  }
+  
+  onMounted(() => {
+    // Set the initial mute state based on the video element
+    if (videoElement.value) {
+      isMuted.value = videoElement.value.muted;
+    }
+  });
+  </script>
+  
+  <style scoped>
   #Live-TV-box {
     align-items: center;
+
   }
   
   .video-container {
     position: relative;
     width: 100%;
-    max-width: 640px; 
+    max-width: 640px;
     margin: auto;
   }
   
-  #video {
+  video {
     display: block;
     width: 100%;
     cursor: pointer;
   }
-  
-  /* .video-cover {
-    position: relative;
-    cursor: pointer;
-  } */
   
   .text-wrapper-6 {
     color: #000000;
@@ -113,7 +116,7 @@ onMounted(() => {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color:  #212529;
+    background-color: #212529;
     padding: 2px;
     border-radius: 10%;
     cursor: pointer;
@@ -123,8 +126,6 @@ onMounted(() => {
     width: 19.17px;
     height: 14.4px;
   }
-
-  
   
   @media (min-width: 992px) and (max-width: 1120px) {
     .text-wrapper-6 {

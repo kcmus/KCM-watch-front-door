@@ -193,7 +193,8 @@ function downloadShowNotes() {
   font-style: var(--body-small-font-style);
   font-weight: var(--body-small-font-weight);
   letter-spacing: var(--body-small-letter-spacing);
-  line-height: var(--body-small-line-height);
+  /* line-height: var(--body-small-line-height); */
+  line-height: 21px;
 
 
 }

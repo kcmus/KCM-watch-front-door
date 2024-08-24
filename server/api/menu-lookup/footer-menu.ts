@@ -51,7 +51,7 @@ export default defineEventHandler(async (event) => {
     return formatMenuResults(results.footer.content);
   }
 
-  // console.warn("faking API call to ", url);
+  console.warn("faking Footer API call to ", url);
 
   const results: FooterMenuLookupResult = {
     "footer": {

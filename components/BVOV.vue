@@ -3,7 +3,7 @@
     <!-- Titles -->
     <div class="row d-flex flex-column align-items-start title" style="gap: 12px;">
       <div class="text-wrapper-1">BVOV This Week</div>
-      <p class="p">{{ }}</p>
+      <p class="p">{{BVOV_Data.title}}</p>
     </div>
     <!-- Titles -->
 

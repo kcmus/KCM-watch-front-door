@@ -77,7 +77,7 @@
 }
 
 #Free-TV {
-  height: 324px;
+ 
   margin-bottom: 36px;
 }
 
@@ -182,8 +182,8 @@
 }
 
 @media (min-width: 768px) {
+
   #Free-TV {
-    height: 187px;
     margin-bottom: 60px;
   }
 

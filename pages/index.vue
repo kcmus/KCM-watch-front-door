@@ -1,29 +1,24 @@
 <template>
-  
-
-  
   <div class="container">
+    <section id="BVOV">
+      <BVOV />
+    </section>
 
+    <section id="Live-TV">
+      <LiveTV />
+    </section>
 
-      <section id="BVOV" >
-        <BVOV />
-      </section>
+    <section id="ITV-Video">
+      <InsideTheVisionVideo />
+    </section>
 
-      <section id="Live-TV">
-        <LiveTV />
-      </section>
+    <section id="Free-TV">
+      <FreeTVOffer />
+    </section>
 
-      <section id="ITV-Video" >
-        <InsideTheVisionVideo />
-      </section>
-
-      <section id="Free-TV" >
-        <FreeTVOffer />
-      </section>
-
-      <!-- <section id="Recent-Videos">
-        <RecentVideos />
-      </section>
+    <!-- <section id="Recent-Videos">
+      <RecentVideos />
+    </section>
 
       <section id="Popular-Videos">
         <PopularVideos />
@@ -33,9 +28,9 @@
         <FaithFoundations />
       </section>
 
-      <section id="Sow-Seeds">
-        <SowSeedsOfChange />  
-      </section>
+    <section id="Sow-Seeds">
+      <SowSeedsOfChange />
+    </section>
 
       <section id="Events-On-Demand">
         <EventsOnDemand />
@@ -58,145 +53,120 @@
       </section> -->
 
   </div>
-
 </template>
 
-<script setup>
-
-
-</script>
+<script setup></script>
 
 <style scoped>
-
-
-
 .container {
   display: flex;
   flex-direction: column;
- 
 }
 
-
-#BVOV{
+#BVOV {
   margin-top: 24px;
 }
 
-#Live-TV{
-
+#Live-TV {
   margin-bottom: 36px;
   margin-top: 24px;
-  
 }
 
-#ITV-Video{
- 
+#ITV-Video {
   margin-bottom: 36px;
-
 }
 
-#Free-TV{
-
+#Free-TV {
   height: 324px;
   margin-bottom: 36px;
 }
 
-
-#Recent-Videos{
-
+#Recent-Videos {
   height: 291px;
   margin-bottom: 36px;
 }
 
-#Popular-Videos{
+#Popular-Videos {
   height: 291px;
   margin-bottom: 60px;
 }
 
-
-#Faith-Foundations{
+#Faith-Foundations {
   height: 305px;
   margin-bottom: 36px;
 }
 
-
-#Sow-Seeds{
+#Sow-Seeds {
   height: 304px;
   margin-bottom: 60px;
 }
 
-#Events-On-Demand{
+#Events-On-Demand {
   height: 1575px;
   margin-bottom: 36px;
-
-  
 }
 
-
-#Inside-the-Vision{
+#Inside-the-Vision {
   height: 975px;
   margin-bottom: 36px;
 }
 
-
-#Search-Programs{
-
+#Search-Programs {
   height: 98px;
   margin-bottom: 36px;
-
 }
 
-#Ways-to-Watch{
+#Ways-to-Watch {
   height: 1104px;
   margin-bottom: 61.34px;
 }
 
-#Give-Prayer-Partner{
+#Give-Prayer-Partner {
   height: 903px;
   margin-bottom: 0px;
-  width: 100vw; 
+  width: 100vw;
   position: relative;
-  left: 50%; 
-  right: 50%; 
-  margin-left: -50vw; 
-  margin-right: -50vw; 
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   background-color: #212529;
 }
 
-
-
 @media (min-width: 992px) {
-
   .container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-auto-rows: minmax(100px, auto); 
+    grid-auto-rows: minmax(100px, auto);
   }
 
-
-  #Free-TV, #Recent-Videos, #Popular-Videos, #Faith-Foundations, #Sow-Seeds,  #Ways-to-Watch, #Give-Prayer-Partner, #Page-Footer {
+  #Free-TV,
+  #Recent-Videos,
+  #Popular-Videos,
+  #Faith-Foundations,
+  #Sow-Seeds,
+  #Ways-to-Watch,
+  #Give-Prayer-Partner,
+  #Page-Footer {
     grid-column: 1 / -1;
   }
 
-  
   #BVOV {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    margin-right: 24px ;
+    margin-right: 24px;
     margin-bottom: 19px;
- 
   }
 
-  #Live-TV, #ITV-Video {
+  #Live-TV,
+  #ITV-Video {
     grid-column: 2 / 3;
-
-
   }
 
   #Live-TV {
     grid-row: 1 / 2;
-    height: 265px; 
+    height: 265px;
     margin-bottom: 24px;
-   
   }
 
   #ITV-Video {
@@ -205,56 +175,44 @@
     margin-bottom: 48px;
   }
 
-
-  #Give-Prayer-Partner{
-
-      height: 325px;
-      margin-bottom: 120px;
-
+  #Give-Prayer-Partner {
+    height: 325px;
+    margin-bottom: 120px;
+  }
 }
 
-
-}
-
-@media (min-width: 768px){
-
-  #Free-TV{
+@media (min-width: 768px) {
+  #Free-TV {
     height: 187px;
     margin-bottom: 60px;
   }
 
-  #Recent-Videos{
-
+  #Recent-Videos {
     height: 272px;
     margin-bottom: 24px;
   }
 
-  #Popular-Videos{
+  #Popular-Videos {
     height: 272px;
     margin-bottom: 24px;
-   
   }
 
-
-  #Faith-Foundations{
+  #Faith-Foundations {
     height: 282px;
     margin-bottom: 60px;
   }
 
-  #Sow-Seeds{
-
+  #Sow-Seeds {
     height: 166px;
     margin-bottom: 84px;
   }
 
-
-  #Events-On-Demand{
-
+  #Events-On-Demand {
     grid-column: 1 / -1;
     padding-top: 24px;
 
     height: 718px;
-    margin-bottom: 84px; 
+    margin-bottom: 84px;
   }
 
   #Inside-the-Vision {
@@ -263,8 +221,6 @@
     margin-bottom: 60px;
   }
 
-
-
   #Search-Programs {
     grid-column: 1 / -1;
 
@@ -272,28 +228,15 @@
     margin-bottom: 60px;
   }
 
-
   #Ways-to-Watch {
     grid-column: 1 / -1;
     height: 908px;
     margin-bottom: 60px;
-
-    
   }
 
-  #Give-Prayer-Partner{
-
+  #Give-Prayer-Partner {
     height: 325px;
     margin-bottom: 0px;
-
   }
-
-
-
 }
-
-
-
-
-
 </style>

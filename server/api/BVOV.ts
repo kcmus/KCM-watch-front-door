@@ -229,7 +229,7 @@ export default defineEventHandler(async (event) => {
               title: "Prayer is a Vital Part of the Christian Life",
               body: "<p>Body, Possibly Containing HTML Markup.</p>",
               summary: "You may have faith and hope, but do you have Love? Watch Believer's Voice of Victory as Kenneth Copeland reveals how Love is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God can use His power on your behalf through the Holy Spirit!",
-              air_date: "2024-8-19",
+              air_date: "2024-8-26",
               video: {
                 vimeo: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
                 youtube: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
@@ -272,11 +272,11 @@ export default defineEventHandler(async (event) => {
               title: "How to Access the Power of God Through Prayer",
               body: "<p>Tuesday-Body, Possibly Containing HTML Markup.</p>",
               summary: "2You may have faith and hope, but do you have Love? Watch Believer's Voice of Victory as Kenneth Copeland reveals how Love is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God can use His power on your behalf through the Holy Spirit!",
-              air_date: "2024-8-20",
+              air_date: "2024-8-27",
               video: {
                 vimeo: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
                 youtube: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
-                video_preview: "/images/BVOV-1.png",
+                video_preview: "/images/BVOV-2.png",
               },
       
               speakers:[
@@ -316,11 +316,11 @@ export default defineEventHandler(async (event) => {
               title: "The Holy Spirit Prays for You Every Day",
               body: "<p>Wednesday-Body, Possibly Containing HTML Markup.</p>",
               summary: "3You may have faith and hope, but do you have Love? Watch Believer's Voice of Victory as Kenneth Copeland reveals how Love is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God can use His power on your behalf through the Holy Spirit!",
-              air_date: "2024-8-21",
+              air_date: "2024-8-28",
               video: {
                 vimeo: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
                 youtube: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
-                video_preview: "/images/BVOV-today.png",
+                video_preview: "/images/BVOV-3.png",
               },
       
               speakers:[
@@ -359,11 +359,11 @@ export default defineEventHandler(async (event) => {
               title: "Prayer That Receives Answers from God",
               body: "<p>Thursday-Body, Possibly Containing HTML Markup.</p>",
               summary: "You may have faith and hope, but do you have Love? Watch Believer's Voice of Victory as Kenneth Copeland reveals how Love is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God can use His power on your behalf through the Holy Spirit!",
-              air_date: "2024-8-22",
+              air_date: "2024-8-29",
               video: {
                 vimeo: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
                 youtube: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
-                video_preview: "/images/BVOV-1.png",
+                video_preview: "/images/BVOV-4.png",
               },
       
               speakers:[
@@ -387,11 +387,11 @@ export default defineEventHandler(async (event) => {
               title: "The Requirement for Mani-festations of the Holy Spirit",
               body: "<p>Body, Possibly Containing HTML Markup.</p>",
               summary: "Friday-You may have faith and hope, but do you have Love? Watch Believer's Voice of Victory as Kenneth Copeland reveals how Love is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God can use His power on your behalf through the Holy Spirit!",
-              air_date: "2024-8-23",
+              air_date: "2024-8-30",
               video: {
                 vimeo: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
                 youtube: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
-                video_preview: "/images/BVOV-1.png",
+                video_preview: "/images/BVOV-5.png",
               },
       
               speakers:[

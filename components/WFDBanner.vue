@@ -22,7 +22,7 @@
             {{ TVOffer.title }}
           </h3>
 
-          <p class="secondary-text pt-2">{{ TVOffer.subtitle }}</p>
+          <p class="pt-2">{{ TVOffer.subtitle }}</p>
         </header>
         <div class="cta">
           <a class="button" :href="TVOffer.link">{{ buttonText }}</a>
@@ -70,13 +70,6 @@ const { data: TVOffer } = useFetch("/api/TVOffer");
     font-weight: 700;
     font-size: 24px;
     text-align: center;
-  }
-
-  .secondry-text {
-    display: block;
-    font-weight: 500;
-    font-size: 20px;
-    color: red !important;
   }
 
   .button {
@@ -154,6 +147,11 @@ const { data: TVOffer } = useFetch("/api/TVOffer");
       display: grid;
       grid-template-columns: 1fr minmax(0, 1fr);
       gap: 1rem;
+
+      p {
+        font-weight: 500;
+        font-size: 20px;
+      }
 
       .cta {
         align-self: end;

@@ -276,7 +276,7 @@ export default defineEventHandler(async (event) => {
               video: {
                 vimeo: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
                 youtube: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
-                video_preview: "/images/BVOV-2.png",
+                video_preview: "/images/BVOV-1.png",
               },
       
               speakers:[
@@ -320,7 +320,7 @@ export default defineEventHandler(async (event) => {
               video: {
                 vimeo: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
                 youtube: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
-                video_preview: "/images/BVOV-3.png",
+                video_preview: "/images/BVOV-1.png",
               },
       
               speakers:[
@@ -363,7 +363,7 @@ export default defineEventHandler(async (event) => {
               video: {
                 vimeo: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
                 youtube: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
-                video_preview: "/images/BVOV-4.png",
+                video_preview: "/images/BVOV-1.png",
               },
       
               speakers:[
@@ -391,7 +391,7 @@ export default defineEventHandler(async (event) => {
               video: {
                 vimeo: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
                 youtube: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",
-                video_preview: "/images/BVOV-5.png",
+                video_preview: "/images/BVOV-1.png",
               },
       
               speakers:[

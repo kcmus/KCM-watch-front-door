@@ -180,8 +180,6 @@ function downloadShowNotes() {
   font-style: var(--heading-h5-font-style);
   font-weight: var(--heading-h5-font-weight);
   letter-spacing: var(--heading-h5-letter-spacing);
-
-
 }
 
 
@@ -195,8 +193,6 @@ function downloadShowNotes() {
   letter-spacing: var(--body-small-letter-spacing);
   /* line-height: var(--body-small-line-height); */
   line-height: 21px;
-
-
 }
 
 
@@ -231,8 +227,6 @@ function downloadShowNotes() {
 
   margin-top: 20px;
   margin-left: 0px;
-
-  
 }
 
 
@@ -244,6 +238,10 @@ function downloadShowNotes() {
     width:65%;
     margin: 15px auto;
   
+  }
+
+  #other-videos-description{
+    margin-top: 14px;
   }
 
  

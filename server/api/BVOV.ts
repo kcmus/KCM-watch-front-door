@@ -386,7 +386,7 @@ export default defineEventHandler(async (event) => {
               type: "daily_broadcast",
               title: "The Requirement for Mani-festations of the Holy Spirit",
               body: "<p>Body, Possibly Containing HTML Markup.</p>",
-              summary: "Friday-You may have faith and hope, but do you have Love? Watch Believer's Voice of Victory as Kenneth Copeland reveals how Love is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God can use His power on your behalf through the Holy Spirit!",
+              summary: "You may have faith and hope, but do you have Love? Watch Believer's Voice of Victory as Kenneth Copeland reveals how Love is the requirement for manifestations of the Holy Spirit. Learn how to abide in Love, so God can use His power on your behalf through the Holy Spirit!",
               air_date: "2024-8-30",
               video: {
                 vimeo: "https://www.kcm.org/watch/tv-broadcast/how-be-strong-end-times-part-3?m=1081772",

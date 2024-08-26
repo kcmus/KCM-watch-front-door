@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'bebas-neue';
+  src: url('/fonts/BebasNeue-Regular/font.woff2') format('woff2'),
+    url('/fonts/BebasNeue-Regular/font.woff') format('woff');
+}
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/39bde3");
+
+@font-face {
+  font-family: 'Gilroy-Light';
+  src: url('/fonts/myfonts/39BDE3_0_0.eot');
+  src: url('/fonts/myfonts/39BDE3_0_0.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/myfonts/39BDE3_0_0.woff2') format('woff2'),
+    url('/fonts/myfonts/39BDE3_0_0.woff') format('woff'),
+    url('/fonts/myfonts/39BDE3_0_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-ExtraBold';
+  src: url('/fonts/myfonts/39BDE3_1_0.eot');
+  src: url('/fonts/myfonts/39BDE3_1_0.eot?#iefix') format('embedded-opentype'),url('/fonts/myfonts/39BDE3_1_0.woff2') format('woff2'),
+    url('/fonts/myfonts/39BDE3_1_0.woff') format('woff'),
+    url('/fonts/myfonts/39BDE3_1_0.ttf') format('truetype');
+}

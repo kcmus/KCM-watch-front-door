@@ -1,0 +1,149 @@
+// scss-docs-start gray-color-variables
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+// scss-docs-end gray-color-variables
+
+// scss-docs-start color-variables
+$blue:    #0d6efd !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$bs-orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+// scss-docs-end color-variables
+
+$red-300: tint-color($red, 40%) !default;
+
+$yellow-800: shade-color($yellow, 60%) !default;
+
+$green-300: tint-color($green, 40%) !default;
+
+// scss-docs-start theme-color-variables
+$primary:       $blue !default;
+$primary-dark:  #8DDAFF;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:        #2C5A6F !default; // Is $cyan by default.
+$warning:       $yellow !default;
+$danger:        $red !default;
+$orange:      #F54D09 !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+// scss-docs-end theme-color-variables
+
+$code-color:    $pink !default;
+
+$link-shade-percentage:   20%;
+
+$info-text-emphasis:            shade-color($info, 60%) !default;
+$orange-text-emphasis:          shade-color($orange, 60%) !default;
+$primary-dark-text-emphasis:    shade-color($primary-dark, 60%) !default;
+
+$info-bg-subtle:                tint-color($info, 80%) !default;
+$orange-bg-subtle:              tint-color($orange, 80%) !default;
+$primary-dark-bg-subtle:        tint-color($primary-dark, 80%) !default;
+
+$info-border-subtle:            tint-color($info, 60%) !default;
+$orange-border-subtle:          tint-color($orange, 60%) !default;
+$primary-dark-border-subtle:    tint-color($primary-dark, 60%) !default;
+
+// scss-docs-start theme-text-dark-variables
+$primary-dark-text-emphasis-dark:   tint-color($primary-dark, 40%) !default;
+$info-text-emphasis-dark:           tint-color($info, 40%) !default;
+$orange-text-emphasis-dark:         tint-color($orange, 40%) !default;
+// scss-docs-end theme-text-dark-variables
+
+// scss-docs-start theme-bg-subtle-dark-variables
+$primary-dark-bg-subtle-dark:       shade-color($primary-dark, 80%) !default;
+$info-bg-subtle-dark:               shade-color($info, 80%) !default;
+$orange-bg-subtle-dark:             shade-color($orange, 80%) !default;
+// scss-docs-end theme-bg-subtle-dark-variables
+
+// scss-docs-start theme-border-subtle-dark-variables
+$primary-dark-border-subtle-dark:   shade-color($primary-dark, 40%) !default;
+$info-border-subtle-dark:           shade-color($info, 40%) !default;
+$orange-border-subtle-dark:         shade-color($orange, 40%) !default;
+// scss-docs-end theme-border-subtle-dark-variables
+
+$body-color-dark:                   $gray-100 !default;
+$body-bg-dark:                      $gray-900 !default;
+$body-secondary-color-dark:         rgba($body-color-dark, .75) !default;
+$body-secondary-bg-dark:            $gray-800 !default;
+$body-tertiary-color-dark:          rgba($body-color-dark, .5) !default;
+$body-tertiary-bg-dark:             mix($gray-800, $gray-900, 50%) !default;
+$body-emphasis-color-dark:          #cccccc !default;
+$border-color-dark:                 $gray-700 !default;
+$border-color-translucent-dark:     rgba($white, .15) !default;
+$headings-color-dark:               inherit !default;
+$link-color-dark:                   $primary-dark !default;
+$link-hover-color-dark:             $gray-400 !default;
+
+//
+// Forms
+//
+
+$form-select-indicator-color-dark:  $body-color-dark !default;
+$form-select-indicator-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color-dark}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>") !default;
+
+$form-switch-color-dark:            rgba($white, .25) !default;
+$form-switch-bg-image-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color-dark}'/></svg>") !default;
+
+// scss-docs-start form-validation-colors-dark
+$form-valid-color-dark:             $green-300 !default;
+$form-valid-border-color-dark:      $green-300 !default;
+$form-invalid-color-dark:           $red-300 !default;
+$form-invalid-border-color-dark:    $red-300 !default;
+// scss-docs-end form-validation-colors-dark
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio:   4.5 !default;
+
+// Customize the light and dark text colors for use in our color contrast function.
+$color-contrast-dark:      $black !default;
+$color-contrast-light:     $white !default;
+
+$enable-shadows: false !default;
+
+$prefix: bs- !default;
+
+// scss-docs-start theme-text-dark-map
+$theme-colors-text-dark: (
+  "primary-dark": $primary-dark-text-emphasis-dark,
+  "info": $info-text-emphasis-dark,
+  "orange": $orange-text-emphasis-dark,
+) !default;
+// scss-docs-end theme-text-dark-map
+
+// scss-docs-start theme-bg-subtle-dark-map
+$theme-colors-bg-subtle-dark: (
+  "primary-dark": $primary-dark-bg-subtle-dark,
+  "info": $info-bg-subtle-dark,
+  "orange": $orange-bg-subtle-dark,
+) !default;
+// scss-docs-end theme-bg-subtle-dark-map
+
+// scss-docs-start theme-border-subtle-dark-map
+$theme-colors-border-subtle-dark: (
+  "primary-dark": $primary-dark-border-subtle-dark,
+  "info": $info-border-subtle-dark,
+  "orange": $orange-border-subtle-dark,
+) !default;
+// scss-docs-end theme-border-subtle-dark-map
+
+$navbar-dark-color:                 rgba($white, .55) !default;
+$navbar-dark-icon-color:            $navbar-dark-color !default;
+$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;

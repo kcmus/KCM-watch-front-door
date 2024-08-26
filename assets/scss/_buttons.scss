@@ -1,0 +1,79 @@
+@use "globals" as *;
+
+.btn-info {
+  @include button-variant(
+    $btn-info-bg,
+    $btn-info-border,
+    $btn-info-color,
+    $btn-info-hover-bg,
+    $btn-info-hover-border,
+    $btn-info-hover-color,
+    $btn-info-active-bg,
+    $btn-info-active-border,
+    $btn-info-active-color,
+    $disabled-background: $btn-info-disabled-bg,
+    $disabled-border: $btn-info-disabled-border,
+    $disabled-color: $btn-info-disabled-color
+  );
+}
+
+.btn-outline-info {
+  @include button-outline-variant(
+    $btn-info-bg,
+    $btn-info-hover-bg,
+    $btn-info-bg,
+    $btn-info-border,
+    $btn-info-color,
+    $btn-info-disabled-bg
+  );
+}
+
+.btn-orange {
+  @include button-variant(
+    $btn-orange-bg,
+    $btn-orange-border,
+    $btn-orange-color,
+    $btn-orange-hover-bg,
+    $btn-orange-hover-border,
+    $btn-orange-hover-color,
+    $btn-orange-active-bg,
+    $btn-orange-active-border,
+    $btn-orange-active-color,
+    $focus-shadow-color: $primary
+  );
+}
+
+.btn-outline-orange {
+  @include button-outline-variant($btn-orange-bg);
+}
+
+.btn-info,
+.btn-outline-info,
+.btn-orange,
+.btn-outline-orange {
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: var(--bs-btn-active-color);
+    background-color: var(--bs-btn-active-bg);
+    border-color: var(--bs-btn-active-border-color);
+
+    &:focus-visible {
+      box-shadow: var(--bs-btn-focus-box-shadow);
+    }
+  }
+}
+
+.btn {
+  &.no-hover {
+    --bs-btn-hover-color: var(--bs-btn-color);
+    --bs-btn-hover-bg: var(--bs-btn-bg);
+    --bs-btn-hover-border-color: var(--bs-btn-border-color);
+  }
+
+  &.no-active {
+    --bs-btn-active-color: var(--bs-btn-color);
+    --bs-btn-active-bg: var(--bs-btn-bg);
+    --bs-btn-active-border-color: var(--bs-btn-border-color);
+  }
+}

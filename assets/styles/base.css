@@ -145,16 +145,83 @@
   border-radius: 3px;
   font-size: 14px;
 }
+  
 
-body{
-  margin: 0;
-  font-family: var(--bs-body-font-family);
-  font-size: var(--bs-body-font-size);
-  font-weight: var(--bs-body-font-weight);
-  line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
-  text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+
+:root {
+  --active-shadow-outline-primary: 0px 0px 0px 4px rgba(13, 110, 253, 0.25);
+  --body-bold-font-family: "Helvetica Neue", Helvetica;
+  --body-bold-font-size: 16px;
+  --body-bold-font-style: normal;
+  --body-bold-font-weight: 700;
+  --body-bold-letter-spacing: 0px;
+  --body-bold-line-height: 150%;
+  --body-lead-font-family: "Helvetica Neue", Helvetica;
+  --body-lead-font-size: 20px;
+  --body-lead-font-style: normal;
+  --body-lead-font-weight: 300;
+  --body-lead-letter-spacing: 0px;
+  --body-lead-line-height: 150%;
+  --body-regular-font-family: "Helvetica Neue", Helvetica;
+  --body-regular-font-size: 16px;
+  --body-regular-font-style: normal;
+  --body-regular-font-weight: 400;
+  --body-regular-letter-spacing: 0px;
+  --body-regular-line-height: 150%;
+  --body-small-font-family: "Helvetica Neue", Helvetica;
+  --body-small-font-size: 14px;
+  --body-small-font-style: normal;
+  --body-small-font-weight: 400;
+  --body-small-letter-spacing: 0px;
+  --body-small-line-height: 150%;
+  --body-textbody-color: rgba(33, 37, 41, 1);
+  --componentsbuttonprimaryhovered-background: rgba(11, 94, 215, 1);
+  --componentsbuttonprimaryhovered-border: rgba(10, 88, 202, 1);
+  --componentsinputfocused-border: rgba(134, 183, 254, 1);
+  --gray-200: rgba(233, 236, 239, 1);
+  --gray-400: rgba(206, 212, 218, 1);
+  --gray-600: rgba(108, 117, 125, 1);
+  --gray-800: rgba(52, 58, 64, 1);
+  --grayblack: rgba(0, 0, 0, 1);
+  --graywhite: rgba(255, 255, 255, 1);
+  --heading-h1-font-family: "Helvetica Neue", Helvetica;
+  --heading-h1-font-size: 40px;
+  --heading-h1-font-style: normal;
+  --heading-h1-font-weight: 500;
+  --heading-h1-letter-spacing: 0px;
+  --heading-h1-line-height: 120.00000476837158%;
+  --heading-h2-font-family: "Helvetica Neue", Helvetica;
+  --heading-h2-font-size: 32px;
+  --heading-h2-font-style: normal;
+  --heading-h2-font-weight: 500;
+  --heading-h2-letter-spacing: 0px;
+  --heading-h2-line-height: 120.00000476837158%;
+  --heading-h3-font-family: "Helvetica Neue", Helvetica;
+  --heading-h3-font-size: 28px;
+  --heading-h3-font-style: normal;
+  --heading-h3-font-weight: 500;
+  --heading-h3-letter-spacing: 0px;
+  --heading-h3-line-height: 120.00000476837158%;
+  --heading-h5-font-family: "Helvetica Neue", Helvetica;
+  --heading-h5-font-size: 20px;
+  --heading-h5-font-style: normal;
+  --heading-h5-font-weight: 500;
+  --heading-h5-letter-spacing: 0px;
+  --heading-h5-line-height: 120.00000476837158%;
+  --heading-h6-font-family: "Helvetica Neue", Helvetica;
+  --heading-h6-font-size: 16px;
+  --heading-h6-font-style: normal;
+  --heading-h6-font-weight: 500;
+  --heading-h6-letter-spacing: 0px;
+  --heading-h6-line-height: 120.00000476837158%;
+  --hitbox: rgba(255, 255, 255, 0);
+  --neutral-dark: rgba(33, 37, 41, 1);
+  --themeborder: rgba(222, 226, 230, 1);
+  --themedark: rgba(33, 37, 41, 1);
+  --themeprimary: rgba(13, 110, 253, 1);
+  --themesecondary: rgba(108, 117, 125, 1);
 }
+
+
+

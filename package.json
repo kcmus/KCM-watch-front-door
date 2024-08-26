@@ -12,10 +12,12 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "nuxt": "^3.12.4",
     "vue": "latest"
   },
   "devDependencies": {
+    "@nuxt/eslint": "^0.5.0",
+    "nuxt": "^3.12.4",
+    "prettier": "^3.3.3",
     "sass": "^1.77.8"
   }
 }

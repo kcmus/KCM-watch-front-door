@@ -1,0 +1,132 @@
+@use "variables-theme" as *;
+@use "functions" as *;
+
+.formkit-outer {
+  .label-required {
+    &::after {
+      content: url("~/assets/svg-asterix.svg");
+      margin-left: 0.25rem;
+    }
+  }
+}
+
+[data-prefix-icon] {
+  button, a {
+    &.formkit-input {
+      padding-left: 1.25rem;
+    }
+  }
+}
+
+[data-suffix-icon] {
+  button, a {
+    &.formkit-input {
+      padding-right: 1.25rem;
+    }
+  }
+}
+
+.formkit-messages {
+  width: 100%;
+  margin: unset;
+  padding: unset;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--bs-form-invalid-color);
+
+  list-style: none;
+}
+
+$form-feedback-valid-color:         $success !default;
+$form-feedback-invalid-color:       $danger !default;
+
+$form-feedback-icon-valid-color:    $form-feedback-valid-color !default;
+$form-feedback-icon-valid:          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/></svg>") !default;
+$form-feedback-icon-invalid-color:  $form-feedback-invalid-color !default;
+$form-feedback-icon-invalid:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='#{$form-feedback-icon-invalid-color}'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>") !default;
+
+[data-complete="true"] {
+  .form-control {
+    border-color: var(--bs-form-valid-border-color);
+    background-image: escape-svg($form-feedback-icon-valid);
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-repeat: no-repeat;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+
+    &:focus {
+      border-color: var(--bs-form-valid-border-color);
+      box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.25);
+    }
+  }
+
+  .form-select {
+    --bs-form-select-bg-icon: #{escape-svg($form-feedback-icon-valid)};
+    border-color: var(--bs-form-valid-border-color);
+    padding-right: 4.125rem;
+    background-position:
+      right 0.75rem center,
+      center right 2.25rem;
+    background-size:
+      16px 12px,
+      calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+
+    &:focus {
+      border-color: var(--bs-form-valid-border-color);
+      box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.25);
+    }
+  }
+
+  .form-check-input {
+    border-color: var(--bs-form-valid-border-color);
+
+    ~ .form-check-label {
+      color: var(--bs-form-valid-color);
+    }
+  }
+}
+
+[data-invalid="true"]:not(:disabled) {
+  .form-control {
+    border-color: var(--bs-form-invalid-border-color);
+    background-image: escape-svg($form-feedback-icon-invalid);
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-repeat: no-repeat;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+
+    &:focus {
+      border-color: var(--bs-form-invalid-border-color);
+      box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+    }
+  }
+
+  .form-select {
+    --bs-form-select-bg-icon: #{escape-svg($form-feedback-icon-invalid)};
+    border-color: var(--bs-form-invalid-border-color);
+    padding-right: 4.125rem;
+    background-position:
+      right 0.75rem center,
+      center right 2.25rem;
+    background-size:
+      16px 12px,
+      calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+
+    &:focus {
+      border-color: var(--bs-form-invalid-border-color);
+      box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+    }
+  }
+
+  .form-check-input {
+    border-color: var(--bs-form-invalid-border-color);
+
+    ~ .form-check-label {
+      color: var(--bs-form-invalid-color);
+    }
+  }
+}
+
+[data-family="button"].formkit-outer {
+  display: inline-block;
+  font-size: var(--bs-btn-font-size);
+  font-family: var(--bs-btn-font-family);
+}

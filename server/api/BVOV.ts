@@ -110,20 +110,16 @@ export type BVOV_Results = Readonly<{
 }>;
 
 
- 
-
 
 export type TodayVideo = BVOVItem | null;
-
 export type OtherVideos = BVOVItem[] | null;
 
-
-
-
-  
+ 
 // Function to get API URL
 const getUrl = (api2Url: string, api2Token: string) => {
+
   return `${api2Url}/api/wfd/bvov.json?token=${api2Token}`;
+  
 };
 
 

@@ -6,7 +6,6 @@ export type ITV_Episode = Readonly<{
         error?: string | null,
 
         content: Readonly<{
-
             title :string,
             weight: string | number,
             image_url: string,
@@ -30,8 +29,6 @@ const getUrl = (api2Url: string, api2Token: string) => {
 const formatITVResults = (ITVData: ITV_Episode) => {
 
     return ITVData["itv_current_week"]["content"];
-
-    
 
 }
 
@@ -62,7 +59,7 @@ export default defineEventHandler(async (event) => {
             "statusCode": 200,
             "error" : null,
             "content" : {
-
+                
                "title" : "Inside the Vision - How to GROW Your Vision",
                 "weight": 0,
                 "image_url": "/images/InsideTheVisionVideo.png",

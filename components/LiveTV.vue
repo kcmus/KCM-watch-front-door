@@ -49,8 +49,8 @@
   // Computed property for audio icon source
   const audioIconSrc = computed(() =>
     isMuted.value
-      ? 'https://img.icons8.com/ios-filled/50/ffffff/mute.png'
-      : 'https://img.icons8.com/ios-filled/50/ffffff/speaker.png'
+      ? '/images/mute.png'
+      : '/images/speaker.png'
   );
   
   // Function to redirect to the live TV URL
@@ -84,9 +84,9 @@
   </script>
   
   <style scoped>
+
   #Live-TV-box {
     align-items: center;
-
   }
   
   .video-container {

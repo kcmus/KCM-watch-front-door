@@ -4,7 +4,7 @@
   </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { defineProps } from 'vue';
 
 const props = defineProps({
@@ -13,9 +13,11 @@ const props = defineProps({
     required: true
   }
 });
+
 </script>
 
 <style scoped>
+
 .custom-button {
  
   border: 1px solid;
@@ -24,15 +26,15 @@ const props = defineProps({
   gap: 8px;
   height: 48px;
   padding: 8px 16px 8px 16px;
-
   font-family: var(--heading-h5-font-family);
-  font-size: 20px;
+  font-size: 1.25rem;
   font-style: var(--heading-h5-font-style) !important;
   font-weight: 500;
   letter-spacing: var(--heading-h5-letter-spacing) !important;
-   line-height: 24px;
-   cursor: pointer;
-   background-color: #ffffff00 !important;
+  line-height: 24px;
+  cursor: pointer;
+  background-color: #ffffff00 !important;
+  
 
 }
 
@@ -49,11 +51,5 @@ const props = defineProps({
    }
 
 }
-
-
-
-
-
-
 
 </style>

@@ -30,7 +30,6 @@ import type { ITV_Data } from '~/server/api/InsideTheVisionVideo';
 
 const {data: itv_current_week} = useFetch<ITV_Data>("/api/InsideTheVisionVideo");
 
-
 const title = computed(() => itv_current_week.value?.title);
 const image_url = computed(() => itv_current_week.value?.image_url);
 const episode_url = computed(()=> itv_current_week.value?.episode_url);
@@ -66,13 +65,13 @@ img {
 }
  
 @media (min-width: 992px) and (max-width: 1120px) {
-        .text-wrapper-7{
-            font-size: 16px;
-        }
+    .text-wrapper-7{
+        font-size: 16px;
+    }
 
-        img{
-            width: 580px;
-        }
+    img{
+        width: 580px;
+    }
 }
 
  @media (min-width: 992px){

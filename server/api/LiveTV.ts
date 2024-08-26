@@ -49,7 +49,6 @@ export default defineEventHandler(async (event) => {
 
         return formatLiveTVResults(results);
 
-
     }
 
 

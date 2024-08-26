@@ -5,9 +5,11 @@
       <div class="text-wrapper-1">BVOV This Week</div>
       <p class="p">{{ }}</p>
     </div>
+    <!-- Titles -->
 
     <!-- main-content -->
     <div class="row gutters">
+
       <!-- Left Side: Main Video -->
       <div class="col-12 col-md-6 mb-3" v-if="todayVideo">
         <div class="main-video">
@@ -25,6 +27,7 @@
           </div>
         </div>
       </div>
+       <!-- Left Side: Main Video -->
 
       <!-- Right Side: Other BVOV Videos -->
       <div class="col-12 col-md-6">
@@ -59,7 +62,11 @@
           </div>
         </div>
       </div>
+      <!-- Right Side: Other BVOV Videos -->
+
     </div>
+    <!-- main-content -->
+
   </div>
 </template>
 
@@ -81,17 +88,19 @@ const parseDateUTC = (date: string) : Date => {
 
 // Function to get today's video and other videos based on the user's local time zone
 const getVideoSeries = (BVOVData:BVOV_Results) => {
-  const currentDate = new Date();  // the user's local time zone
-  const currentDay = currentDate.getDay(); // the user's current day
+
+  const currentDate = new Date(); 
+  const currentDay = currentDate.getDay(); 
 
   let todayVideo : TodayVideo = null;
   let otherVideos : OtherVideos = [];
 
   BVOVData?.items?.forEach((video : BVOVItem) => {
-    const videoDate = parseDateUTC(video.air_date);  // Parse the UTC date
-    const isFridayVideo = videoDate.getUTCDay() === 5;  // Compare in UTC
 
-    // Adjust for user's local time zone
+    const videoDate = parseDateUTC(video.air_date);  
+    const isFridayVideo = videoDate.getUTCDay() === 5; 
+
+   
     if ((currentDay === 6 || currentDay === 0) && isFridayVideo) {
       todayVideo = { ...video };
     } else if (currentDay !== 6 && currentDay !== 0 && currentDate.toDateString() === videoDate.toDateString()) {
@@ -137,31 +146,23 @@ function downloadShowNotes() {
   padding-left: 5px;
 }
 
-
-
 .title .text-wrapper-1 {
   color: #000000;
   font-family: var(--heading-h1-font-family);
-  /* font-size: var(--heading-h1-font-size); */
   font-size: clamp(28px, 4vw + 12px, 40px);;
   font-style: var(--heading-h1-font-style);
   font-weight: var(--heading-h1-font-weight);
   letter-spacing: var(--heading-h1-letter-spacing);
-  /* line-height: var(--heading-h1-line-height); */
   line-height: clamp(33px, 4vw + 17px, 48px);
-
-
 
 }
 
 .title .p {
+  
   color: #000000;
   font-family: var(--heading-h2-font-family);
-  /* font-size: var(--heading-h2-font-size); */
-  /* line-height: var(--heading-h2-line-height); */
   font-size: clamp(20px, 3vw + 10px, 32px);
   line-height: clamp(24px, 3vw + 14px, 38.4px);
-
   font-style: var(--heading-h2-font-style);
   font-weight: var(--heading-h2-font-weight);
   letter-spacing: var(--heading-h2-letter-spacing);
@@ -172,9 +173,6 @@ function downloadShowNotes() {
 .text-wrapper-2{
   color: #000000;
   font-family: var(--heading-h5-font-family);
-  /* font-size: var(--heading-h5-font-size);
-  line-height: var(--heading-h5-line-height); */
-
   font-size: clamp(16px, 1.5vw + 12px, 20px);
   line-height: clamp(19.2px, 1.5vw + 14.4px, 24px);
   font-style: var(--heading-h5-font-style);
@@ -191,7 +189,6 @@ function downloadShowNotes() {
   font-style: var(--body-small-font-style);
   font-weight: var(--body-small-font-weight);
   letter-spacing: var(--body-small-letter-spacing);
-  /* line-height: var(--body-small-line-height); */
   line-height: 21px;
 }
 
@@ -233,11 +230,9 @@ function downloadShowNotes() {
 
 @media (max-width: 768px){
 
-  #button-wrapper{
-    
+  #button-wrapper{ 
     width:65%;
     margin: 15px auto;
-  
   }
 
   #other-videos-description{
@@ -245,7 +240,6 @@ function downloadShowNotes() {
   }
 
  
-
 }
 
 

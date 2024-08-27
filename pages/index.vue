@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <section id="BVOV">
-      <BVOV />
+      <!-- <BVOV /> -->
+       <BVOVWithStatic/>
     </section>
 
     <section id="Live-TV">
@@ -55,7 +56,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+</script>
 
 <style scoped>
 .container {

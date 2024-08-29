@@ -3,8 +3,7 @@
       <div class="video-container mb-3">
         <!-- video -->
         <video
-          ref="videoElement"
-          
+          ref="videoElement" 
           :poster="poster_url"
           autoplay
           controls
@@ -77,7 +76,6 @@
   }
   
   onMounted(() => {
-  // Initialize HLS.js if necessary
   if (videoElement.value && video_url.value) {
     if (Hls.isSupported()) {
       const hls = new Hls();
@@ -86,8 +84,6 @@
     } else if (videoElement.value.canPlayType('application/vnd.apple.mpegurl')) {
       videoElement.value.src = video_url.value;
     }
-
-    // Set the initial mute state based on the video element
     isMuted.value = videoElement.value.muted;
   }
 });

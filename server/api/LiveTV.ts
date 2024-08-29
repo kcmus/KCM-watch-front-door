@@ -63,8 +63,8 @@ export default defineEventHandler(async (event) => {
            content: {
 
              "title" : "Live TV VICTORY – Faith Teaching 24/7",
-            //  video_url : "https://content.uplynk.com/channel/ea37a0934a0749fe80f493b402ce5908.m3u8",
-             video_url : "https://www.w3schools.com/html/mov_bbb.mp4",
+             video_url : "https://content.uplynk.com/channel/ea37a0934a0749fe80f493b402ce5908.m3u8",
+            //  video_url : "https://www.w3schools.com/html/mov_bbb.mp4",
              redirect_url: "https://www.kcm.org/watch/tv-broadcast",
              poster_url : "/images/LiveTV.png"
 

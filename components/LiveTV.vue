@@ -4,7 +4,7 @@
         <!-- video -->
         <video
           ref="videoElement"
-          :src="video_url"
+          
           :poster="poster_url"
           autoplay
           controls
@@ -29,6 +29,7 @@
   
   <script setup lang="ts">
   import { ref, computed, onMounted } from 'vue';
+  import Hls from 'hls.js';  // Import hls.js
   import type { LiveTV_Data } from '~/server/api/LiveTV.js';
   
   // Fetch LiveTV data from the API
@@ -76,11 +77,23 @@
   }
   
   onMounted(() => {
-    // Set the initial mute state based on the video element
-    if (videoElement.value) {
-      isMuted.value = videoElement.value.muted;
+  // Initialize HLS.js if necessary
+  if (videoElement.value && video_url.value) {
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(video_url.value);
+      hls.attachMedia(videoElement.value);
+    } else if (videoElement.value.canPlayType('application/vnd.apple.mpegurl')) {
+      videoElement.value.src = video_url.value;
     }
-  });
+
+    // Set the initial mute state based on the video element
+    isMuted.value = videoElement.value.muted;
+  }
+});
+
+
+
   </script>
   
   <style scoped>

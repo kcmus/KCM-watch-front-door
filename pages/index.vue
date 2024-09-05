@@ -2,7 +2,7 @@
   <div class="container">
     <section id="BVOV">
       <!-- <BVOV /> -->
-       <BVOVWithStatic/>
+      <BVOVWithStatic />
     </section>
 
     <section id="Live-TV">
@@ -15,6 +15,35 @@
 
     <section id="Free-TV">
       <FreeTVOffer />
+      <Box
+        box-title="Free TV Offer"
+        button-text="Order Today"
+        :start="true"
+        :end="true"
+        :sections="{
+          title: TVOffer?.subtitle,
+          body: TVOffer.body,
+          link: TVOffer.link,
+        }"
+      >
+        <template v-slot:start>
+          <picture>
+            <source
+              media="(max-width: 799px)"
+              :srcset="TVOffer.image.small.src"
+            />
+            <source
+              media="(min-width: 800px)"
+              :srcset="TVOffer.image?.large.src"
+            />
+            <img :src="TVOffer.image?.large.src" :alt="TVOffer.image.alt" />
+          </picture>
+        </template>
+        <template v-slot:end>
+          <a class="button" :href="TVOffer.link">Order Today</a>
+        </template>
+      </Box>
+      <pre class="kcm-debug">{{ TVOffer }}</pre>
     </section>
 
     <!-- <section id="Recent-Videos">
@@ -27,13 +56,14 @@
 
       <section id="Faith-Foundations">
         <FaithFoundations />
-      </section>
+      </section>-->
 
     <section id="Sow-Seeds">
       <SowSeedsOfChange />
+      <pre class="kcm-debug">{{ SeedsOfChange }}</pre>
     </section>
 
-      <section id="Events-On-Demand">
+    <!-- <section id="Events-On-Demand">
         <EventsOnDemand />
       </section>
 
@@ -52,12 +82,12 @@
       <section id="Give-Prayer-Partner">
         <CTA />
       </section> -->
-
   </div>
 </template>
 
-<script setup>
-
+<script setup lang="ts">
+const { data: TVOffer } = useTVOffer();
+const { data: SeedsOfChange } = useSeedsOfChange();
 </script>
 
 <style scoped>
@@ -80,7 +110,6 @@
 }
 
 #Free-TV {
- 
   margin-bottom: 36px;
 }
 
@@ -185,7 +214,6 @@
 }
 
 @media (min-width: 768px) {
-
   #Free-TV {
     margin-bottom: 60px;
   }
@@ -243,3 +271,4 @@
   }
 }
 </style>
+import type SeedsOfChange from '~/server/api/SeedsOfChange';

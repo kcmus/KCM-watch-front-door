@@ -1,7 +1,8 @@
 <template>
-  <div id="WFD-Banner">
+  <!-- <div id="WFD-Banner">
     <WFDBanner buttonText="Order Today" variant="tv-offer" />
-  </div>
+  </div> -->
+  <!-- <Box :box-title="TVOffer.title" /> -->
 </template>
 
 <script setup lang="ts"></script>

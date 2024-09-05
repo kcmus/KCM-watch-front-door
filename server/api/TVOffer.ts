@@ -50,7 +50,7 @@ export default defineEventHandler(async (event) => {
         title: "Release the Powerhouse of Faith in Your Heart Today!",
         subtitle: "Becoming God-Inside Minded Package",
         link: "https://my.kcm.org/category/newest-releases/pb-an-encounter-with-him-300853",
-        body: "Body content",
+        body: "Becoming God-Inside Minded Package",
         price: "$25.99",
         offerDates: {
           start: "05/25/1999",

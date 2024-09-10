@@ -114,8 +114,6 @@
   </template>
   
   <script setup lang="ts">
-  import { ref, computed } from 'vue';
-
   import type { ITVData} from '~/server/api/InsideTheVision';
 
 

@@ -67,9 +67,22 @@
     <section id="Events-On-Demand">
       <EventsOnDemand />
     </section>
+
   </div>
 
+  <InsideTheVision id="Inside-the-Vision" />
+
+  <div class="container">
+    <section id="Search-Programs">
+      <SearchPrograms />
+    </section>
+    <section id="Ways-to-Watch">
+      <WaysToWatch />
+    </section>
+  </diV>
+     
   <CTA />
+
 </template>
 
 <script setup lang="ts">
@@ -78,6 +91,7 @@ const { data: SeedsOfChange } = useSeedsOfChange();
 </script>
 
 <style scoped>
+
 .container {
   display: flex;
   flex-direction: column;
@@ -126,6 +140,10 @@ const { data: SeedsOfChange } = useSeedsOfChange();
 
 #Search-Programs {
   height: 98px;
+  margin-bottom: 36px;
+}
+
+#Inside-the-Vision{
   margin-bottom: 36px;
 }
 

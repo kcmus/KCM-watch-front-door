@@ -18,4 +18,5 @@ export default defineAppConfig({
   fakeITVFetch: true,
   fakeLiveTVFetch: true,
   fakeTVOfferFetch: true,
+  fakeEventsOnDemand:true
 });

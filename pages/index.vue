@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+
     <section id="BVOV">
       <!-- <BVOV /> -->
        <BVOVWithStatic/>
@@ -17,7 +18,7 @@
       <FreeTVOffer />
     </section>
 
-    <!-- <section id="Recent-Videos">
+    <section id="Recent-Videos">
       <RecentVideos />
     </section>
 
@@ -36,10 +37,12 @@
       <section id="Events-On-Demand">
         <EventsOnDemand />
       </section>
-
-      <section id="Inside-the-Vision">
-        <InsideTheVision />
-      </section>
+   </div> 
+   
+   <InsideTheVision/>
+   
+     
+    <div class="container pt-5">
 
       <section id="Search-Programs">
         <SearchPrograms />
@@ -49,11 +52,18 @@
         <WaysToWatch />
       </section>
 
-      <section id="Give-Prayer-Partner">
+      <!-- <section id="Give-Prayer-Partner">
         <CTA />
       </section> -->
 
-  </div>
+    </div>
+
+    <CTA/>
+       
+
+ 
+
+
 </template>
 
 <script setup>
@@ -61,6 +71,7 @@
 </script>
 
 <style scoped>
+
 .container {
   display: flex;
   flex-direction: column;
@@ -105,14 +116,12 @@
 }
 
 #Events-On-Demand {
-  height: 1575px;
+ 
   margin-bottom: 36px;
 }
 
-#Inside-the-Vision {
-  height: 975px;
-  margin-bottom: 36px;
-}
+
+
 
 #Search-Programs {
   height: 98px;
@@ -174,7 +183,7 @@
 
   #ITV-Video {
     grid-row: 2 / 3;
-    height: 263px;
+  
     margin-bottom: 48px;
   }
 
@@ -214,15 +223,10 @@
     grid-column: 1 / -1;
     padding-top: 24px;
 
-    height: 718px;
+
     margin-bottom: 84px;
   }
 
-  #Inside-the-Vision {
-    grid-column: 1 / -1;
-    height: 563px;
-    margin-bottom: 60px;
-  }
 
   #Search-Programs {
     grid-column: 1 / -1;

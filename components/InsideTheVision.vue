@@ -2,7 +2,6 @@
     <div class="inside-the-vision container-fluid">
       <div class="container py-5">
         
-
         <div class="row">
           <div class="col-12">
             <h3 class="text-white mb-4" id="text-wrapper-1">Inside the Vision</h3>
@@ -26,7 +25,6 @@
               >
               </a>
 
-
               <a
                 class="mb-3 d-none d-lg-block"
                 @click="openITVCurrentWeek"
@@ -38,7 +36,6 @@
                   class="img-fluid"
               >
               </a>
-         
               
               <h5 
                  class="text-white text-lg-start" 

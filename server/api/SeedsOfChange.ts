@@ -18,7 +18,7 @@ const getUrl = (api2Url: string, api2Token: string) => {
   return `${api2Url}/api/wfd/seedsOfChange.json?token=${api2Token}`;
 };
 
-const formatSeedsOfChangeResults = (SeedsOfChangeData: Seeds_Of_Change) => {
+const formatSeedsChangeResults = (SeedsOfChangeData: Seeds_Of_Change) => {
   return SeedsOfChangeData["seedsOfChange"]["content"];
 };
 
@@ -32,7 +32,7 @@ export default defineEventHandler(async (event) => {
   if (!fakeSeedsOfChangeFetch) {
     const results = await $fetch<Seeds_Of_Change>(url);
 
-    return formatSeedsOfChangeResults(results);
+    return formatSeedsChangeResults(results);
   }
 
   console.warn("faking Seeds of Change api call to", url);
@@ -43,14 +43,13 @@ export default defineEventHandler(async (event) => {
       error: null,
       content: {
         id: "seeds-kcm-1c8ff359",
-        type: "seeds_of_change",
+        type: "giving",
         title: "Sow Seeds of Change with KCM.",
-        subtitle:
-          "Give a tax-deductible donation to Kenneth Copeland Ministries. Your giving supports worldwide TV, Outreaches, Prayer & Prison programs, and ministries around the globe.",
+        subtitle: "",
         link: "https://my.kcm.org/category/newest-releases/pb-an-encounter-with-him-300853",
         body: "Give a tax-deductible donation to Kenneth Copeland Ministries. Your giving supports worldwide TV, Outreaches, Prayer & Prison programs, and ministries around the globe.",
       },
     },
   };
-  return formatSeedsOfChangeResults(results);
+  return formatSeedsChangeResults(results);
 });

@@ -1,7 +1,5 @@
 <template>
-  <div id="sow-seeds-of-change-box">
-    <WFDBanner buttonText="Order Today" variant="giving" />
-  </div>
+  <pre>Sow Seeds Of Change</pre>
 </template>
 
 <script setup></script>

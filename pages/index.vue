@@ -14,19 +14,15 @@
     </section>
 
     <section id="Free-TV">
-      <FreeTVOffer />
-      <Box
+      <WFDBanner
+        background-color="primary"
+        buttonText="Order Today"
         box-title="Free TV Offer"
-        button-text="Order Today"
-        :start="true"
-        :end="true"
-        :sections="{
-          title: TVOffer?.subtitle,
-          body: TVOffer.body,
-          link: TVOffer.link,
-        }"
+        title-alignment="end"
+        :banner="TVOffer"
+        :tokens="['align-self-end']"
       >
-        <template v-slot:start>
+        <template #sectionStart>
           <picture>
             <source
               media="(max-width: 799px)"
@@ -34,55 +30,46 @@
             />
             <source
               media="(min-width: 800px)"
-              :srcset="TVOffer.image?.large.src"
+              :srcset="TVOffer.image.large.src"
             />
-            <img :src="TVOffer.image?.large.src" :alt="TVOffer.image.alt" />
+            <img :src="TVOffer.image.large.src" :alt="TVOffer.image.alt" />
           </picture>
         </template>
-        <template v-slot:end>
-          <a class="button" :href="TVOffer.link">Order Today</a>
-        </template>
-      </Box>
-      <pre class="kcm-debug">{{ TVOffer }}</pre>
+      </WFDBanner>
     </section>
 
-    <!-- <section id="Recent-Videos">
+    <section id="Recent-Videos">
       <RecentVideos />
     </section>
 
-      <section id="Popular-Videos">
-        <PopularVideos />
-      </section>
-
-      <section id="Faith-Foundations">
-        <FaithFoundations />
-      </section>-->
-
-    <section id="Sow-Seeds">
-      <SowSeedsOfChange />
-      <pre class="kcm-debug">{{ SeedsOfChange }}</pre>
+    <section id="Popular-Videos">
+      <PopularVideos />
     </section>
 
-    <!-- <section id="Events-On-Demand">
-        <EventsOnDemand />
-      </section>
+    <section id="Faith-Foundations">
+      <FaithFoundations />
+    </section>
 
-      <section id="Inside-the-Vision">
-        <InsideTheVision />
-      </section>
+    <section id="Sow-Seeds">
+      <WFDBanner
+        background-color="secondary"
+        buttonText="Sow a Gift Today"
+        :banner="SeedsOfChange"
+        :tokens="['align-self-center']"
+      >
+        <template #sectionBody="SeedsOfChange">
+          <h3 class="title">{{ SeedsOfChange.title }}</h3>
+          <p>{{ SeedsOfChange.body }}</p>
+        </template>
+      </WFDBanner>
+    </section>
 
-      <section id="Search-Programs">
-        <SearchPrograms />
-      </section>
-
-      <section id="Ways-to-Watch">
-        <WaysToWatch />
-      </section>
-
-      <section id="Give-Prayer-Partner">
-        <CTA />
-      </section> -->
+    <section id="Events-On-Demand">
+      <EventsOnDemand />
+    </section>
   </div>
+
+  <CTA />
 </template>
 
 <script setup lang="ts">
@@ -134,12 +121,6 @@ const { data: SeedsOfChange } = useSeedsOfChange();
 }
 
 #Events-On-Demand {
-  height: 1575px;
-  margin-bottom: 36px;
-}
-
-#Inside-the-Vision {
-  height: 975px;
   margin-bottom: 36px;
 }
 
@@ -203,7 +184,7 @@ const { data: SeedsOfChange } = useSeedsOfChange();
 
   #ITV-Video {
     grid-row: 2 / 3;
-    height: 263px;
+
     margin-bottom: 48px;
   }
 
@@ -242,14 +223,7 @@ const { data: SeedsOfChange } = useSeedsOfChange();
     grid-column: 1 / -1;
     padding-top: 24px;
 
-    height: 718px;
     margin-bottom: 84px;
-  }
-
-  #Inside-the-Vision {
-    grid-column: 1 / -1;
-    height: 563px;
-    margin-bottom: 60px;
   }
 
   #Search-Programs {
@@ -271,4 +245,3 @@ const { data: SeedsOfChange } = useSeedsOfChange();
   }
 }
 </style>
-import type SeedsOfChange from '~/server/api/SeedsOfChange';

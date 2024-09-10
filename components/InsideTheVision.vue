@@ -49,6 +49,7 @@
                 Latest Episode<br>
                 {{ latestEpisodeTitle }}
               </h5>
+
             </div>
 
           </div>
@@ -285,6 +286,13 @@
   
     .episode-list.second-half {
       margin-top: -40px;
+    }
+
+    #text-wrapper-2{
+
+      margin-top: 10px;
+
+
     }
   
    

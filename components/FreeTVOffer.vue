@@ -1,7 +1,5 @@
 <template>
-  <div id="WFD-Banner">
-    <WFDBanner buttonText="Order Today" variant="tv-offer" />
-  </div>
+  <pre>Free TV Offer</pre>
 </template>
 
 <script setup lang="ts"></script>

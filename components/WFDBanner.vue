@@ -1,45 +1,46 @@
 <template>
-  <div id="WFD-Banner">
-    <h2 v-if="variant === 'tv-offer'">Free TV Offer</h2>
-    <div class="banner" :data-variant="variant">
-      <div class="image" v-if="variant === 'tv-offer'">
-        <picture>
-          <source
-            media="(max-width: 799px)"
-            :srcset="TVOffer.image.small.src"
-          />
-          <source
-            media="(min-width: 800px)"
-            :srcset="TVOffer.image.large.src"
-          />
-          <img :src="TVOffer.image.large.src" :alt="TVOffer.image.alt" />
-        </picture>
-      </div>
+  <KCMBox :boxTitle="boxTitle" title-alignment="end">
+    <div
+      id="WFD-Banner"
+      :data-background="backgroundColor"
+      :data-type="banner.type"
+    >
+      <div class="sections">
+        <div class="section-start" v-if="$slots.sectionStart">
+          <slot name="sectionStart" />
+        </div>
 
-      <div class="content">
-        <header class="header">
-          <h3 class="title">
-            {{ TVOffer.title }}
-          </h3>
+        <div class="content">
+          <h3 class="title">{{ banner.title }}</h3>
+          <p class="body pt-2">{{ banner.body }}</p>
+        </div>
 
-          <p class="pt-2">{{ TVOffer.subtitle }}</p>
-        </header>
-        <div class="cta">
-          <a class="button" :href="TVOffer.link">{{ buttonText }}</a>
+        <div class="cta" :class="tokens">
+          <a class="button" :href="banner.link">{{ buttonText }}</a>
         </div>
       </div>
     </div>
-  </div>
+  </KCMBox>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-  buttonText: string;
-  variant?: string;
-}>();
-const { buttonText, variant } = props;
+interface Banner {
+  title?: String;
+  body?: String;
+  link?: String;
+  image?: Object;
+  type?: String;
+}
 
-const { data: TVOffer } = useFetch("/api/TVOffer");
+interface Props {
+  boxTitle?: string;
+  buttonText?: string;
+  backgroundColor?: string;
+  banner: Banner;
+  tokens?: string[];
+}
+
+const props = defineProps<Props>();
 </script>
 
 <style scoped>
@@ -47,115 +48,108 @@ const { data: TVOffer } = useFetch("/api/TVOffer");
   --primary-bg-gradient: linear-gradient(to bottom, #028cd3, #00a8ff);
   --secondary-bg-gradient: linear-gradient(to bottom, #f54d09, #b33005);
   container-type: inline-size;
-  container-name: offer;
+  container-name: banner;
+
+  .sections {
+    border-radius: 20px;
+    color: #fff;
+    padding-block: 20px;
+    padding-inline: 24px;
+
+    .content {
+      padding-block: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .title {
+      font-family: sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      text-align: left;
+    }
+
+    .button {
+      background-color: #fff;
+      border-radius: 50px;
+      color: #212529;
+      display: inline-block;
+      padding-block: 0.875rem;
+      padding-inline: 1.25rem;
+      text-align: center;
+    }
+
+    .cta {
+      justify-self: end;
+      .button {
+        font-size: 1rem;
+        text-decoration: none;
+        width: 100%;
+      }
+    }
+  }
+
+  /** Box Variations */
+  &[data-background="primary"] {
+    .sections {
+      background: var(--primary-bg-gradient);
+    }
+  }
+  &[data-background="secondary"] {
+    .sections {
+      background: var(--secondary-bg-gradient);
+
+      .content {
+        font-size: 14px;
+        .body {
+          border-bottom: 1px solid #ff8c00;
+          padding-bottom: 20px;
+        }
+      }
+
+      .content,
+      .cta {
+        padding-inline: 1.75rem;
+      }
+    }
+  }
 }
 
-.banner {
-  border-radius: 20px;
-  color: #fff;
-  padding-block: 20px;
-  padding-inline: 24px;
-
-  .content {
-    padding-block: 1rem;
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-  .title {
-    font-family: sans-serif;
-    display: inline;
-    font-weight: 700;
-    font-size: 24px;
-    text-align: center;
-  }
-
-  .button {
-    background-color: #fff;
-    color: #212529;
-    display: inline-block;
-    padding-inline: 1.25rem;
-    padding-block: 0.875rem;
-    border-radius: 50px;
-    text-align: center;
-  }
-
+@container banner (min-width: 600px) {
   .cta {
     justify-self: end;
-    .button {
-      font-size: 1rem;
-      text-decoration: none;
-      width: 100%;
-    }
-  }
-
-  &[data-variant="primary"],
-  &[data-variant="tv-offer"] {
-    background: var(--primary-bg-gradient);
-  }
-  &[data-variant="secondary"],
-  &[data-variant="giving"] {
-    background: var(--secondary-bg-gradient);
+    width: 260px;
   }
 }
 
-@container offer (min-width: 600px) {
-  [data-variant="giving"] .content,
-  [data-variant="tv-offer"] {
+@container banner (min-width: 800px) {
+  #WFD-Banner .sections {
     display: grid;
-    gap: 2.5rem;
+    grid-template-columns: auto 1fr auto;
+    gap: 2.25rem;
   }
 
-  [data-variant="giving"] .content,
-  [data-variant="tv-offer"] {
-    .cta {
-      width: 260px;
-    }
-  }
-  [data-variant="tv-offer"] {
-    grid-template-columns: minmax(0, 260px) 1fr;
-    grid-auto-flow: dense;
-  }
-}
+  #WFD-Banner {
+    &[data-background="secondary"] {
+      > .sections {
+        background: var(--secondary-bg-gradient);
+        .content {
+          border-right: 1px solid #ff8c00;
+          font-size: 14px;
+          padding-block: 24px;
+          .body {
+            border-bottom: none;
+            padding-inline-end: 2.5rem;
+            padding-bottom: 0;
+          }
+        }
 
-@container offer (min-width: 880px) {
-  [data-variant="giving"] > .content {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
-    .cta {
-      margin-block-start: 0;
-      align-self: center;
-      justify-self: end;
-      position: relative;
-      &:before {
-        content: "";
-        height: 89px;
-        background-color: orange;
-        width: 1px;
-        position: absolute;
-        left: -50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-  }
-  [data-variant="tv-offer"] {
-    grid-template-columns: repeat(autofit, minmax(0, 260px) 2fr);
-    .content {
-      display: grid;
-      grid-template-columns: 1fr minmax(0, 1fr);
-      gap: 1rem;
-
-      p {
-        font-weight: 500;
-        font-size: 20px;
-      }
-
-      .cta {
-        align-self: end;
-        justify-self: end;
+        .content,
+        .cta {
+          padding-inline: 36px;
+        }
       }
     }
   }

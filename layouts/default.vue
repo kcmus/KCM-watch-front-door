@@ -9,6 +9,8 @@
       <NuxtPage/>
     </main>
 
+   
+
     <FooterPageFooter/>
 
   </div>

@@ -1,34 +1,19 @@
 <template>
-
-    <div id="sow-seeds-of-change-box">
-         9.Sow Seeds of Change
-        
-    </div>
+  <pre>Sow Seeds Of Change</pre>
 </template>
 
-
-<script setup>
-
-</script>
+<script setup></script>
 
 <style scoped>
+#sow-seeds-of-change-box {
+  height: 304px;
+  background-color: bisque;
+}
 
-
-#sow-seeds-of-change-box{
-    height: 304px;
+@media (min-width: 768px) {
+  #sow-seeds-of-change-box {
+    height: 166px;
     background-color: bisque;
-
+  }
 }
-
-
-@media (min-width: 768px){
-
-    #sow-seeds-of-change-box{
-        height: 166px;
-        background-color: bisque;
-
-    }
-
-}
-
 </style>

@@ -105,7 +105,7 @@
         
         <div class="row">
           <div class="col-12 text-center text-lg-start">
-            <button class="btn btn-outline-light" @click="openITVHomePage"  >Visit Inside the Vision</button>
+            <button class="btn btn-outline-light" @click="openITVHomePage" >Visit Inside the Vision</button>
           </div>
         </div>
 

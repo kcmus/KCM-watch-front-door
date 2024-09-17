@@ -1,5 +1,5 @@
 <template>
-    <div class="inside-the-vision container-fluid">
+    <div class="ITV container-fluid" id="inside-the-vision">
       <div class="container py-5">
         
         <div class="row">
@@ -172,14 +172,14 @@
   
   <style scoped>
   
-  .inside-the-vision {
+  .ITV {
     background-image: url('/images/ITV-brand.png');
     background-size: cover;
     background-position: 98% 2%;
     position: relative;
   }
   
-  .inside-the-vision::before {
+  .ITV::before {
     content: '';
     position: absolute;
     top: 0;
@@ -189,7 +189,7 @@
     background-color: rgba(0, 15, 77, 0.8);
   }
   
-  .inside-the-vision > * {
+  .ITV > * {
     position: relative;
     z-index: 1;
   }
@@ -266,12 +266,12 @@
   
   @media (max-width: 991px) {
 
-    .inside-the-vision {
+    .ITV {
       background-image: none;
       background: linear-gradient(180deg, rgba(0, 15, 77, 0.4624) 0%, rgba(0, 15, 77, 0.68) 44.02%);
     }
   
-    .inside-the-vision::before {
+    .ITV::before {
       display: none;
     }
   

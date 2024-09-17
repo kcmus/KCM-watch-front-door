@@ -1,12 +1,16 @@
 <template>
+
   <div class="container">
     <section id="BVOV">
       <!-- <BVOV /> -->
       <BVOVWithStatic />
+
+      <!-- <BVOVDrupal/> -->
     </section>
 
     <section id="Live-TV">
-      <LiveTV />
+      <!-- <LiveTV /> -->
+       <LiveTVDrupal/>
     </section>
 
     <section id="ITV-Video">
@@ -79,16 +83,21 @@
     <section id="Ways-to-Watch">
       <WaysToWatch />
     </section>
-  </diV>
-     
-  <CTA />
+  </div>
 
+  <CTA id="CTA"/>  
+   
 </template>
 
 <script setup lang="ts">
 const { data: TVOffer } = useTVOffer();
 const { data: SeedsOfChange } = useSeedsOfChange();
+
+
+
+
 </script>
+
 
 <style scoped>
 

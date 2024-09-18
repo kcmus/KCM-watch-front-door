@@ -17,6 +17,7 @@
                 width="12"
                 height="19"
               />
+
             </a>
             <button
               class="btn btn-sm no-hover no-active btn-outline-secondary dropdown-toggle kcmh-region-select rounded-1"
@@ -106,9 +107,17 @@
       </button>
 
       <a class="navbar-brand me-auto ms-3 ms-lg-0" href="https://www.kcm.org/">
-        <img
+        <!-- <img
           class=""
           src="https://libraries67.kcm.org/images/logos/kcm-header-logo.svg"
+          width="306"
+          height="57"
+          alt="Kenneth Copeland Ministries"
+        /> -->
+
+        <img
+          class=""
+          src="https://www.kcm.org/themes/custom/bootstrap_kcm/images/logo.svg"
           width="306"
           height="57"
           alt="Kenneth Copeland Ministries"

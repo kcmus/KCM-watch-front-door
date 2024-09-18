@@ -27,8 +27,8 @@
   </template>
   
   <script setup lang="ts">
-  import { ref, computed, onMounted } from 'vue';
-  import Hls from 'hls.js';  // Import hls.js
+
+  import Hls from 'hls.js';
   import type { LiveTV_Data } from '~/server/api/LiveTV.js';
   
   // Fetch LiveTV data from the API

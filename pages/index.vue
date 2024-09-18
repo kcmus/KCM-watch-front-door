@@ -69,7 +69,15 @@
     </section>
 
     <section id="Events-On-Demand">
-      <EventsOnDemand />
+
+      <KCMEventsBox
+        title = "Events OnDemand"
+        :events1 = "events1"
+        :events2 = "events2"
+        :events3 = "events3" 
+        buttonText = "All OnDemand Videos"     
+      
+      />
     </section>
 
   </div>
@@ -92,6 +100,17 @@
 <script setup lang="ts">
 const { data: TVOffer } = useTVOffer();
 const { data: SeedsOfChange } = useSeedsOfChange();
+
+const {data:EventsOnDemand} = useEventsOnDemand();
+
+const eventsCategories = computed(() => EventsOnDemand.value?.categories ?? []);
+
+const url = computed(() => EventsOnDemand.value?.url ?? '');
+
+const events1 = computed(() => eventsCategories.value[0]);
+const events2 = computed(() => eventsCategories.value[1]);
+const events3 = computed(() => eventsCategories.value[2]);
+
 
 
 

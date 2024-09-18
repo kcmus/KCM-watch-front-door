@@ -87,10 +87,19 @@
   
   font-family: var(--heading-h3-font-family);
 
+  color: white;
+  font-size: 1.5rem;
+  font-family: Helvetica;
+
+
 }
 
+.card-text{
+
+  color: #FFFFFF99;
 
 
+}
 
 .btn-outline-light{
 
@@ -102,6 +111,7 @@
   font-style: var(--heading-h5-font-style);
   font-weight: var(--heading-h5-font-weight);
   letter-spacing: var(--heading-h5-letter-spacing);
+  border-color: #FFFFFF99; 
 
 }
 
